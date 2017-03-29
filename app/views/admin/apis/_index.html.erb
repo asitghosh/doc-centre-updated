@@ -1,0 +1,8 @@
+<a href="#" class="js-open-all">Expand All</a>
+<ol class="pagelist sortable" data-sort-url="<%= sort_pages_path() %>">
+  <% @apis.each do |api| %>
+    <% if api.parent_id == 0 || api.parent_id == nil %>
+      <%= render "listitem", :api => api %>
+    <% end %>
+  <% end %>
+</ol>

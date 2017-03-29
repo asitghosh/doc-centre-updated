@@ -1,0 +1,270 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1451255"></a><a name="66612"></a>Work with the Symantec.cloud New Account template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1452059"></a>You can edit content in the Symantec.cloud New Account template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1452060"></a>When the template is turned On, it sends an informational message to any company’s first-ever assigned user for Symantec.cloud service. The message conveys administrative login credentials and other details about administering the company’s Symantec.cloud service.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1452061"></a>When the template is turned Off, the intended recipient lacks the necessary information to administer his or her company’s Symantec.cloud account. </li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1452062"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1452063"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Custom Product Emails | <span class="EH-EmphasisHeavy">
+Symantec.cloud New Account</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1452064"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1452065"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1452066"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1452067"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1452068"></a>	Click <span class="EH-EmphasisHeavy">
+Symantec.cloud New Account</span>
+ in the Custom Product Emails area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3411143"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-123.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-124.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1469801"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+Administrator instructions for your new Symantec.cloud account</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1452072"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4016557"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112897"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112899"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112901"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose <span class="EI-EmphasisItalic">
+channel administrators</span>
+ operate and manage your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112903"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112905"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112907"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112909"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112911"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112913"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112915"></a><code class="S-Sample">
+{USER_FIRST_NAME}</code>
+ — Inserts the message recipient’s given name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112917"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the message recipient’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112919"></a><code class="S-Sample">
+{USER_LAST_NAME}</code>
+ — Inserts the message recipient’s surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4112921"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1452075"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3901434"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-125.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-126.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-127.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-1453815"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467815"></a><code class="S-Sample">
+Dear {USER_FULL_NAME},</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467817"></a><code class="S-Sample">
+Our records indicate that this is the first time your company has purchased a Symantec.cloud product from {PARTNER_STORE_LABEL}. You should receive a New User Registration email message from Symantec shortly. It contains your Symantec.cloud administrative account username and a link to create your password. If you do not receive this email in your inbox when you expect it, please check your spam folder.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467819"></a><code class="S-Sample">
+After your Symantec.cloud admin account is activated, you can change the login email address, reset your password, add more users, and download the desktop software through the Symantec.cloud portal. Please safekeep the administrative login email address for future reference.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467821"></a><code class="S-Sample">
+If you forget the administrative login email address or lose access to the email account, you can contact Symantec support to reset it for you:<br>
+</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467822"></a><span class="EH-EmphasisHeavy">
+Support Request Form</span>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467823"></a><code class="S-Sample">
+Click here to access the support form.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467824"></a><code class="S-Sample">
+</code>
+ </p>
+<p class="SB-StepBody">
+<a name="pgfId-1467825"></a><span class="EH-EmphasisHeavy">
+Telephone</span>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467826"></a><code class="S-Sample">
+Please visit the following link to obtain contact information for your region: <br>
+http://www.symanteccloud.com/support</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467827"></a><code class="S-Sample">
+</code>
+ </p>
+<p class="SB-StepBody">
+<a name="pgfId-1467828"></a><span class="EH-EmphasisHeavy">
+Email</span>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1467829"></a><code class="S-Sample">
+support.cloud@symantec.com<br>
+<br>
+<br>
+<br>
+Thanks and enjoy your app!</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1453816"></a><code class="S-Sample">
+Your friends at {PARTNER_STORE_LABEL}</code>
+</p>
+<p class="Anchor">
+<a name="pgfId-1453817"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1460064"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2445920"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1460065"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-1452077"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1452081"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2462744"></a><a href="/fm/36848" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for product users</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

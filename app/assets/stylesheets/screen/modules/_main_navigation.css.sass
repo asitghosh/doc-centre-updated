@@ -1,0 +1,510 @@
+.impersonation
+  &.active
+    display: block
+  padding: 13px 0 14px
+  background-color: #484848
+  form
+    width: 70%
+    float: left
+    height: 23px
+    label
+      @extend .inline-block
+      @extend .icon-impersonate
+      padding: 0 5px 0 32px
+      height: 16px
+      color: white
+      vertical-align: top
+      margin-top: 5px
+    .icon-impersonate:before
+      font-size: 16px
+      position: relative
+      top: -2px
+      padding-right: 6px
+  button
+    background: transparent
+    border: none
+    float: right
+    padding: 0
+    position: relative
+    top: 4px
+    opacity: .9999
+    @extend .opacity_transform
+    &:before
+      @extend .before_icon_shift
+      font-size: 20px
+      position: relative
+    &:hover
+      opacity: .5
+
+body
+  >header
+    background: #eee
+    border-bottom: 1px solid #bbb
+    a
+      color: #a2a2a2
+      font-size: 14px
+
+  fieldset
+    border: 0
+
+  .main_nav, .user_menu, .subnavigation
+    font-family: $accent-stack
+    a
+      @extend .no_decoration
+  .anon.main_nav
+    width: 232px
+    a:hover
+      background: #333
+      color: #eee
+  .main_nav
+    & > ul
+      margin: 0
+      padding: 0
+      & > li
+        float: left
+        position: relative
+        padding: 0
+        border-right: 1px solid $d
+        & > a
+          display: block
+          padding: 0 16px
+          line-height: 64px
+          height: 59px
+        &:first-child
+          border-left: 1px solid $d
+          &.selected
+            left: 0px
+            &:hover
+              a
+                color: #333
+          &:hover
+            background: #333
+            a
+              color: #eee
+        &:last-child.active
+          position: relative
+          left: -1px
+        &.selected
+          height: 60px
+          border-left: 1px solid $b
+          border-right: 1px solid $b
+          position: relative
+          left: -1px
+          &:before
+            content: ""
+            display: block
+            position: absolute
+            height: 3px
+            left: -1px
+            right: -1px
+            top: 0px
+          &.active:before
+            display: none
+          & > a
+            color: #333
+        &.subnav:hover
+          & > a
+            color: #eee
+            &:after
+              border-top-color: #eee    
+      #appdirect
+        @extend .ir
+        background: url(appdirect-mark.png) 50% 50% no-repeat
+        background-size: 40px
+        width: 62px
+        &:hover
+          background: #333 url(appdirect-mark-light.png) 50% 50% no-repeat
+          background-size: 40px
+        a:hover
+          background: transparent
+  .fixed-header
+    > header
+      background: #eee
+      border-bottom: 1px solid #bbb
+      a
+        color: #a2a2a2
+        font-size: 14px
+
+    fieldset
+      border: 0
+    .subnavigation
+      background-color: #fff
+    .main_nav, .user_menu, .subnavigation
+      font-family: $accent-stack
+      a
+        @extend .no_decoration
+    .anon.main_nav
+      width: 232px
+      a:hover
+        background: #333
+        color: #eee
+    .main_nav
+      & > ul
+        margin: 0
+        padding: 0
+        & > li
+          float: left
+          position: relative
+          padding: 0
+          border-right: 1px solid $d
+          & > a
+            display: block
+            padding: 0 16px
+            line-height: 64px
+            height: 59px
+          &:first-child
+            border-left: 1px solid $d
+            &.selected
+              left: 0px
+              &:hover
+                background: white
+                a
+                  color: #333
+            &:hover
+              background: #333
+              a
+                color: #eee
+          &:last-child.active
+            position: relative
+            left: -1px
+          &.selected
+            height: 60px
+            border-left: 1px solid $b
+            border-right: 1px solid $b
+            position: relative
+            left: -1px
+            &:before
+              content: ""
+              display: block
+              position: absolute
+              height: 3px
+              left: -1px
+              right: -1px
+              top: 0px
+            &.active:before
+              display: none
+            & > a
+              color: #333
+          &.subnav:hover
+            & > a
+              color: #eee
+              &:after
+                border-top-color: #eee    
+        #appdirect
+          @extend .ir
+          background: url(appdirect-mark.png) 50% 50% no-repeat
+          background-size: 40px
+          width: 62px
+          &:hover
+            background: #333 url(appdirect-mark-light.png) 50% 50% no-repeat
+            background-size: 40px
+          a:hover
+            background: transparent
+    // &.anon
+    //   a:hover
+    //     background: #333
+    //     color: #eee
+    //   a:last-child
+    //     margin-left: -1px
+    //   li.selected:hover
+    //     border-color: #333
+    //     width: auto   
+    //     &:before
+    //       display: none
+    //     a:after
+    //       content: ""
+    //       display: block
+    //       position: absolute
+    //       height: 1px
+    //       background-color: #333
+    //       bottom: 0
+    //       right: 0
+    //       left: 0
+
+
+
+.user_menu
+  ul
+    li
+      float: left
+      &.welcome_show
+        padding: 0
+      a
+        display: block
+        height: 60px
+        line-height: 60px
+        &#set_welcome_true
+          margin-right: 20px
+          padding-top: 2px
+          &:before
+            content: "+"
+            font-family: $black-stack
+            font-size: 1.5em
+            margin-right: 5px
+            vertical-align: bottom
+
+
+.subnav
+  text-align: center
+  position: relative
+  li
+    padding: 0
+    float: none
+    width: 100%
+    border: 0
+    border-left: 0 !important
+    border-right: 0 !important
+  & > a
+    @extend .inline-block
+    height: 59px
+    line-height: 60px
+    white-space: nowrap
+    padding: 0 14px
+    &:hover
+      color: #eee
+      background-color: #333
+      &:after
+        border-top-color: #eee
+    &.user_name
+      padding: 2px 14px 0
+      display: inline-block
+      &:focus
+        outline: 0
+    &:after
+      content: ""
+      position: relative
+      @extend .inline-block
+      margin-left: 9px
+      width: 0px
+      height: 0px
+      border: 4px transparent solid
+      border-top: 4px solid #c2c2c2
+  .disabled > a
+    color: #5B5B5B
+    position: relative
+    cursor: default
+    @extend .icon-lock
+  .icon-lock:before
+    font-size: 16px
+    position: relative
+    top: -4px
+    padding-right: 8px
+    &:hover
+      color: #5B5B5B
+      background: none
+    &:before
+      content: ""
+      position: absolute
+      display: inline-block
+      width: 12px
+      height: 16px
+
+      top: 50%
+      right: 15px
+      margin-top: -8px
+  &.login, &.help-support
+    & > a:after
+      display: none
+  &.help-support
+    border-right: 0 !important
+  &.training
+    border-left: 1px solid #ddd
+    padding: 0
+    a
+      &:after
+        display: none
+  .avatar
+    position: relative
+    margin-left: 10px
+    top: 6px
+  ul
+    display: none
+    background: #333
+    color: #c2c2c2
+    text-align: left
+    position: absolute
+    width: 240px
+    left: -1px
+    top: 59px
+    z-index: 5
+    li
+      border-bottom: 1px solid #474747
+      &:first-child
+        border-top: 1px solid #474747
+      a
+        display: block
+        padding: 0 25px
+        height: 49px
+        line-height: 52px
+        +transition(background-color .2s linear)
+        +transition(color .2s linear)
+        &:hover
+          background: rgba(255, 255, 255, .05)
+          color: white
+        &.selected
+          color: white
+          &:hover
+            background: transparent
+
+  &.active, &.selected.active
+    background: #333
+    color: #c2c2c2
+    border-left: 1px solid #333 !important
+    border-right: 0 !important
+    width: auto
+    .user_name, & > li > a
+      color: #eee
+      text-overflow: ellipsis
+      &:after
+        border-top-color: #eee
+    ul
+      display: block
+  &.selected.active
+    border-right: 1px solid #333 !important
+
+
+#user_list, .help-support
+  border-left: 1px solid $d
+  border-right: 1px solid $d !important
+  padding: 0
+  ul
+    left: auto
+    right: 0px
+
+.subnavigation
+  border-bottom: 1px solid $b
+  height: 50px
+  ul
+    +horizontal-list
+    padding-top: 3px
+    li
+      height: 50px
+      margin-right: 20px
+      padding: 0
+      &.bold
+        text-transform: uppercase
+        font-family: $bold-stack
+        line-height: 54px
+      a
+        border-bottom: none
+      a
+        @extend .opacity_transform
+        line-height: 54px
+        color: $charcoal
+        opacity: .5
+        font-size: 14px
+        &:hover
+          opacity: .75
+        &.active
+          border-bottom: 3px solid #009abf
+          padding-bottom: 12px
+          opacity: 1
+    &.dynamic-nav
+      span
+        padding-left: 20px
+        color: #ABABAB
+        &.black
+          font-family: $black-stack
+      &.selected
+        border-bottom: 3px solid $bright-blue
+        a
+          opacity: .999999
+          &:hover
+            color: $charcoal 
+    
+    
+
+.chzn-drop
+  box-sizing: content-box
+
+
+.modal
+  border-radius: 3px
+  border: 0
+// can't be nested as it exists inside the iframe with class .modal
+.modal-header
+  background-color: #f3f3f3
+  border-bottom: 1px solid #e5e5e5
+  border-radius: 3px
+  min-height: 50px
+  padding: 18px 15px 10px 15px
+  h1,h2,h3,h4,h5,h6
+    font-size: 1.125em
+    line-height: 1
+    margin: 0
+
+.modal-body
+  .small-gray-caps
+    border-bottom: 1px solid #ebebeb
+    margin-bottom: 20px
+  label
+    font-size: .875em
+
+.modal-footer
+  min-height: 70px
+  margin-top: 100px
+  .dismiss_modal
+    float: left
+
+#modal--user_settings
+  height: 591px
+
+
+.settings.edit
+  h4
+    margin-bottom: 12px
+  h5
+    margin-bottom: 8px
+  .block
+    margin-bottom: 8px
+  .mailing_lists
+    margin-bottom: 38px
+
+.gradient-header
+  padding-top: 60px
+  background: linear-gradient( 90deg, #3998bf, #47beb9 )
+  border-bottom: 1px solid #ccc
+  &.extra-padding
+    padding-top: 110px
+  h1
+    font-family: $black-stack
+    margin: 5px 0 0 0
+    font-size: 16px
+    text-transform: uppercase
+    color: #fff
+    float: left
+    display: inline-block
+    &:before
+      content: ""
+      display: block
+      float: left
+      background: url(appdirect-mark-light.png) 50% 50% no-repeat
+      margin-top: 3px
+      margin-right: 10px
+      background-size: 30px
+      width: 40px
+      height: 40px
+  header
+    border-bottom: 1px solid rgba(255, 255, 255, .6)
+  .user_menu
+    float: right
+    a
+      color: white
+  .search-bar
+    padding: 50px
+    form
+      padding: 0
+      width: 100%
+      input
+        height: 50px
+        margin-top: 0
+        background-position: 12px 12px
+        .search-bar
+    h2, h3
+      text-align: center
+      color: white
+    h2
+      margin-top: 0
+    h3
+      margin-top: 5px
+      margin-bottom: 25px

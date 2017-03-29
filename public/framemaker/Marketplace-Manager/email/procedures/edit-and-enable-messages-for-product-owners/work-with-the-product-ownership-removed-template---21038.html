@@ -1,0 +1,256 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1474797"></a><a name="21038"></a>Work with the Product Ownership Removed template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1476358"></a>You can edit content in the Product Ownership Removed template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1476359"></a>When the template is turned On, it notifies a subscription contract’s previously billed user that another user, who is often a <span class="EI-EmphasisItalic">
+company administrator</span>
+ or a company <span class="EI-EmphasisItalic">
+billing administrator</span>
+, has taken over the contract’s billing responsibility.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1476360"></a>When the template is turned Off, the subscription contract’s previously billed user does not receive this formal notification.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476361"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1476362"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Products | <span class="EH-EmphasisHeavy">
+Product Ownership Removed</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476363"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1476364"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476365"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1476366"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1476367"></a>	Click <span class="EH-EmphasisHeavy">
+Product Ownership Removed </span>
+in the Products area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3658219"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-247.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-248.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1476375"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+{APPLICATION_NAME} has changed ownership on {PARTNER_LABEL}</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1476376"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4020910"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158721"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158723"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158725"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158727"></a><code class="S-Sample">
+{NEW_OWNER_NAME}</code>
+ — Inserts the full name of whichever authorized user took over the payment obligation for the described contract.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158729"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose <span class="EI-EmphasisItalic">
+channel administrators</span>
+ operate and manage your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158731"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158733"></a><code class="S-Sample">
+{PREVIOUS_OWNER_NAME}</code>
+ — Inserts the full name of the message recipient. He or she might still be assigned to consume one of the allocated seats, but is no longer the contract’s billed party.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158735"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158737"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158739"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158741"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158743"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158745"></a><code class="S-Sample">
+{USER_FIRST_NAME}</code>
+ — Inserts the message recipient’s given name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158747"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the message recipient’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158749"></a><code class="S-Sample">
+{USER_LAST_NAME}</code>
+ — Inserts the message recipient’s surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4158751"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1476380"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3904358"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-249.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-250.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-251.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-1476381"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-1493181"></a><code class="S-Sample">
+Hi, {PREVIOUS_OWNER_NAME}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2197650"></a><code class="S-Sample">
+Good news! Billing obligations for your {APPLICATION_NAME} contract on {PARTNER_STORE_LABEL} have transferred exclusively to {COMPANY_NAME} — thanks to your colleague, {NEW_OWNER_NAME}. You can still use {APPLICATION_NAME} as long as the contract remains valid, the account remains in good standing, and you are assigned to one of the contract’s allocated seats. However, {COMPANY_NAME} is now the sole billable party for that contract.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1651878"></a><code class="S-Sample">
+Starting immediately, {NEW_OWNER_NAME} will manage and pay for {APPLICATION_NAME} on {COMPANY_NAME}’s behalf. Even so, you can still use {APPLICATION_NAME} from your MyApps page on {PARTNER_STORE_LABEL}, as before.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1493186"></a><code class="S-Sample">
+Please contact your company administrator if you can no longer access {APPLICATION_NAME}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1493188"></a><code class="S-Sample">
+If you have any questions, our support team is standing by. You can email us at {SUPPORT_EMAIL}, call us at {SUPPORT_PHONE}, or start a chat with us on our website at {SUPPORT_URL}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1493192"></a><code class="S-Sample">
+Thank you!</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1476382"></a><code class="S-Sample">
+Your friends at {PARTNER_LABEL}</code>
+</p>
+<p class="Anchor">
+<a name="pgfId-1476383"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1476384"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2449691"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1476385"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-1476386"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476390"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2598951"></a><a href="/fm/12533" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for product owners</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

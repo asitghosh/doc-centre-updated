@@ -1,0 +1,16 @@
+%ul.list-reset.release_footer_list.channel_color
+  - release_notes_count = release.count_notes_for(current_user) ? release.count_notes_for(current_user) : 0
+  - if release_notes_count > 0
+    %li.rfooter_channel
+      = link_to content_tag(:span, "Channel Specific Data") , release_path(release, :anchor => "channel_specific"), :class => "smaller icon-right-arrow-circle", :title => "#{pluralize(release_notes_count, 'Channel Specific Note')}"
+
+  - unless release.features.blank?
+    %li.rfooter_feature
+      = link_to content_tag(:span, "Appended Features"), release_path(release, :anchor => "features"), :class => "smaller icon-circle-plus", :title => "#{pluralize(release.features.count, 'Appended Feature')}"
+
+  - unless release.hotfixes_for(current_user).blank?
+    %li.rfooter_hotfixes
+      = link_to content_tag(:span, "Hotfixes"), release_path(release, :anchor => "hotfix#{release.hotfix_numbers_for(current_user).first.gsub(".", "_") }"), :class => "smaller icon-hotfix", :title => "Hotfixes that effect your marketplace: #{release.hotfix_numbers_for(current_user).join(', ')}"
+
+  %li.rfooter_print
+    = link_to content_tag(:span, t('pdf', scope: :releases, release_number: release.title)), release_path(release, format: :pdf), { :class => "smaller icon-print", title: t('pdf', scope: :releases, release_number: release.title)}

@@ -1,0 +1,8 @@
+.fl_container.supports.footer_padding
+  = render "api_head_w_search"
+  .middle-col.no_pad
+    %h2 This page can be anything you like to funnel people into your story funnels
+    %h3 Right now it just pulls the root pages from /api
+    %ul
+      -@api_roots.each do |root_page|
+        %li= link_to root_page.title, root_page.permalink

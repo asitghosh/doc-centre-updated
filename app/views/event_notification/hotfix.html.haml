@@ -1,0 +1,136 @@
+- channel_host = "#{@channel_partner.subdomain}.docs.appdirect.com"
+
+%html
+	= stylesheet_link_tag 'email'
+
+%body
+	%table.parent.notification{ :width => "100%" }
+		%tr
+			%td{ :width => "100%", :align => "center" }
+				%table.container
+					%tbody
+						%tr
+							%td{ :align => "right" }
+								%table
+									%tr
+										%td{ :align => "right" }
+											= image_tag( @channel_partner.logo, :class => "logo")
+										%td.spacer{ :width => "20" }
+						%tr
+							%td{ height: "20" }
+						%tr
+							%td
+								%table{ :width => "100%", :style => "background: #f6f6f6;" }
+									%tbody
+										%tr
+											%td{ :height => "14", :style => "border-top: 3px solid ##{@channel_partner.color}" }
+										%tr
+											%td
+												%table
+													%tr
+														%td{ :width => "16", :style => "width: 16px !important;"  }
+														%td{ :align => "left", :width => "539" }
+															%img{ :src => "https://s3.amazonaws.com/doc-center/rich/rich_files/rich_files/487/original/doc-center-email-header.gif", :alt => "AppDirect Documenation Center" }
+
+														%td{ :align => "right", :width => "225" }
+															%table
+																%tr
+																	%td{ :height => "15" }
+																%tr
+																	%td.date_info{ :align => "right" }
+																		%h5 HOTFIX TEMPLATE Notification
+																		%h6.date= Time.current.strftime('%A, %B %e %Y')
+														%td.spacer{ :width => "20" }
+										%tr
+											%td{ :height => "14" }
+						%tr
+							%td{ :height => "60" }
+						%tr
+							%td{ :align => "left" }
+								%table
+									%tr
+										%td{ :width => "25" }
+										%td{ :align => "left" }
+											%h4
+												%span.update_count{ :style => "background: ##{@channel_partner.color}" }
+													= @resource.title
+												%span
+													= "#{@resource.class.to_s.capitalize} Published"
+
+
+
+										%td{ :width => "20" }
+
+						%tr
+							%td{ :align => "left" }
+								%table
+									%tr
+										%td{ :width => "25" }
+										%td
+											:ruby
+												permalink = case @resource.class.to_s
+													when "Release"
+														"http://#{channel_host}/releases/#{@resource.title}"
+													when "Page"
+														"http://#{channel_host}#{@resource.permalink}"
+													when "Feature"
+														"http://#{channel_host}/features/#{@resource.title}"
+													when "Hotfix"
+														"http://#{channel_host}/releases/#{@resource.release.title}"
+													else
+														"#"
+													end
+												content = case @resource.class.to_s
+													when "Release"
+														@resource.summary
+													when "Hotfix"
+														@resource.content
+													end
+											.content= raw content
+											= link_to "View #{@resource.friendly_title} in the Documentation Center", permalink, :style => "color: ##{@channel_partner.color}"
+
+										%td{ :width => "20" }
+
+						%tr
+							%td.appdirect_watermark
+
+						%tr
+							%td.footer{ :style => "background: #f6f6f6" }
+								%table
+									%tr
+										%td{ :height => "12" }
+									%tr
+										%td{ :width => "800", :align => "left" }
+											%table
+												%tbody
+
+
+													%tr
+														%td{ :width => "20" }
+														%td{ :width => "354", :align => "left", :valign => "top" }
+															%p
+																%strong.stronger You recieved this message because you are subscribed to alert emails from the AppDirect Documentation Center.
+
+															%p.bigger_space
+																%strong.stronger Want to edit your preferences or unsubscribe?
+																%br
+																%a{ :href => "http://#{channel_host}/users/settings", :style => "color: ##{@channel_partner.color}" }
+																	Edit your Documentation Center preferences
+
+														%td{ :width => "95", :align => "left" }
+
+														%td{ :width => "315", :align => "left", :valign => "top" }
+															%p
+																This email was sent to you on behalf of the Documentation Center by AppDirect, Inc.
+															%p
+																%strong= "\u00A9 #{Time.now.strftime('%Y')} AppDirect"
+																%br
+																650 California St., Fl. 25
+																%br
+																San Francisco, CA 94108
+														%td.spacer{ :width => "20" }
+
+
+
+									%tr
+										%td{ :height => "60" }

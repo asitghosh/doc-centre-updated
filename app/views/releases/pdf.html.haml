@@ -1,0 +1,4 @@
+- if @releases
+  = render partial: 'releases/single_release_pdf', collection: @releases, as: :release
+- else
+  = render partial: 'releases/single_release_pdf', locals: { release: @release}

@@ -1,0 +1,46 @@
+!!! 5
+%html.fluid
+  = render "head"
+  %body{:class => "#{controller_name} #{action_name}", :data => { :color => "#{(!current_user || current_user.channel_partner.color.empty?) ? '009abf' : current_user.channel_partner.color}" } }
+    .fixed-header
+      = render 'navigation',  :fluid => true, :search => false
+      = render 'guides_subnav'
+    .gradient-header.extra-padding
+      .search-bar.container
+        %h2= t :headline, :scope => @api.title.parameterize.to_sym
+        %h3= t :tagline, :scope => @api.title.parameterize.to_sym
+        / %h3 Everything you need to know about working with the AppDirect product suite.
+        -if current_user
+          = form_tag search_path, method: "get", class: "header-search" do
+            = #select_tag(:index, options_for_select([["All", "All"], ["Release Notes", "Release"], ["Manuals", "Page"], ["FAQs", "Faq"], ["Roadmaps", "Roadmap"]], params[:index]), :class => "chosen-input large").html_safe
+            = text_field_tag :q, params[:q], autocomplete: "off", placeholder: "Search Help Center"
+            = hidden_field_tag(:time, params[:time])
+            = hidden_field_tag(:sort, params[:sort])
+            = hidden_field_tag(:index, "All")
+            = submit_tag("Search", :class => "header_submit")
+        - else
+          = form_tag search_path, method: "get", class: "header-search" do
+            = #select_tag(:index, options_for_select([["All", "All"], ["Release Notes", "Release"], ["Manuals", "Page"], ["FAQs", "Faq"], ["Roadmaps", "Roadmap"]], params[:index]), :class => "chosen-input large").html_safe
+            = text_field_tag :q, params[:q], autocomplete: "off", placeholder: "Search Help Center"
+            = hidden_field_tag(:time, params[:time])
+            = hidden_field_tag(:sort, params[:sort])
+            = hidden_field_tag(:index, "Api")
+            = submit_tag("Search", :class => "header_submit")
+    #main.help-center-home{:role => "main"}
+      .container
+        - @apis.each do |api|
+          - if api.children.present? && api.published?
+            %h2.section-title= api.title
+            .chapter-grid
+              - api.children.each do |child|
+                - if child.published?
+                  %a.chapter-grid-entry{ :href => child.permalink }
+                    
+                    %h3.chapter-grid-entry-title= child.title
+                    - if child.logo.present?
+                      = image_tag child.logo, alt: "#{child.title} Icon", class: "chapter-grid-entry-image"
+                    - if child.summary.present?
+                      %p.chapter-grid-entry-summary= child.summary
+
+    
+    = render 'footer_includes'

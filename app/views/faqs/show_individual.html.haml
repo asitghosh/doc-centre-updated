@@ -1,0 +1,12 @@
+%section.container.three-nine-three
+  %header
+    %h1.h2= t :headline, :scope => :faqs
+    = render 'search_header'
+  = render 'leftnav'
+  %article.middle-col.channel_color_headlines
+    %ul.list-reset.item_list
+      %li.spy_this{:id => @faq.question.parameterize}
+        %h3.channel_color= @faq.question
+        .answer
+          = raw @faq.answer
+  %aside.right-col

@@ -1,0 +1,14 @@
+%section.container.three-nine-three
+  %header
+    %h1.h2= t :headline, :scope => :pages
+    = render 'search_header'
+  %nav.left-col.page_nav
+    %ul.side
+      = render "leftnav", :print => true, :pages => @navigation
+  %article.middle-col.channel_color_headlines
+    %h2
+      = link_to "Summary of Platform Features", "/manuals/summary-of-platform-features"
+    %p This guide is meant to describe from the highest possible level what the multi-sided, white-label AppDirect platform does, and for whom. It describes key user roles and illustrates in a broad sense what most users can expect to observe when they engage with features that align with their interests and responsibilities.
+    %h2
+      = link_to "Partner API Documentation", "/manuals/partner-api-documentation"
+    %p This guide describes API calls that you can use to customize some aspects of the user interface for your marketplace. Each API call description includes conceptual, procedural, and reference information. Thus, a typical description is likely to include an overview of the corresponding page type, syntax to customize the user interface, and examples that should simplify or streamline customization.

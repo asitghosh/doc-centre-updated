@@ -1,0 +1,11 @@
+{
+  "project_id" : "Doc-Center",
+  "conduit_uri" : "http://phabricator.devisle.com/",
+  "copyright_holder" : "AppDirect, Inc.",
+  "arc.land.onto.default": "master",
+  "immutable_history": false,
+  "lint_engine": "AppDirectLintEngine",
+  "phutil_libraries": {
+    "appdirect": ".arc/appdirect/"
+  }
+}

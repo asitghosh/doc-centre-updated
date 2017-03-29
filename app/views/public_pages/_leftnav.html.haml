@@ -1,0 +1,22 @@
+- pages.each do |page, children|
+  - if page.published? || current_user && current_user.can_see_drafts?
+    %li{ :class => "nav-root-depth-#{ page.depth++ 1 }" }
+      - if children.present?
+        - if page.depth == 2
+          %a{ :href => page.permalink }
+            %h2.js-sidenav-toggle.caret{ :class => "#{'ascendent open' if request.fullpath.include? page.permalink and request.fullpath != page.permalink or request.fullpath == page.permalink }" }
+              = page.title
+        - else page.redirect_to_first_child? and page.depth >= 3
+          %h2{ :class => "#{'ascendent' unless page.depth > 2 if request.fullpath.include? page.permalink and request.fullpath != page.permalink }" }
+            = page.title
+      - elsif page.depth == 2
+        %a{ :href => page.permalink }
+          %h2.js-sidenav-toggle{ :class => "#{'ascendent open' if request.fullpath == page.permalink }" }
+            = page.title
+      - else
+        = link_to page.title, page.permalink, :class => "#{'active' if request.fullpath == page.permalink }"
+        
+      - if children.present? || request.fullpath == page.permalink
+        %ul.side{ :class => "depth-#{page.depth++ 1 } #{ 'open' if request.fullpath.include? page.permalink } #{ 'jumpnav' if request.fullpath == page.permalink } nested" }
+          - if children.present?
+            = render :partial => "leftnav", :locals => { :pages => children }

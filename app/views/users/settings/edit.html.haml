@@ -1,0 +1,30 @@
+= form_tag user_settings_update_path, :remote => true, :id => "update_settings" do
+    %header.modal-header
+        %h2.h3 Settings
+    - flash.each do |name, msg|
+        - if msg.is_a?(String)
+            .flash_container{ :id => "flash_#{name}" }
+                .container
+                    %span.msg= msg
+    .content.modal-body
+        %h4.small-gray-caps
+            Email Preferences
+        .mailing_lists
+            %h5 Digests
+            - @digests.each do |list|
+                .container.block
+                    = check_box_tag "mailing_lists[]", list.id, @user.mailing_lists.include?(list), class: 'update_subscription' #, disabled: !list.user_joinable?
+                    %label{ :for => list.title.parameterize }
+                        = list.description.present? ? list.description : list.title
+            %h5 Email Notifications:
+            - @notifications.each do |list|
+                .container.block
+                    = check_box_tag "mailing_lists[]", list.id, @user.mailing_lists.include?(list), class: 'update_subscription' #, disabled: !list.user_joinable?
+                    %label{ :for => list.title.parameterize }
+                        = list.description.present? ? list.description : list.title
+        %h4.small-gray-caps
+            Information
+        = check_box_tag "quickstart", "quickstart", current_user.quickstart
+        %label{ :for => "quickstart" } Show Quick Start on dashboard page
+    %footer.modal-footer
+        = submit_tag "Save", :class => "channel_color_background submit_button"

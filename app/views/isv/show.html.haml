@@ -1,0 +1,52 @@
+%section.container.three-nine-three
+  %header
+    %h1.h2 ISV Application Information
+    = # render 'search_header'
+  %nav.left-col.page_nav
+    %ul.side
+      = render "leftnav", :print => true, :pages => @navigation
+  %article.middle-col.channel_color_headlines
+    %header.page-head
+      %time.small-gray-caps
+        Last Updated #{datetime_to_date @page.updated_at}
+      = render "read_indicator", :resource => @page
+      %h2.h1.channel_color= @page.title
+    = raw @page.body
+    - if @page.passages.present?
+      - @page.passages.each do |passage|
+        = raw passage.content
+    - unless @channel_specific_content.blank?
+      - @channel_specific_content.each do |channel_partner, content|
+        .spy_this{:id => channel_partner.parameterize}
+          %h3.h5.all-caps.nine.section_separator= channel_partner
+          - content.each do |c|
+            = raw c.content
+  - if !@subsection_headings.empty?
+    %aside.right-col
+      .fix_wrap
+        %h2.h6.all-caps Contents
+        %nav#jumpnav
+          %ul.side-nav.jumpnav.nav.right
+            - @subsection_headings.each do |heading|
+              %li
+                %a.channel_color_border{:href => "##{"#{heading.parameterize}"}"}= "#{heading}"
+            - unless @channel_specific_content.blank?
+              - @channel_specific_content.each do |channel_partner, content|
+                %li
+                  %a.channel_color_border{:href => "##{channel_partner.parameterize}"}= channel_partner
+        - if false
+          .download_link
+            %a{ :href => "#{@page.permalink}.pdf", :class => "no_decoration all-caps download channel_color js-download-pdf pdf-status-default" }
+              %ul.download_messages
+                %li.default
+                  %span.prefix.icon-print
+                  %span.content= t('pdf', scope: :supports, title: @page.title) #t('pdf', scope: :supports, title: @support.title)
+                %li.generating
+                  %span.prefix.spinner-small
+                  %span.content= t('generating', scope: :pdf )
+                %li.complete
+                  %span.prefix.icon-download
+                  %span.content= t('complete', scope: :pdf )
+                %li.error
+                  %span.prefix.icon-close
+                  %span.content= t('error', scope: :pdf )

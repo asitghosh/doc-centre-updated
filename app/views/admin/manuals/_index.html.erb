@@ -1,0 +1,7 @@
+<ol class="pagelist sortable" data-sort-url="<%= sort_pages_path() %>">
+  <% @manuals.each do |page| %>
+    <% if page.parent_id == 0 || page.parent_id == nil %>
+      <%= render "listitem", :page => page %>
+    <% end %>
+  <% end %>
+</ol>

@@ -1,0 +1,18 @@
+<li id="list_<%= support.id %>" class="">
+  <div class="for<%= support.id %> itemcontainer <%= 'no_children' if support.children.empty? %>">
+    <span class="title"><%= link_to support.title, edit_admin_support_path(:id => support.id) %><%= " (draft)" if support.pub_status == 'draft' %></span>
+    <menu>
+      <%= link_to("Create Child", new_admin_support_path(:parent_id => support.id)) %>
+      <%= link_to("Destroy", admin_support_path(support), :method => :delete, :confirm => "Are you sure? This cannot be undone!") %>
+    </menu>
+    <%=raw "<span class='redirects'>redirects to first child &#x21b4;</span>" if support.redirect_to_first_child %>
+    <span class="viewsupport" id="view_for_<%= support.id %>"><%= link_to "View this support", support.permalink %></span>
+  </div>
+  <% if !support.children.empty? %>
+    <ol>
+      <% support.children.each do |child| %>
+        <%= render "listitem", :support => child %>
+      <% end %>
+    </ol>
+  <% end %>
+</li>

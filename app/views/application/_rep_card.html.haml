@@ -1,0 +1,8 @@
+.card
+  = avatar_for account_rep, { :size => 70 }
+  .text
+    %p
+      %strong= account_rep.name
+    - unless account_rep.phone.blank?
+      %p= account_rep.phone
+    %p= mail_to account_rep.email, nil, :encode => "javascript"

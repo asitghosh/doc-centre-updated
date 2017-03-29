@@ -1,0 +1,24 @@
+/ Template to generate necessary HTML for Bootstrap navigation tabs
+- if (attr? 'fileprefix') and (attr? 'filedir') and (attr? 'tabnames') and (attr? 'activetab')
+  - tabs = (attr 'tabnames').split(",")
+  ul id="bs-tab-#{attr 'bsid'}" class="nav nav-tabs" role="tablist"
+    - tabs.each do |tab|
+      - itemTarget = "#{attr 'bsid'}-#{tab.downcase}"
+      - isTabActive = (tab == (attr 'activetab')) 
+      - itemClass = (isTabActive ? "active" : "")
+      - tabStatus = (isTabActive ? "true" : "false")
+      li role="presentation" class="#{itemClass}"
+        a href="##{itemTarget}" id="#{itemTarget}-tab" role="tab" data-toggle="tab" aria-controls="#{itemTarget}" aria-expanded="#{tabStatus}" =tab
+  div id="bs-content-#{attr 'bsid'}" class="tab-content"
+    - tabs.each do |tab|
+      - itemTarget = "#{attr 'bsid'}-#{tab.downcase}"
+      - isTabActive = (tab == (attr 'activetab'))
+      - tabClass = (isTabActive ? " active in" : "")
+      div role="tabpanel" class="tab-pane fade#{tabClass}" id="#{itemTarget}" aria-labelledby="#{itemTarget}-tab"
+        - filename = "#{attr 'filedir'}/#{attr 'fileprefix'}-#{tab}.adoc"
+        - if (File.exist?(filename))
+          = Asciidoctor.convert(IO.read(filename), base_dir: @document.base_dir, safe: @document.safe)
+        - else
+          = filename + " not found"
+- else
+  = "Missing configuration..."

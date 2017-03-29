@@ -1,0 +1,263 @@
+body, html
+  margin: 0
+  padding: 0
+  position: relative
+  font-family: Arial, Helvetica, sans-serif
+  color: $charcoal
+  font-size: 16px
+  line-height: 1.5
+  > header
+    height: 60px
+    .main_nav
+      //width: 30%
+      width: 335px
+      float: left
+    .user_menu
+      float: right
+  > footer
+    clear: both
+    padding-bottom: 100px
+    .foot_nav_column
+      +span-columns(2, 15)
+      &:last-child
+        position: relative
+        right: -40px
+  .fixed-header
+    height: auto
+    position: fixed
+    width: 100%
+    z-index: 100
+    top: 0
+    .main_nav
+      width: 335px
+      float: left
+    .user_menu
+      float: right
+    > header
+      height: 60px
+
+nav, menu
+  margin: 0
+  padding: 0
+  ul, ol
+    @extend .list-reset
+.home, .roadmaps
+  #main
+    padding-top: 60px
+.releases, .faqs, .pages, .public_pages, .supports
+  #main
+    padding-top: 110px
+
+.container > header,
+.page_header
+  overflow: auto
+  width: 100%
+  h1
+    +span-columns(10, 15)
+  form
+    +span-columns(3 omega, 15)
+    input
+      width: 100%
+
+.welcome_intro
+  padding-bottom: (40em/16)
+  menu
+    li
+      +span-columns(3.665, 15)
+      height: 185px
+      &:last-child
+        +omega
+
+.left-col, .right-col, .middle-col
+  padding-top: 0
+  &.no_pad
+    padding-top: 0
+  img
+    max-width: 100%
+.search_results, .release_list
+  @extend .footer_padding
+  .left-col, .right-col, .middle-col
+    padding-top: 0
+
+//handle the footer margin on pages that don't have columns
+.footer_padding, .releases.index, .home.container, .features_missing
+  padding-bottom: 200px
+
+//home#index
+.three-eight-four
+  .left-col
+    +span-columns(3, 15)
+  .middle-col
+    +span-columns(8, 15)
+  .right-col
+    +span-columns(4 omega, 15)
+//pages#show
+.three-nine-three
+  //there are some serious issues with this layout in webkit. right-col appears ~5px to the left of the intended position
+  //I attempted using the new "isolate" feature, but that had the same errors
+  .left-col
+    float: left
+    width: 20.5%
+  .middle-col
+    padding: 0 60px 60px
+    +span-columns(9, 15)
+    @extend .footer_padding
+    width: 59.79%
+    margin-right: 0
+    border-left: 1px solid $d
+    border-right: 1px solid $d
+  .right-col
+    +span-columns(3 omega, 15)
+    width: 18%
+  &.fixed
+    .left-col
+      height: 100vh
+      position: fixed
+      overflow: auto
+      border-right: 1px solid #dfdfdf
+      z-index: 10
+    .middle-col
+      padding-left: 352px
+      border-left: 0
+  .fluid &
+    .fluid_wrapper
+      display: table
+      width: 100%
+      overflow: hidden
+    .left-col,
+    .middle-col,
+    .right-col
+      display: table-cell
+      float: none
+      vertical-align: top
+    .left-col,
+    .right-col
+      table-layout: fixed
+    .left-col
+      width: 292px
+      padding-left: 0
+    .right-col
+      width: 233px
+      .fix_wrap
+        width: 233px
+      h2.h6
+        padding-left: 20px
+      .side-nav li a
+        margin-left: -1px
+      .download_link
+        margin: 10px 0 0 0
+    .middle-col
+      width: auto
+    &.right_nav_hidden
+      .middle-col
+        border-right: 0
+
+
+//releases#show
+//releases#search
+.twelve-three
+  .left-col
+    +span-columns(12, 15)
+    +pad(0,2)
+    border-right: 1px solid $d
+    @extend .footer_padding
+    .section_separator, .caution_banner, .warning_banner, .note_banner, .timesaver_banner, .tips_banner
+      //this is essentially +bleed(2 of 12, right)
+      //but I needed to tweak the values for it to hit the border
+      box-sizing: content-box
+      margin-right: -20.6%
+      padding-right: 20.6%
+    td
+      .banner,
+      .warning_banner,
+      .note_banner,
+      .timesaver_banner,
+      .tips_banner,
+      .caution_banner
+        margin: 0
+        padding-right: 0
+
+  .right-col
+    +span-columns(3 omega, 15)
+
+//releases#pagination
+.pagination
+  clear: both
+  float: left
+  border: 1px solid $d
+  border-radius: 4px
+  background-color: white
+  margin-top: 3%
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  a
+    text-decoration: none
+    color: $b
+    display: inline-block
+    padding: 6px 8px
+    &:hover, &:focus
+      color: $charcoal
+  .first, .prev, .page, .next, .last
+    float: left
+    border-right: 1px solid $d
+    &:first-child
+      margin-left: 0
+      border-radius: 3px 0 0 3px
+    &:last-child
+      border-radius: 0 3px 3px 0
+      border-right: 1px solid transparent
+      margin-right: -1px
+  .current, .gap
+    display: inline-block
+    // line-height: 1.6em
+    padding: 6px 8px
+  .current
+    background-color: rgba(143, 143, 143, 0.2)
+    color: $charcoal
+  .gap
+    color: $b
+
+//features#show
+.three-ten
+  .left-col
+    float: left
+    width: 20.5%
+  .right-col
+    +pad(1,0)
+    @extend .footer_padding
+    border-left: 1px solid $d
+    +span-columns(12 omega, 15)
+    width: 79.5%
+
+.release
+  &.rbox
+    +span-columns(3, 15)
+    &:nth-of-type(5n)
+      +omega
+  &.rlist
+.release_overview
+  h2
+    display: block
+    float: left
+    margin-right: 20px
+
+.login_block, .error_box
+  width: 655px
+
+.fix_wrap
+  width: 220px
+  h2
+    margin-bottom: 10px
+
+.page-head , .support-head
+  padding-top: 30px
+  h2, .h1
+    line-height: 1
+    margin-top: 10px
+
+.fl_container
+  .subnav
+    .user_name
+      img
+        top: 0

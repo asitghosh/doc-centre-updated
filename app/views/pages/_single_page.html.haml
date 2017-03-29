@@ -1,0 +1,16 @@
+%section.container.three-nine-three
+  %article.middle-col.channel_color_headlines
+    %header.page-head
+      %time.small-gray-caps
+        Last Updated #{datetime_to_date page.updated_at}
+      %h2.h1.channel_color= page.title
+    = raw page.body
+    - if page.passages.present?
+      - page.passages.each do |passage|
+        = raw passage.content
+    - unless channel_specific_content.blank?
+      - channel_specific_content.each do |channel_partner, content|
+        .spy_this{:id => channel_partner.parameterize}
+          %h3.h5.all-caps.nine.bold_underline.section_separator= channel_partner
+          - content.each do |c|
+            = raw c.content

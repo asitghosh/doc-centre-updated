@@ -1,0 +1,288 @@
+.view_switcher
+  @extend .rounded
+  margin: -11px 10px 0 0
+  position: relative
+  width: 79px
+  height: 38px
+  float: right
+  border: 1px solid $d
+  a
+    @extend .opacity_transform
+    display: block
+    float: left
+    height: 36px
+    width: 50%
+    border-radius: 0px 3px 3px 0px
+    opacity: .9999
+    &:first-child
+      border-right: 1px solid $d
+      border-radius: 3px 0px 0px 3px
+    &.active
+      background-color: #eee
+  .grid-icon
+    @extend .icon-grid
+    text-indent: 0
+    font-size: 24px
+    color: #bbb
+    padding-left: 7px
+    margin-top: -1px
+  .list-icon
+    @extend .icon-list
+    text-indent: 0
+    font-size: 24px
+    color: #bbb
+    padding-left: 7px
+    margin-top: -1px
+    &:hover
+      opacity: .65
+
+.release
+  &.rbox
+    border-radius: 6px
+    padding: 3px
+    margin-top: 20px
+    color: #828282
+    +transition(background .2s linear)
+    a
+      color: inherit
+      @extend .no_decoration
+    .wrapper
+      border-radius: 4px
+      background: white
+      position: relative
+      +transition(border-color .2s linear)
+    header
+      min-height: 158px
+      padding: 20px 0 10px
+      text-align: center
+      border-bottom: 1px solid $d
+      display: table
+      width: 100%
+      .meta_content
+        display: table-cell
+        vertical-align: middle
+      h3
+        margin: 0
+        font: 64px $black-stack
+        line-height: .8
+        +transition(color .2s linear)
+      p
+        margin: 0
+        +transition(color .2s linear)
+      .indicator
+        margin-bottom: 8px
+    .summary
+      font-size: (13em/16)
+      padding: 0 1.25em
+      color: $b
+      height: 95px
+      +transition(color .2s linear)
+    .hover_title
+      display: none
+      position: absolute
+      left: -1px
+      right: -1px
+      bottom: 40px
+      color: white
+      padding: 10px 15px
+      font-size: 12px
+      background: rgba(68, 68, 68, .9)
+    footer
+      border-top: 1px solid $d
+      menu
+        height: 40px
+        li
+          height: 40px
+          float: left
+          width: 40px
+          text-align: center
+          border-right: 1px solid $d
+          padding: 0
+          &.rfooter_print
+            float: right
+            border-right: none
+            border-left: 1px solid $d
+            a:before
+              border-radius: 0 0 4px 0
+              width: 42px
+              position: relative
+              right: -1px
+              margin-left: -3px
+          &.rfooter_channel
+            a:before
+              border-radius: 0 0 0 4px
+              width: 41px
+              position: relative
+              left: -1px
+          a
+            @extend .opacity_transform
+            display: block
+            font-size: 22px
+            line-height: 1.7em
+            opacity: .999
+            &:before
+              display: block
+              width: 40px
+              height: 30px
+              padding-top: 10px
+            &.active
+              &:before
+                background-color: rgba(68,68,68,.9)
+                color: white
+
+            span
+              @extend .visuallyhidden
+    &:hover, &.current
+      color: #444444
+      .summary
+        color: #565656
+  &.future
+    background: -o-repeating-linear-gradient(45deg, white, white 7px, #eeeeee 7px, #eeeeee 14px)
+    background: -webkit-repeating-linear-gradient(45deg, white, white 7px, #eeeeee 7px, #eeeeee 14px)
+    background: -moz-repeating-linear-gradient(45deg, white, white 7px, #eeeeee 7px, #eeeeee 14px)
+    background: repeating-linear-gradient(45deg, white, white 7px, #eeeeee 7px, #eeeeee 14px)
+    .wrapper
+      border: 1px solid $b
+    &:hover
+      background: -o-repeating-linear-gradient(45deg, white, white 7px, #dedede 7px, #dedede 14px)
+      background: -webkit-repeating-linear-gradient(45deg, white, white 7px, #dedede 7px, #dedede 14px)
+      background: -moz-repeating-linear-gradient(45deg, white, white 7px, #dedede 7px, #dedede 14px)
+      background: repeating-linear-gradient(45deg, white, white 7px, #dedede 7px, #dedede 14px)
+
+
+  &.current
+    background: $light-blue
+    .wrapper
+      border: 1px solid $bright-blue
+    &:hover
+      background: $bright-blue
+
+  &.past
+    background: #eee
+    .wrapper
+      border: 1px solid $b
+    &:hover
+      background: #d4d4d4
+      .wrapper
+        border: 1px solid #b0b0b0
+  &.draft
+    background: #ffe9a0
+    .wrapper
+      border: 1px solid $b
+    &:hover
+      background: #ffd442
+      .wrapper
+        border: 1px solid #b0b0b0
+    footer li a
+      color: #ffd442
+
+.release_overview
+  padding-top: 15px
+  header
+    min-height: 122px
+    .number_box
+      +span-columns(2, 10)
+      color: white
+      letter-spacing: -1px
+  .updated
+    font-size: 0.75em
+    color: #BBB
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-family: $accent-stack
+  .summary
+    font-size: (18em/16)
+    color: #828282
+    p:nth-of-type(1)
+      margin-top: 0
+  .meta
+    font-size: 14px
+    color: $charcoal
+    clear: both
+    margin-top: 15px
+    span
+      padding: 0 1.42857em
+      border-left: 1px solid $b
+      &:first-child
+        padding-left: 0
+        border-left: none
+  &.rlist
+
+.number_box,
+  margin-top: 0
+  margin-bottom: 8px
+  padding: .35em 0
+  padding-bottom: .2em
+  // another inline channel_color override
+  color: white //!important
+  display: block
+  background: $bright-blue
+  text-align: center
+  font: 72px/1em $black-stack
+  a
+    color: white !important
+  &.small
+    font-size: 32px
+    letter-spacing: -1px
+    min-width: 1.5em
+    &.past
+      background-color: #545454
+    &.future
+      background-color: $b
+    &.draft
+      background-color: #ffd442
+  &.gray
+    background-color: $charcoal
+.number_box_parent
+  +span-columns(1, 10)
+  position: relative
+  top: -1px
+  h1
+    width: 100%
+.number_box
+  @extend .opacity_transform
+  opacity: .9999
+  width: 100%
+  &:hover
+    opacity: .5
+
+//Overrides for flexboxes and listboxes when there are no partner specific notes
+.empty_release
+  .number_box, .number_box.past, .number_box:hover, .number_box.past:hover
+    color: white
+    background-color: #ddd
+    opacity: 1
+  footer
+    a
+      display: none
+  &.rbox.release, &.rbox.current, &.rbox.current:hover, &.rbox.release:hover
+    background-color: #eeeeee !important
+    color: #ddd
+    opacity: 1
+    .meta_content, p, .summary
+      &, &:hover,
+        color: #ddd
+        opacity: 1
+    .hover_title, a.small
+      display: none
+    .wrapper
+      border-color: #ddd !important
+  .channel_color_background
+    background-color: #ddd !important
+
+.item_list
+  @extend .list-reset
+  & > li
+    padding: 0 0 25px 0
+    border-bottom: 1px solid $d
+    .left-col
+      padding-bottom: 0
+    &:last-child
+      border-bottom: none
+
+.release_type_label, .search_results > h2
+  @extend .h6
+  @extend .all-caps
+  line-height: 1
+  margin-top: 35px
+  margin-bottom: 10px

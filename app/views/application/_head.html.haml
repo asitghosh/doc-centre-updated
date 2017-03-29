@@ -1,0 +1,18 @@
+%head
+  %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %title
+      = content_for?(:title) ? "#{yield(:title)} - " : ""
+      = main_title
+    %meta{:content => content_for?(:description) ? yield(:description) : "DocCenter", :name => "description"}
+    - if content_for?(:alternate_css)
+      = yield(:alternate_css)
+    - else
+      = stylesheet_link_tag "application-all", :media => "all"
+    = stylesheet_link_tag "application-print", :media => "print"
+    = csrf_meta_tags
+    = render "channel_color"
+    = javascript_include_tag "fe_head"
+    = yield(:head)
+    %script
+      window.I18n_pdf = #{current_pdf_translations.to_json.html_safe}

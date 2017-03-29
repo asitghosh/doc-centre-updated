@@ -1,0 +1,16 @@
+/ Template to generate necessary HTML for Bootstrap collapsible sections (i.e. accordions)
+- if (attr? 'id') and (attr? 'file') and (attr? 'title')
+  div class='panel-group' id="bs-accordion-#{attr 'id'}" role="tablist" aria-multiselectable="true"
+    div class="panel panel-default"
+      div class="panel-heading" role="tab" id="bs-heading-#{attr 'id'}"
+        a data-toggle="collapse" data-parent="#bs-accordion-#{attr 'id'}" href="#bs-collapse-#{attr 'id'}" aria-expanded="false" aria-controls="bs-collapse-#{attr 'id'}" = "#{attr 'title'}"
+      div id="bs-collapse-#{attr 'id'}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bs-heading-#{attr 'id'}"
+        div class="panel-body"
+          - if (attr? 'file')
+            - filename = "#{attr 'file'}"
+            - if (File.file?(filename))
+              = Asciidoctor.convert(IO.read(filename), base_dir: @document.base_dir, safe: @document.safe)
+            - else
+              = filename + " does not exist"
+- else
+  = "Missing some configuration..."

@@ -1,0 +1,8 @@
+!!! 5
+%html
+    = render "head"
+    %body{:class => "#{controller_name} #{action_name}"}
+        #main{:role => "main"}
+            = yield
+        / ! end of #container
+        = render 'footer_includes'

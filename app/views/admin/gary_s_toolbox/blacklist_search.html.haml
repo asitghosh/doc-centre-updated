@@ -1,0 +1,11 @@
+- if @lists.empty?
+  %h1 No blacklisted content for that channel partner
+- else
+  %ul
+  - @lists.each do |list|
+    - next if list.channel_specific_type != "Release"
+    //TODO: optimize later.
+    - r = Release.find(list.channel_specific_id)
+    %li= link_to r.friendly_title, edit_admin_release_path(r)
+
+%a{ :href => "/admin/gary_s_toolbox/" } Back

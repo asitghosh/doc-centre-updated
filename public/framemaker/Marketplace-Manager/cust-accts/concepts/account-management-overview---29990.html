@@ -1,0 +1,167 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1369363"></a><a name="29990"></a>Account management overview</h3>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1684384"></a>The AppDirect database organizes a set of records that describe certain <a href="/fm/35205" class="XRef"><span class="EH-EmphasisHeavy">
+entities</span></a> individually and collectively, while also tracking their interactions and dependencies. These entity types include <a href="/fm/39519" class="XRef"><span class="EH-EmphasisHeavy">
+companies</span></a> and <a href="/fm/52678" class="XRef"><span class="EH-EmphasisHeavy">
+users</span></a>. Companies and users are the only entity types that can enter into contractual relationships, have debt, make payments against debt, or receive payments. All marketplace activity and revenue depends on them.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1393094"></a>Companies and user accounts are bound together</p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1685838"></a>Each registered user is at least one company’s constituent. </li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2101351"></a>Some users maintain simultaneous associations with multiple companies.</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1891604"></a>Each company gives context to at least one registered user. </li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2101334"></a>Most companies have multiple associated users.</li>
+</ul>
+</ul>
+<p class="B1-Body1">
+<a name="pgfId-1891643"></a>No user account can exist outside its necessary context. At a minimum, high-level metadata for a given company must be saved in database records before the records that describe any of the company’s constituent user accounts can be saved. </p>
+<p class="B1-Body1">
+<a name="pgfId-2080479"></a>Similarly, a company can exist only as long as it has at least one associated user account.</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1687002"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ In the logic that underlies our database schema, a ‘company’ is an organization, not necessarily a business. Its mission could differ from the mission that a business pursues. Such differences are not relevant for account management purposes. We mean only to label the entity type that centralizes billing and user management for a set of related user accounts.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-2101435"></a>The ‘first user’ designation is not an assignable user role</p>
+<p class="B1-Body1">
+<a name="pgfId-2101494"></a>Because companies and user accounts are bound together, the workflow to create a company includes mandatory designation of the company’s first associated user account. In most cases, this user account belongs to someone who should have the <span class="EI-EmphasisItalic">
+company administrator</span>
+ role.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1675589"></a>Users can be invited, activated, synchronized, and migrated</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1684448"></a>Typically, a <span class="EI-EmphasisItalic">
+company administrator</span>
+ either <a href="/fm/88273" class="XRef"><span class="EH-EmphasisHeavy">
+invite</span></a>s his or her coworkers to <a href="/fm/65465" class="XRef">activation</a> associations to their company or syncs user accounts with their company’s Microsoft Active Directory server. </p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-2082117"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Activation applies to companies as well as users. A company is not considered active until its “first user” activates his or her user account.</p>
+<p class="B1-Body1">
+<a name="pgfId-1893084"></a>A <a href="/fm/96562" class="XRef"><span class="EH-EmphasisHeavy">
+reseller</span></a> can create a company and populate it by inviting potential users to join. </p>
+<p class="B1-Body1">
+<a name="pgfId-1893252"></a>A marketplace <a href="/fm/50589" class="XRef"><span class="EH-EmphasisHeavy">
+provider</span></a> can migrate imported company and user records in bulk from a legacy cloud service commerce platform.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1674625"></a>Authentication separates users from visitors</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1674643"></a>Some marketplaces display their product discovery features even to people who are not logged in (authenticated). We call such people <span class="EI-EmphasisItalic">
+visitors</span>. Other marketplaces display nothing but signup and login forms to their <span class="EI-EmphasisItalic">
+visitors</span>. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2074154"></a>There is no assignable user role that makes someone a <span class="EI-EmphasisItalic">
+visitor</span>.</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2080816"></a>Many <span class="EI-EmphasisItalic">
+visitors</span>
+ are not registered users. They have no defined authority or access. They see only what a marketplace does not hide. </li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2074069"></a>Other <span class="EI-EmphasisItalic">
+visitors</span>
+ have registered user accounts but are not logged in.</li>
+</ul>
+</ul>
+<p class="B1-Body1">
+<a name="pgfId-1687576"></a><span class="EI-EmphasisItalic">
+Visitors</span>
+ who click any Try Now or Buy Now button on a product marketing profile page cannot enter the product’s purchase flow. Instead, we prompt them immediately to either log in to their registered user account — supposing that they might have one without being logged in to it currently — or register as a new user.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1674612"></a>Role assignments often expand user authority</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1689043"></a>A <a href="/fm/42949" class="XRef"><span class="EH-EmphasisHeavy">
+user role</span></a> is a defined authorization scope. Most role assignments are additive, expanding a registered user’s authority to see and use various features. </p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-2074862"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Although most role assignments are additive, some subtract from what a user can see. For example, a user who has the <span class="EI-EmphasisItalic">
+reseller</span>
+ role can see UI elements in Reseller Center that are hidden from someone whose role assignments combine the <span class="EI-EmphasisItalic">
+reseller</span>
+ role and the <span class="EI-EmphasisItalic">
+channel administrator</span>
+ role. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1688099"></a>Low-access users</p>
+<p class="B1-Body1">
+<a name="pgfId-2074489"></a>Every registered user has at least one assigned user role. However, the least powerful role — the ordinary consumer that we call an <span class="EI-EmphasisItalic">
+end-user</span>
+ — is assigned implicitly to all registered users automatically. At a minimum, <span class="EI-EmphasisItalic">
+end-users</span>
+ can receive product assignments and use their respective MyApps pages. </p>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-2076218"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ All other assignable roles can also access these features. </p>
+<p class="B1-Body1">
+<a name="pgfId-2076163"></a>It is possible but rare to assign this role, except when reassigning it to someone whose <span class="EI-EmphasisItalic">
+end-user</span>
+ role assignment you revoked previously. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1689043"></a>User role assignment options are situational</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2076347"></a>Any or all of the following variables can limit which roles are available for assignment to a given user.</p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1688413"></a>which of the target user’s company <a href="/fm/57693" class="XRef"><span class="EH-EmphasisHeavy">
+association</span></a>s is selected during role assignment, supposing that the user is associated with more than one company</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1688504"></a>which <a href="/fm/92725" class="XRef"><span class="EH-EmphasisHeavy">
+plan</span></a> the marketplace provider purchased, such as “listing” or “network”</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2079749"></a>which optional services the marketplace provider purchased, such as “reseller management”</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1688563"></a>how the marketplace is configured and customized</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1688424"></a>which user roles are applied to the role-assigner’s own account</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1688298"></a>User groups simplify user account management</p>
+<p class="B1-Body1">
+<a name="pgfId-1688296"></a><span class="EI-EmphasisItalic">
+Company administrators</span>
+ can organize their company’s associated users into <a href="/fm/87418" class="XRef">user group</a>, and then manage user activities and product assignments collectively. These logical groupings can take any form, including worker locale, job title, department, manager, or time zone. </p>
+<p class="B1-Body1">
+<a name="pgfId-2102336"></a>As a <span class="EI-EmphasisItalic">
+channel administrator</span>
+, you benefit from the implicit user grouping that occurs on a company-by-company basis through company-user associations. Your actions that affect a company affect all of its associated users.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1688794"></a>Your marketplace supports multiple user authentication models</p>
+<p class="B1-Body1">
+<a name="pgfId-1688824"></a>Your AppDirect marketplace is both a provider and a consumer of authentication services. </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2080182"></a>Registered companies can consume OpenID authentication services provided through Google or other external providers. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2080233"></a>Registered companies can consume Microsoft Active Directory authentication services that their own servers provide, for user base synchronization.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2080423"></a>After any registered users receive seat assignments for products that your marketplace lists, your marketplace becomes the identity provider for their SSO access to these products. Clicking any product tile on a MyApps page initiates an SSO session with the product’s vendor. </li>
+<li class="Bu1-Bullet1
+_banner">
+<a name="pgfId-2081708"></a><span class="SpF-SignpostFlag">
+</span>
+In addition, <span class="EI-EmphasisItalic">
+company administrators</span>
+ can turn two-factor authentication On or Off for their associated users.</li>
+</ul>
+</ul>
+</div>
+</div>

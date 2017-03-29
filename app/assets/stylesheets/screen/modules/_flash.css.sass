@@ -1,0 +1,75 @@
+#flash_notice, 
+#flash_alert, 
+#flash_warning, 
+#flash_posted, 
+#flash_pdf_generation,
+.notice, 
+.error
+  height: 50px
+  font-family: $black-stack
+  @extend .all-caps
+  .msg
+    line-height: 54px
+    .edit
+      @extend .no_decoration
+      @extend .opacity_transform
+      float: right
+      height: 49px
+      text-transform: capitalize
+      font-family: $heading-stack
+      letter-spacing: 0
+      color: #333
+      opacity: .75
+      padding: 0 30px
+      border-left: 1px solid rgba(0,0,0,0.1)
+      border-right: 1px solid rgba(0,0,0,0.1)
+      &:before
+        @extend .before_icon_shift
+        margin-right: 5px
+        font-size: 22px 
+      &:hover
+        opacity: .5
+    a
+      text-decoration: none
+        
+  .flash-icon
+    background: #86c4ff
+    color: white
+    font-size: 36px
+    line-height: 50px
+    text-align: center
+    +span-columns(1, 15)
+  .dismiss_flash
+    border: 0
+    background: transparent
+    float: right
+    display: block
+    height: 54px
+    font-size: 12px
+    color: #a2a2a2
+    font-family: $accent-stack
+
+#flash_notice, .notice
+  background-color: #e9f4ff
+  border-bottom: solid 1px $b
+  border-right: solid 1px $b
+  border-left: solid 1px $b
+
+#flash_warning, .warning
+  background-color: #ffe5e5
+  border-bottom: solid 1px $b
+  .flash-icon
+    background: #ff7272
+
+#flash_alert, .error
+  background-color: $error-red
+  border: solid 1px $error-border
+
+#flash_posted
+  background-color: #feffce
+  border-bottom: solid 1px #ecee65
+
+.waiting-spinner
+  width: 22px
+  height: 52px
+  float: left

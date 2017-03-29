@@ -1,0 +1,18 @@
+<li id="list_<%= api.id %>" class="">
+  <div class="for<%= api.id %> itemcontainer <%= 'no_children' if api.children.empty? %>">
+    <span class="title"><%= link_to api.title, edit_admin_public_page_path(:id => api.id) %><%= " (draft)" if api.pub_status == 'draft' %></span>
+    <menu>
+      <%= link_to("Create Child", new_admin_public_page_path(:parent_id => api.id)) %>
+      <%= link_to("Destroy", admin_public_page_path(api), :method => :delete, :confirm => "Are you sure? This cannot be undone!") %>
+    </menu>
+    <%=raw "<span class='redirects'>redirects to first child &#x21b4;</span>" if api.redirect_to_first_child %>
+    <span class="viewsupport" id="view_for_<%= api.id %>"><%= link_to "View this page", api.permalink %></span>
+  </div>
+  <% if !api.children.empty? %>
+    <ol>
+      <% api.children.each do |child| %>
+        <%= render "listitem", :api => child %>
+      <% end %>
+    </ol>
+  <% end %>
+</li>

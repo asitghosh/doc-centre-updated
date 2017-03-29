@@ -1,0 +1,203 @@
+.chosen-container-single
+  .chosen-single
+    background: white
+    background-image: none
+    border-radius: 4px
+    border: 1px solid #ddd
+    color: #bfbfbf
+    +box-shadow(0 0 0 0)
+
+  .chosen-drop
+    border: 1px solid #ddd
+    +box-shadow(0 0 0 0)
+    .chosen-results
+      margin: 0
+      padding: 0
+      //.active-result
+      .highlighted
+        background-image: none
+        background-color: #565656
+        color: white
+      li
+        padding: 5px 8px
+.chosen-container-active.chosen-with-drop
+  .chosen-single
+    background: white
+    background-image: none
+    border: 1px solid #ddd
+    color: #bfbfbf
+    +box-shadow(0 0 0 0)
+    border-radius: 4px 4px 0 0
+
+.chosen-input
+  font-size: 16px
+
+
+%chosen-container-large
+  .chosen-single
+    height: 36px
+    font-size: 16px
+    line-height: 36px
+    div b
+      background-position: 0px 8px
+  &.chosen-container-active
+    .chosen-single div b
+      background-position: 0px 8px
+  .chosen-drop
+    font-size: 16px
+
+
+// HEADER FORM
+
+.header-search
+  display: inline-block
+  padding-left: 10px
+  width: 34%
+  > input
+    height: 36px
+    border: 1px solid #ddd
+    border-radius: 4px
+    padding-left: 40px
+    margin-top: 12px
+    background: #FFF url(/assets/magnifying_glass.png) no-repeat 12px 5px
+    width: 100%
+    &:focus
+      outline: none
+  .header_submit
+    position: absolute
+    left: -999999px
+    width: 1px
+    height: 1px
+  #index_chosen
+    float: left
+    width: 25% !important
+    @extend %chosen-container-large
+    .chosen-single
+      width: 123%
+      border-radius: 4px 0 0 4px
+      margin-top: 12px
+    .chosen-drop
+      width: 180px
+    &.chosen-container-active
+      .chosen-single
+        border-radius: 4px 0 0 0
+
+
+// SEARCH RESULTS
+
+.search_results, .release_list
+  .search_result, .release_item
+    padding-right: 0
+    border-top: 1px solid $d
+    border-bottom: none
+    padding: 0
+    &:first-child
+      border-top: none
+    header
+      float: left
+      margin-right: 2.17%
+      .number_box.gray
+        background-color: transparent
+        padding: 0
+        margin: 0
+        a
+          display: inline-block
+          line-height: 50px
+          width: 72px
+          height: 50px
+        &.release
+          background-color: #565656
+          a
+            padding-top: 2px
+        .box
+          display: inline-block
+          background-color: #dddddd
+          width: 72px
+          height: 50px
+          &.faq
+            background: #ddd url('faq.png') no-repeat 50% 50%
+          &.page
+            background: #ddd url('guide.png') no-repeat 50% 50%
+          &.roadmap
+            background: #ddd url('roadmap.png') no-repeat 50% 50%
+    .highlights
+      padding: 20px 0 0 0
+
+
+
+    .content
+      float: left
+      width: 85%
+      padding: 10px 0 25px 0
+      .meta
+        .title
+          color: #bbbbbb
+      time
+        float: right
+        font-size: 11px
+        margin-top: 9px
+
+      p:first-of-type
+        margin-top: 0
+
+    .release_footer_list
+      margin-top: 13px !important
+      li
+        border: none
+        padding: 0
+        line-height: 1.75em
+        a
+          text-decoration: none
+          span
+            text-decoration: underline
+          &:before
+            @extend .no_decoration
+            font-size: 19px
+            padding: 0 6px 0 0
+            vertical-align: middle
+.filter-select
+  margin-top: 8px
+  margin-bottom: 24px
+  .chosen-container
+    @extend %chosen-container-large
+  .chosen-single
+    width: 120px
+  .chosen-single, li
+    text-transform: none
+    font-weight: normal
+    letter-spacing: 0
+    font-family: Arial, Helvetica, sans-serif
+  .chosen-drop
+    width: 150px
+
+.filter-list
+  margin: 8px 0 24px 0
+  padding: 0
+  list-style: none
+  li
+    padding: 0
+    margin: 0 0 14px 0
+    &:last-child
+      margin-bottom: 0
+  label
+    font-size: 14px
+    text-transform: none
+    font-weight: normal
+    letter-spacing: 0
+    padding-left: 3px
+    font-family: Arial, Helvetica, sans-serif
+    color: #bfbfbf
+  input[type="radio"]:checked+label
+    color: #565656
+
+
+
+.search.index
+  .left-col
+    padding-right: 0
+    padding-bottom: 0
+    min-height: 460px
+  .search_results
+    padding-bottom: 0
+    header
+      padding: 80px 0 20px

@@ -1,0 +1,231 @@
+/*
+ *= require select2
+ */
+
+@import "active_admin/mixins"
+@import "active_admin/base"
+
+body
+  @include sans-family
+  line-height: 150%
+  font-size: 72%
+  background: #fff
+  margin: 0
+  padding: 0
+  color: $text-color
+
+  .cke_chrome
+    display: inline-block
+    width: 77%
+  .cke_combopanel
+    width: 200px
+    height: 300px
+  .cke_combopanel__styles
+    width: 500px
+
+  form fieldset ol > li label
+    clear: both
+
+fieldset ol
+  li.error
+    background-color: #FAE6E4
+    .cke
+      border: 1px solid #932419
+
+a.cke_dialog_ui_button_ok
+  &, span
+  color: #FFF !important
+a.cke_dialog_ui_button
+  color: #333 !important
+  text-decoration: none
+
+.sortable, .sortable ol
+  margin: 0 0 0 15px !important
+  .itemcontainer
+    cursor: move
+    margin-top: 5px
+    padding: 5px 0 5px 12px
+    border: 1px solid #d6d6d6
+    background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#DFE1E2))
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2)
+    text-shadow: white 0 1px 0
+    color: #5E6469
+    border-radius: 3px
+    &:before
+      content: ""
+      position: relative
+      margin-right: 6px
+      display: inline-block
+      width: 0px
+      height: 0px
+      border: 5px transparent solid
+      border-left: 5px solid #999999
+    .redirects
+      font-size: 10px
+      color: #bbbbbb
+    .viewpage
+      float: right
+      margin-right: 10px
+    & ~ ol
+      display: none
+    &.open
+      &:before
+        top: 3px
+        left: -2px
+        border-left: 5px transparent solid
+        border-top: 5px solid #999999
+      & ~ ol
+        display: block
+    &.no_children
+      &:before
+        display: none
+    a
+      text-decoration: none !important
+  menu
+    display: inline-block
+    font-size: 10px
+    padding: 0
+    margin: 0 0 0 20px
+    a
+      margin-right: 10px
+
+.flashes.injected
+  position: absolute
+  width: 100%
+
+.versions
+  .version
+    border-top: 2px solid #333
+    margin-bottom: 80px
+  h2
+    padding-top: 20px
+    display: inline-block
+
+  .changes
+    h5
+      border-bottom: 1px solid #ddd
+      text-transform: capitalize
+    .diff
+      overflow: auto
+      margin-bottom: 1em
+      ul
+        background: #fff
+        overflow: auto
+        font-size: 13px
+        list-style: none
+        margin: 0
+        padding: 0
+        display: table
+        width: 100%
+      del, ins
+        display: block
+        text-decoration: none
+        white-space: pre-wrap
+        font-family:courier
+      del strong, ins strong
+        font-weight: normal
+        background: #fcc
+      ins strong
+        background: #9f9
+      span
+        white-space: pre-wrap
+        font-family:courier
+      li
+        padding: 0
+        display: table-row
+        margin: 0
+        height: 1em
+        &:hover
+          background: #ffc
+        &.diff-comment
+          display: none
+        &.diff-block-info
+          background: none repeat scroll 0 0 gray
+      .ins
+        background: #dfd
+        color: #080
+      .del
+        background: #fee
+        color: #b00
+
+.autosave_status
+  padding: 10px
+  border-radius: 4px
+  border: 1px solid #bbb
+  margin-bottom: 10px
+  +transition(background-color .2s linear)
+  &.idle
+    background-color: #BDD3EF
+  &.active
+    background-color: #DEC680
+  &.successful
+    background-color: #D6E5D7
+
+.red
+  color: #FF0000
+
+.buttons input[type=submit],
+body form .actions input[type=submit].primary
+  background: #006080
+  color: white
+  border: 1px solid #004c66
+  text-shadow: 0px -1px 0px #004c66
+  +box-shadow(inset 0 1px 0 0 #669fb2, 0 2px 2px 0 rgba(45, 45, 45, 0.15))
+  &:hover
+    background: #006b8f
+    border-color: #004a63
+    +box-shadow(inset 0 1px 0 0 #99bfcc, 0 2px 3px 0 rgba(45, 45, 45, 0.2))
+.tagselect
+  width: 400px
+
+.annotation-list
+  margin: 0
+  padding: 0
+.annotation-list-item
+  list-style: none
+  padding: 0 0 1em 0
+  border-bottom: 1px solid black
+  h5
+    margin-bottom: .25em
+    margin-top: 1em
+
+.annotation_count
+  float: right
+  padding: 2px 5px
+  background: #0093d8
+  color: white
+  margin-right: 16px
+  border-radius: 3px
+  position: relative
+  top: -2px
+
+.btn-primary
+  -webkit-border-radius: 200px
+  -moz-border-radius: 200px
+  border-radius: 200px
+  display: inline-block
+  font-weight: bold
+  font-size: 1.0em
+  font-family: Helvetica, Arial, sans-serif
+  line-height: 12px
+  margin-right: 3px
+  padding: 7px 16px 6px
+  text-decoration: none
+  -webkit-font-smoothing: antialiased
+  background: #838a90
+  background: -webkit-linear-gradient(-90deg, #838a90, #414549)
+  background: -moz-linear-gradient(-90deg, #838a90, #414549)
+  background: linear, -90deg, #838a90, #414549
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF838A90', endColorstr='#FF414549')
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF838A90', endColorstr='#FF414549')
+  text-shadow: black 0 1px 0
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset
+  border: solid 1px #484e53
+  border-color: #484e53
+  border-top-color: #616a71
+  border-right-color: #484e53
+  border-bottom-color: #363b3f
+  border-left-color: #484e53
+  color: #efefef !important
+  text-decoration: none !important
+  cursor: pointer

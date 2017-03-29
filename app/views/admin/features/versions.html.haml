@@ -1,0 +1,9 @@
+- @feature.versions.reverse_each do |v, i|
+- #next if v.event != "update"
+  .version
+    = render "admin/shared/vheading", :v => v
+    - if v.index + 1  == @feature.versions.length
+      %strong Current Version
+    - else
+      = link_to "Rollback to this version", feature_rollback_path(:version => v.id), :method => :post
+    = render "admin/shared/diff", :v => v

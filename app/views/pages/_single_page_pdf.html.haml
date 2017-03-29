@@ -1,0 +1,10 @@
+- @page = page
+%section.container.three-nine-three
+  %header
+    %h1.h2= t :headline, :scope => :pages
+  %article.middle-col
+    %header.page-head
+      %time.small-gray-caps
+        Last Updated #{datetime_to_date @page.updated_at}
+      %h2.h1.channel_color= @page.title
+    = raw @page.body

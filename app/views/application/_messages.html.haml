@@ -1,0 +1,7 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    .flash_container{ :id => "flash_#{name}" }
+      %div{ :class => "#{'fl_' if fluid }container" }
+        %span.msg= msg
+
+= render "update"

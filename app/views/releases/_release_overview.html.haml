@@ -1,0 +1,52 @@
+- if @context == :pdf
+  %header
+    - unless current_user.channel_partner.logo.blank?
+      = image_tag current_user.channel_partner.logo, class: "partner_logo"
+    %h2.number_box.channel_color= @release.title
+    .summary_container
+      %h3.updated.small-gray-caps
+        Published: #{@release.release_date.to_s :long_ordinal}
+      %span.release_date
+        Last Updated #{raw datetime_to_date @release.updated_at, true}
+      %h3.summary_headline.small-gray-caps
+        Summary
+      .summary= raw @release.summary
+      - if @release.general_notes.present?
+        .general_notes
+          = raw @release.general_notes
+
+    .page_footer_content
+      %span.release
+        Release #{@release.title}
+      %span.page_number
+
+      %span.updated_on
+        Last Updated On #{raw datetime_to_date @release.updated_at, true}
+      %span.copyright
+        &copy; #{@release.release_date.strftime("%Y")} AppDirect
+- else
+  %header
+    %h2.number_box.channel_color_background= @release.title
+    .summary_container
+      %span.updated.small-gray-caps
+        Last Updated #{raw datetime_to_date @release.updated_at, true}
+      %span.release_date.hidden
+        Published: #{@release.release_date.to_s :long_ordinal}
+      = render "read_indicator", :resource => @release
+      .summary
+        %p= raw strip_tags(@release.summary)
+  .meta
+    %span.release_type
+      %strong= release_period_label @release
+    %span.release_date
+      Published: #{@release.release_date.to_s :long_ordinal}
+    - unless @release.features.blank?
+      %span.appended_features
+        %a{:href => "#appended_features"}= pluralize(@release.features.count, 'Appended Feature')
+    - unless @specific_content.blank?
+      %span.channel_specific
+        %a{:href => "#channel_specific"}
+          Improvements for #{current_user.channel_partner.name}
+  - if @release.general_notes.present?
+    .general_notes
+      = raw @release.general_notes

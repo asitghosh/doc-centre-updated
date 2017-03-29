@@ -1,0 +1,8 @@
+- releases = group_by_type(releases)
+- releases.each do |type, releases_of_type|
+  %h2.release_type_label
+    = type.capitalize
+    Release#{"s" unless type == "current"}
+  %ul.list-reset.item_list.release_list
+    - releases_of_type.each do |release|
+      = render_cached "release_listbox", type: type, release: release, replace: { unread_badge: unread_badge(release) }

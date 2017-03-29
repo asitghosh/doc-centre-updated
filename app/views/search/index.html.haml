@@ -1,0 +1,100 @@
+%section.container.twelve-three.search_results
+  %header
+    %h1.h2= "Search results for \"#{@term}\" #{@headline_add}"
+  .left-col
+    %ul.list-reset.item_list
+      - if @results.empty?
+        %h3= "Sorry, no results could be found for \"#{@term}\""
+        %p
+          Can't find what you're looking for?
+          %a{ :href => faqs_path }
+            Browse our FAQ
+
+      - @results.each do |result|
+        - record = result[0]
+        - highlights = result[1][:highlight]
+        - record_class = (record.class.to_s == "Manual" || record.class.to_s == "Support" || record.class.to_s == "Api") ? "page" : record.class.to_s.downcase
+        - next if record.class.to_s == "Release" && record.try(:release_type) == "draft"
+        %li.container.search_result
+          %article
+            %header.number_box_parent
+              %h1.headline_reset.number_box.small.gray{ :class => record_class }
+                - if record.class.to_s == "Release"
+                  = link_to "#{record.title}", url_for(record)
+                - else
+                  %a{ :href => record.respond_to?('permalink') ? record.permalink : url_for(record) }
+                    %span.box{ :class => record_class}
+            .content
+              .meta
+                %span.class.h6.all-caps
+                  = @book.present? ? @book : record.headline
+                %span.title.h6.all-caps
+                  - display_title = highlights[:title].present? ? highlights[:title] : record.friendly_title
+                  = "> "
+                  = link_to(truncate_html(display_title, :length => 90), (record.respond_to?('permalink') ? record.permalink : url_for(record)), :class => "no_decoration")
+                %time.h6.small-gray-caps{datetime: record.updated_at }
+                  = record.respond_to?('release_date') ? record.release_date.to_s(:long_ordinal) : record.updated_at.to_date.to_s(:long_ordinal)
+              -if highlights.present?
+                .highlights
+                  - highlights.each do |key, value|
+                    - # if the title is the only highlight, go ahead and display it. otherwise skip.
+                    - next if key == :title and highlights.length > 1
+                    %p= raw "..." + value.strip + "..."
+              -else
+
+              = link_to "View #{ record.class.to_s == 'Api' ? 'Documentation' : record_class.to_s }", record.respond_to?('permalink') ? record.permalink : url_for(record), :class => "all-caps channel_color small no_decoration after-icon-arrow-next"
+
+
+  %aside.right-col
+    %h2.h6.all-caps
+      Sort By
+      .filter-select
+        = select_tag(:sort, options_for_select([["Relevance", "_score"], ["Date Ascending", "date-asc"], ["Date Descending", "date-desc"]], params[:sort]), :class => "chosen-input large").html_safe
+
+    %h2.h6.all-caps
+      Section
+      .section
+        %ul.filter-list
+
+          - if current_user
+            %li
+              = radio_button_tag(:index, "All", params[:index] == "All")
+              = label_tag(:index_All, "All")
+            %li
+              = radio_button_tag(:index, "Release", params[:index] == "Release")
+              = label_tag(:index_Release, "Release Notes")
+            %li
+              = radio_button_tag(:index, "Manual", params[:index] == "Manual")
+              = label_tag(:index_Manual, "Manuals")
+            %li
+              = radio_button_tag(:index, "Faq", params[:index] == "Faq")
+              = label_tag(:index_Faq, "FAQs")
+            %li
+              = radio_button_tag(:index, "Roadmap", params[:index] == "Roadmap")
+              = label_tag(:index_Roadmap, "Roadmaps")
+            - if false
+              %li
+                = radio_button_tag(:index, "Support", params[:index] == "Support")
+                = label_tag(:index_Support, "Support Guides")
+          %li
+            = radio_button_tag(:index, "Api", params[:index] == "Api")
+            = label_tag(:index_Api, "Documentation")
+
+    %h2.h6.all-caps
+      Time Range
+      %ul.filter-list
+        %li
+          = radio_button_tag(:time, "", params[:time].blank?)
+          = label_tag(:time_, "All Time")
+        %li
+          = radio_button_tag(:time, "week", params[:time] == "week")
+          = label_tag(:time_week, "Past Week")
+        %li
+          = radio_button_tag(:time, "month", params[:time] == "month")
+          = label_tag(:time_month, "Past Month")
+        %li
+          = radio_button_tag(:time, "6_months", params[:time] == "6_months")
+          = label_tag(:time_6_months, "Past 6 Months")
+        %li
+          = radio_button_tag(:time, "year", params[:time] == "year")
+          = label_tag(:time_year, "Past Year")

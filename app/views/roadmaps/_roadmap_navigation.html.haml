@@ -1,0 +1,17 @@
+- roadmaps.each do |parent, children|
+  - if parent.published?
+    %li
+      - if parent.depth == 0 && parent.redirect_to_first_child?
+        %h2.h6.all-caps.js-year-toggle.year{ :class => "#{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink}" }
+          = parent.title
+      - elsif parent.depth == 0
+        %h2.h6.all-caps.js-quarter-toggle{ :class => "channel_color_border #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink}" }
+          = link_to parent.title, parent.permalink, :class => " #{'active' if request.fullpath == parent.permalink} #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink}"
+      - elsif parent.depth == 1
+        %h2.h6.all-caps.js-quarter-toggle{ :class => "channel_color_border #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink}" }
+          = link_to parent.title, parent.permalink, :class => "quarter #{'active' if request.fullpath == parent.permalink} #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink}"
+      - else
+        = link_to parent.title, parent.permalink, :class => "#{'active' if request.fullpath == parent.permalink}"
+      - if children.present?
+        %ul.side{ :class => "depth-#{parent.depth++ 1} #{'open' if request.fullpath.include? parent.permalink }" }
+          = render :partial => "roadmap_navigation", :locals => { :roadmaps => children }

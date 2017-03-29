@@ -1,0 +1,14 @@
+-cache ["listbox", current_user.channel_partner.id, cache_key_for_record(release)] do
+  - any_content = release.any_content_for?(current_user)
+  %li{class: "container twelve-three release_item #{type} #{'empty_release' unless any_content}"}
+    %article
+      .left-col
+        %header.number_box_parent
+          %h1.headline_reset{title: "release number", :class => "number_box small #{"channel_color_background" if type == "current"} #{type}"}
+            = link_to_if any_content, "#{release.title}", release_path(release)
+        .content
+          %time.small-gray-caps{datetime: release.release_date}= release.release_date.to_s(:long_ordinal)
+          = cache_replace_key 'unread_badge' if any_content
+          = any_content ? raw(release.summary) : (content_tag :p, t(:no_content, :scope => :releases))
+          = link_to "View Release", release_path(release), :class => "all-caps channel_color small no_decoration after-icon-arrow-next" if any_content
+      %footer.right-col= render "release_footer_links", :release => release if any_content

@@ -1,0 +1,63 @@
+.updates_table{"data-seven" => 7.days.ago.to_date, "data-thirty" => 30.days.ago.to_date}
+  %header
+    %menu.main_tabs
+      %ul.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#recently_published"}
+            Recently Published
+            %span#rp_count.count 0
+        %li
+          %a{"data-toggle" => "tab", :href => "#changes"} Changes
+  .tab-content
+    #recently_published.tab-pane.active
+      %header
+        %menu.time_select
+          %a#rp_time_unread{"data-range" => "unread", "data-scope" => "unread", :href => "#"} Unread Only
+          %a#rp_time_30days{"data-range" => "30_days", "data-scope" => 30.days.ago.to_date, :href => "#"} Last 30 Days
+      %table
+        %thead
+          %tr
+            %th.title Title
+            %th.section Section
+            %th.date Date Posted
+        %tbody#rp_tbody
+    #changes.tab-pane
+      %header
+        %menu.time_select
+          %a#c_time_7days.c_first.active{"data-range" => "7_days", "data-scope" => 7.days.ago.to_date, :href => "#"} Last Week
+          %a#c_time_30days{"data-range" => "30_days", "data-scope" => 30.days.ago.to_date, :href => "#"} Last 30 Days
+      %table
+        %thead
+          %tr
+            %th.c_title Title
+            %th.c_section Section
+            %th.c_action Action
+            %th.c_date Date Posted
+        %tbody#changes_tbody
+
+
+%script{ :type => "text/html", :id => "recently_published_template" }
+  %tr{:class => "{{ status.toLowerCase() }}"}
+    %td.title.linkable
+      %a{:href => "{{ link }}"} {{ title }}
+      %div{:class => "indicator channel_color_background_hover {{ status.toLowerCase() }}", "data-read-on" => "{{ read_on }}", "data-resource-id" => "{{ klass }}-{{ id }}"}
+        .prefix
+          %ul
+            %li.check
+            %li.spinner-small
+            %li.un UN
+        READ
+    %td.linkable
+      %a.icon{:class => "icons-{{ klass.toLowerCase() }}", :href => "{{  section_link }}"} {{ section }}
+    %td {{ date }}
+
+%script{ :type => "text/html", :id => "changes_template" }
+  %tr
+    %td.title.linkable
+      %a{:href => "{{ link }}"} {{ title }}
+    %td.linkable
+      %a.icon{:class => "icons-{{ klass.toLowerCase() }}", :href => "{{ section_link }}"} {{ section }}
+    %td
+      %div{:class => "indicator {{ action.toLowerCase() }}"}
+        {{ action_message() }}
+    %td {{ date }}

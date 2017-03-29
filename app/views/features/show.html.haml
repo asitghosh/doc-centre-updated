@@ -1,0 +1,16 @@
+.container.three-ten
+  = render "feature_head"
+  %aside.left-col
+    %h2.h6.all-caps Upcoming
+    = render_navigation do |side_nav|
+      - side_nav.dom_class = 'side-nav'
+      - @feature_nav.each do |feature|
+        = side_nav.item feature.title.gsub(/\s+/, "_").downcase.to_sym, feature.title, feature_path(feature), :class => 'channel_color_border'
+
+  .right-col
+    %header.page-head
+      %time.small-gray-caps= @feature.release.nil? ? "release date unknown" : @feature.release.release_date.to_s(:long_ordinal)
+      %h2.channel_color= @feature.title
+
+    .summary= raw @feature.summary
+    .content= raw @feature.content

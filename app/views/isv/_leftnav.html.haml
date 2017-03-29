@@ -1,0 +1,27 @@
+- pages.each do |parent, children|
+  - if parent.published? || current_user.can_see_all?
+    %li.channel_color_border.simple-navigation-active-leaf{ :class => "#{'open' if request.fullpath.include? parent.permalink}"}
+      - if parent.depth == 0
+        %h2.h5.all-caps.js-book-toggle.book{ :class => "channel_color #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink} #{'active' if request.fullpath == parent.permalink}" }
+          = link_to "#{parent.draft? ? "(draft) " : ""}#{parent.title}", parent.permalink, :class => " #{'active' if request.fullpath.include? parent.permalink}"
+      - elsif children.present?
+        %span.expand
+          %span.arrow
+        %h2.h6.all-caps.js-chapter-toggle.chapter{ :class => "channel_color_border #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink} #{' active' if request.fullpath == parent.permalink}" }
+          = link_to parent.title, parent.permalink, :class => ""
+      - else
+        = link_to "#{parent.draft? ? "(draft) " : ""}#{parent.title}", parent.permalink, :class => "channel_color_border #{'active' if request.fullpath == parent.permalink}"
+      - if children.present?
+        %ul.side-nav{ :class => "depth-#{parent.depth++ 1} #{'open' if request.fullpath.include? parent.permalink }" }
+          = render :partial => "leftnav", :locals => { :pages => children }
+-# - @sidenav_root.each_with_index do |(first_level, childs), index|
+-#   %ul.page_nav
+-#     %li
+-#       %h2.h6.all-caps
+-#         - if first_level.redirect_to_first_child
+-#           = first_level.title
+-#         - else
+-#           = link_to first_level.title, first_level.permalink
+-#       - unless childs.empty?
+-#         = render "navlist", :childs => childs
+

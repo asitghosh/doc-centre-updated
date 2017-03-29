@@ -1,0 +1,17 @@
+%li{ :id => "list_#{rm.id}" }
+  .itemcontainer{ :class => "for#{rm.id} #{'no_children' if rm.children.empty?}" }
+    %span.title
+      = link_to rm.title, edit_admin_roadmap_path(:id => rm.id)
+      = " (draft)" if rm.pub_status == 'draft'
+    %menu
+      = link_to("Create Child", new_admin_roadmap_path(:parent_id => rm.id))
+      = link_to("Destroy", admin_roadmap_path(rm), :method => :delete, :confirm => "Are you sure? This cannot be undone!")
+
+    =raw "<span class='redirects'>redirects to first child &#x21b4;</span>" if rm.redirect_to_first_child
+    %span.viewpage{ :id => "view_for_#{rm.id}" }
+      = link_to "View this roadmap", rm.permalink
+
+  - unless rm.children.empty?
+    %ol
+      - rm.children.each do |child|
+        = render "listitem", :rm => child

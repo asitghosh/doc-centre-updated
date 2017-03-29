@@ -1,0 +1,36 @@
+- channel_host = "#{@channel_partner.subdomain}.docs.appdirect.com"
+
+AppDirect Documentation Center
+===============================
+
+= "Recently Published #{@resources.count}"
+= "\n\n\n\n"
+- @resources.each do |resource|
+	:ruby
+		permalink = case resource.class.to_s
+			when "Release"
+				"http://#{channel_host}/releases/#{resource.title}"
+			when "Page"
+				"http://#{channel_host}#{resource.permalink}"
+			when "Feature"
+				"http://#{channel_host}/features/#{resource.title}"
+			when "Hotfix"
+				"http://#{channel_host}/releases/#{resource.release.title}"
+			when "Roadmap"
+				"http://#{channel_host}/#{resource.permalink}"
+			else
+				"#"
+			end
+	- if resource.class.to_s == "Release"
+		= "Release #{resource.title}: permalink\r\n"
+	- else
+		= "#{resource.title} - #{permalink}\r\n"
+
+= "\n\n\n\n"
+Emails too frequent?
+= "Edit your Documentation Center preferences: http://#{channel_host}/users/settings\r\n\n\n"
+
+
+
+Don't want to recieve these messages any more?
+= "Edit your Documentation Center preferences to unsubscribe: http://#{channel_host}/users/settings\r\n\n\n"

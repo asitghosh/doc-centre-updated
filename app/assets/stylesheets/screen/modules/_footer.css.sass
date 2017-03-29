@@ -1,0 +1,43 @@
+body > footer
+  border-top: 1px solid $d
+  padding-top: 20px
+  .copyright
+    @extend .no_decoration
+    float: right
+  ul
+    @extend .list-reset
+    li
+      padding: 0
+      a
+        @extend .no_decoration
+        display: block
+        margin-bottom: 10px
+      li
+        a
+          font-size: 14px
+          opacity: .5
+          &.selected
+            opacity: .9999
+        &.disabled
+          a
+            color: #CDCDCD
+            position: relative
+            cursor: default
+            &:before
+              @extend .icons-lock
+              content: ""
+              position: static
+              display: inline-block
+              width: 12px
+              height: 16px
+              margin-right: 5px
+              position: relative
+              top: 2px
+
+
+
+  .foot_nav_column > a
+    @extend .all-caps
+    color: $d
+    font-size: 12px
+    cursor: default

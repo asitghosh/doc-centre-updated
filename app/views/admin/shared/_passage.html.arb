@@ -1,0 +1,57 @@
+# to change the label for the panel, pass a headline var
+# if the form had an old WYSIWYG field, pass the name as string
+# if the passage needs a hidden type_name, pass the value as string
+
+headline = headline || "Passages"
+old_field = old_field || false
+type_name = type_name || false
+fors = [:passages]
+
+if type_name
+  # if there's a typename, we need to scope the passages
+  # to only those with that type_name value
+  fors << f.object.send("#{type_name}_passages")
+end
+
+f.inputs "#{headline}" do
+  if old_field
+    unless f.object.new_record? or f.object.send(old_field.downcase.parameterize(sep = '_')).blank?
+      f.input type_name.to_sym, :as => :rich
+    end
+  end
+  f.has_many :passages, for: fors do |pform|
+    unless pform.object.new_record?
+      pform.form_buffers.last << "<li class='string input optional'><label class='label' for=''>Versions:</label><a href='#{versions_admin_passage_path(pform.object)}'>versions of this passage</a></li>".html_safe
+
+      pform.input :_destroy,
+                  :as => :boolean,
+                  :label => "Delete?"
+    end
+    if type_name
+      pform.input :type_name,
+                  :as => :hidden,
+                  :input_html => { :value => type_name }
+    end
+    pform.input :tag_list,
+      label: "Tags",
+      input_html: {
+        data: {
+          placeholder: "Enter tags",
+          saved: pform.object.tags.map{|t| {id: t.name, name: t.name}}.to_json,
+          url: autocomplete_tags_path },
+        class: 'tagselect'
+      },
+      hint: "if you accidentally delete a tag, save the page and re-edit to add it back."
+
+    pform.input :remote_content
+
+    pform.input :content,
+                :as => :rich,
+                :config => { :width => '76%', :height => '400px' }
+
+    pform.input :sortable_order,
+                :as => :number
+
+
+  end
+end

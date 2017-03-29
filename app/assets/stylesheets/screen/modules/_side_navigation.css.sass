@@ -1,0 +1,432 @@
+
+// side is left hand columns
+.side
+  ul
+    margin-bottom: 50px
+  li
+    padding: 0
+  .manual_download
+    display: block
+    border-top: 1px solid $d
+    margin-top: 30px
+    padding-top: 20px
+  .page_nav
+    h2
+      margin-bottom: 10px
+
+
+aside
+  h2
+    @extend .all-caps
+  .release.rbox
+    width: 100%
+  .custom_links, .support_links
+    @extend .list-reset
+    margin-bottom: 2em
+    font-size: 13px
+    li
+      padding: 0
+    a
+      @extend .no_decoration
+
+.side-nav
+  li
+    padding: 0
+    a
+      @extend .opacity_transform
+      padding: 7px 11px 4px
+      margin-left: -11px
+      position: relative
+      right: -1px
+      color: $charcoal
+      font: 14px $accent-stack
+      text-decoration: none
+      display: block
+      opacity: .999
+      &:hover
+        opacity: .75
+      &.selected, &.active
+        background: #f6f6f6
+        border-right: 3px solid
+        border-color: inherit
+    h2 a
+      font-family: inherit
+      font-size: inherit
+    li
+      margin-left: 10px
+
+  &.right
+    width: 100%
+    li
+      a
+        margin-left: -22px
+        padding-left: 22px
+        &.selected, &.active
+          border-right: none
+          border-left:  3px solid $bright-blue
+          padding-left: 19px
+
+.download_link
+  margin: 10px 0 0 -20px
+  padding: 10px 0 0 20px
+  border-top: 1px solid $d
+
+.download
+  @extend .opacity_transform
+  opacity: .999
+  font-size: 14px
+  line-height: 1.2
+  overflow: hidden
+  height: 46px
+  &:hover
+    opacity: .5
+  .right-col &
+    display: block
+    margin-top: 15px
+    padding-left: 29px
+  &.pdf-status-default
+    .download_messages
+      margin-top: 0
+    .default
+      opacity: 1
+  &.pdf-status-generating
+    .download_messages
+      margin-top: -52px
+    .generating
+      opacity: 1
+  &.pdf-status-complete
+    .download_messages
+      margin-top: -104px
+    .complete
+      opacity: 1
+  &.pdf-status-error
+    .download_messages
+      margin-top: -156px
+    .error
+      opacity: 1
+
+.download_messages
+  +transition(margin, 0.25s)
+  list-style: none
+  margin: 0 0 0 0
+  li
+    display: block
+    margin: 0 0 20px 0
+    padding: 0
+    opacity: 1
+    position: relative
+  .prefix
+    &:before
+      @extend .before_icon_shift
+      font-size: 22px
+      position: relative
+      margin-right: 4px
+      position: absolute
+      top: 0px
+      left: -29px
+    &.spinner-small
+      position: absolute
+      left: -29px
+      width: 22px
+      height: 14px
+  .error
+    background: none
+    border: none
+
+.page_nav
+  .side-nav
+    display: none
+    &.open
+      display: block
+      & > li
+        display: block
+  h2
+    &.active
+      border-right: 3px solid
+  li
+    position: relative
+  .expand
+    float: left
+    position: absolute
+    z-index: 1000
+    top: 1px
+    left: -16px
+    cursor: pointer
+    .arrow
+      margin-right: 6px
+      @extend .inline-block
+      width: 0px
+      height: 0px
+      border: 5px transparent solid
+      border-left: 5px solid #999999
+  .open > .expand
+    top: 4px
+    left: -19px
+    cursor: pointer
+    .arrow
+      border-left: 5px transparent solid
+      border-top: 5px solid #999999
+
+  .book
+    position: relative
+    right: -1px
+    &.ascendent,
+    &.active
+      border-right: 3px solid
+
+.roadmap_nav
+  a
+    @extend .opacity_transform
+    padding: 7px 11px 4px
+    margin-left: -11px
+    position: relative
+    right: -1px
+    color: $charcoal
+    font: 14px $accent-stack
+    text-decoration: none
+    display: block
+    opacity: .999
+    &:hover
+      opacity: .75
+    &.selected, &.active
+      background: #f6f6f6
+      border-right: 3px solid
+      border-color: inherit
+  h2
+    font-size: 14px
+    a
+      color: inherit
+      font-family: $black-stack
+      font-size: inherit
+      font-weight: normal
+  .depth-1,
+  .depth-2
+    display: none
+    &.open
+      display: block
+  .year,
+  .quarter
+    cursor: pointer
+    &:before
+      content: ""
+      position: relative
+      margin-right: 6px
+      @extend .inline-block
+      width: 0px
+      height: 0px
+      border: 5px transparent solid
+      border-left: 5px solid #999999
+    &.open:before,
+    .open &:before
+      top: 3px
+      left: -2px
+      border-left: 5px transparent solid
+      border-top: 5px solid #999999
+
+  li li
+    padding-left: 10px
+    margin: 0
+    h2
+      margin-top: 10px
+    li
+      a
+        padding-left: 18px
+
+=scrolling-shadows($background-color: #f9f9f9, $shadow-intensity: 0.13, $shadow-color: rgb(0, 0, 0), $cover-size: 40px, $shadow-size: 14px)
+  background: linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)), radial-gradient(50% 100%, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)) 0 100%
+  background: linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)), radial-gradient(farthest-side at 50% 100%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)) 0 100%
+  background-repeat: no-repeat
+  background-color: $background-color
+  background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size
+  // Opera doesn't support this in the shorthand
+  background-attachment: local, local, scroll, scroll
+
+.api_nav
+  margin-left: 0
+  ul
+    display: none
+    list-style: none
+    margin-bottom: 0
+    margin-left: 0
+    padding: 19px 0 24px 30px
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.10)
+    .nav-root-depth-4
+      &:first-child
+        h2
+          border-top: none
+      > a
+        margin-left: -10px
+        background-color: transparent !important
+        font-weight: bold
+        padding: 6px 30px 6px 10px
+        &.active
+          color: #4b4b4b
+    .nav-root-depth-5
+      &:last-child
+        margin-bottom: 16px
+      // +10px for each subsection beyond depth-5
+      [class^="nav-root-depth"]
+        padding-left: 10px
+    li
+      a
+        color: #7A7A7A
+        font-size: 12px
+        display: block
+        padding: 5px 30px 5px 0
+        text-decoration: none
+        &:hover
+          color: #151515
+          text-decoration: none
+        &.active
+          background-color: #E5E5E5
+          color: #151515
+          text-decoration: none
+  > li
+    h2
+      &.caret
+        &:before
+          content: ""
+          position: absolute
+          margin: auto 0
+          top: 0
+          bottom: 0
+          left: 10px
+          @extend .inline-block
+          width: 0
+          height: 0
+          border: 5px transparent solid
+          border-left: 5px solid #999999
+        &.open
+          &:before
+            border-left: 5px transparent solid
+            border-top: 5px solid #999999
+            top: 4px
+  ul.open
+    display: block
+  li
+    list-style: none
+    line-height: 1em
+    a
+      text-decoration: none
+      &:hover
+        h2
+          background-image: linear-gradient(-180deg, #EAEAEA 0%, #DAD9D9 100%)
+          &.open
+            background-image: none
+  h2
+    margin-top: 0
+    padding: 10px 16px 10px 26px
+    background-color: #FAFAFA
+    border-top: 1px solid #dfdfdf
+    border-left: 1px solid #dfdfdf
+    background-image: linear-gradient(-180deg, #FAFAFA 0%, #ECECEC 100%)
+    font-size: 12px
+    margin-bottom: 0
+    font-family: $normal-stack
+    color: #888
+    text-transform: uppercase
+    font-weight: bold
+    cursor: pointer
+    letter-spacing: 0.1em
+    position: relative
+    &.open
+      background-color: #fff
+      background-image: none
+      color: #565656
+      margin-left: -1px
+      border-right: 4px solid #fff
+      border-top: none
+      border-bottom: none !important
+      margin-bottom: 0
+      a
+        color: #565656
+  > li:last-child
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1)
+  ul
+    &.depth-3
+      overflow: auto
+      position: relative
+      max-height: 450px
+      +scrolling-shadows
+      li
+        &:first-child
+          h2
+            padding-top: 0
+        h2
+          background-color: transparent
+          padding: 0 0 5px
+          border: none
+          border-top: 1px solid #e7e7e7
+          padding-top: 16px
+          background-image: none
+          font-size: 18px
+          color: #015F81
+          text-transform: none
+          font-weight: normal
+          cursor: default
+          letter-spacing: -0.05em
+          margin-right: 30px
+          &:before
+            display: none
+      ul
+        display: block
+      .depth-4
+        box-shadow: none
+        padding: 0
+        li
+          h2
+            font-weight: bold
+            color: #4B4B4B 
+            font-size: 12px 
+            border: none
+            letter-spacing: 0em
+            border-top: none !important
+            padding: 5px 30px 5px 0
+            &:before
+              display: none
+
+        .depth-5
+          padding: 0
+          box-shadow: none
+          border-bottom: none
+          > h2
+            border: none
+            &:before
+              display: none
+          .depth-6
+            padding: 0
+            border: none
+            box-shadow: none
+
+.after-icon-arrow-next
+  @extend .opacity_transform
+  opacity: .9999
+  &:hover
+    opacity: .5
+  &:after
+    @extend .before_icon_shift
+    font-size: 24px
+.container > header,
+.page_header
+  border-bottom: 1px solid $d
+  padding: 55px 0 20px
+  .home &
+    border: none
+  h1
+    line-height: 1
+    margin: 0
+  //search
+  form
+    float: right
+    margin-top: -11px
+    input
+      @extend .rounded
+      padding: 12px 0 12px 40px
+      border: 1px solid $d
+      height: 38px
+      background: image-url('magnifying_glass.png') no-repeat 12px 7px
+      &:focus
+        outline: none
+        border: 1px solid $b
+    input[type="submit"]
+      display: none

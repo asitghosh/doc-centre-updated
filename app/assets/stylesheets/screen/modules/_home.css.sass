@@ -1,0 +1,409 @@
+.welcome_intro
+  &.hidden
+    display: none
+  li
+    padding: 0
+    border-radius: 3px
+  h2
+    color: $bright-blue
+    margin-bottom: 45px
+  .dismiss_welcome
+    @extend .opacity_transform
+    padding: 0 0 0 18px
+    border: none
+    color: $bright-blue
+    position: absolute
+    line-height: 11px
+    z-index: 0
+    font-size: (13em/16)
+    bottom: -32px
+    right: 0px
+    background: transparent
+    opacity: .9999
+    &:before
+      @extend .before_icon_shift
+      font-size: 22px
+    &:hover
+      opacity: .5
+  li
+    color: $b
+    position: relative
+    .tooltip
+      opacity: 0
+      transition: 210ms cubic-bezier(0.23, 1, 0.32, 1)
+      margin: 0
+      position: absolute
+      border-radius: 3px
+      color: white
+      font-size: 14px
+      text-align: left
+      padding: 20px
+      top: 175px
+      left: 0px
+      right: 0px
+      z-index: -1
+      background: rgba(68,68,68,.9)
+      -webkit-backface-visibility: hidden
+      &.active
+        z-index: 10
+        opacity: 1
+        transition-delay: 50ms
+        -webkit-transition-delay: 50ms
+        -webkit-transform: translateY(20px)
+        -moz-transform: translateY(20px)
+        -o-transform: translateY(20px)
+        transform: translateY(20px)
+    a
+      display: block
+      width: 100%
+      height: 185px
+      text-align: center
+      padding: 40px 0px 0px 0px
+      span
+        @extend .ir
+    figure
+      width: 100%
+      height: 100%
+      position: relative
+      figcaption
+        overflow: hidden
+        h3
+          margin: 0
+          color: white
+          position: absolute
+          bottom: 25px
+          left: 0px
+          right: 0px
+          font-size: 20px
+          text-align: center
+
+    .user-guide
+      @extend .large-icons-userguide
+      width: 60px
+      height: 81px
+    .faqs
+      @extend .large-icons-faqs
+      width: 76px
+      height: 67px
+    .releases
+      @extend .large-icons-releasenotes
+      width: 64px
+      height: 76px
+    .upcoming-features
+      @extend .large-icons-upcomingfeatures
+      width: 75px
+      height: 81px
+    .roadmap
+      @extend .large-icons-roadmap
+      width: 94px
+      height: 60px
+    &.disabled
+      background-color: #CCC !important
+      a
+        cursor: default
+
+.home
+  .left-col
+    border: 0
+    padding-right: 0
+    padding-top: 30px
+  .right-col
+    padding-top: 80px
+    .widget
+      padding-bottom: 40px
+      overflow: auto
+      clear: both
+    .h6
+      color: #444
+      padding-bottom: 1px
+      margin: 0 0 9px 0
+      border-bottom: 1px solid #eee
+    .current_container
+      .h6
+        margin-bottom: 14px
+    .current_release
+      width: 60px
+      float: left
+      margin-right: 9.09091%
+      @extend .inline-block
+    .release_footer_links
+      @extend .list-reset
+      position: relative
+      top: -2px
+      font-size: 13px
+      width: 63.636363%
+      float: right
+      li
+        padding: 0
+      a
+        @extend .no_decoration
+        @extend .opacity_transform
+        opacity: .9999
+        &:hover
+          opacity: .75
+
+.updated_content
+  h2
+    @extend .all-caps
+    margin-bottom: 13px
+  ul
+    @extend .list-reset
+    li
+      border-top: 1px solid $d
+      padding: 12px 0
+      font-size: 14px
+      &:last-child
+        border-bottom: none
+      a
+        padding: 2px 0 2px 35px
+        margin-left: 10px
+        text-decoration: underline
+      time
+        float: right
+        color: #444
+
+.card
+  margin: 0 0 20px 0
+  overflow: auto
+  h3
+    @extend .all-caps
+    @extend .charcoal
+    margin: 20px 0
+    opacity: .5
+    text-align: center
+  .avatar
+    float: left
+    width: 27.272727%
+  .text
+    margin: 0 0 0 9.090909%
+    font-size: 13px
+    float: left
+    width: 63.636363%
+    a
+      @extend .no_decoration
+
+    //p:last-child
+    //   border-bottom: none
+    & > *
+      width: 100%
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      margin: 0 0 1px 0
+
+.partner_logo
+  float: right
+  max-width: 250px
+  max-height: 35px
+
+.updates_table
+  .nav-tabs
+    position: relative
+    z-index: 2
+    @extend .list-reset
+    height: 50px
+    li
+      @extend .inline-block
+      padding: 0
+      margin-right: 10px
+      a
+        @extend .small-gray-caps
+        @extend .no_decoration
+        font-size: (11em/16)
+        position: relative
+        padding: 0 25px
+        display: block
+        height: 50px
+        line-height: 54px
+        border: 1px solid #ddd
+        border-bottom: none
+        background: #eeeeee
+        color: #444
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          bottom: 0
+          left: -1px
+          right: -1px
+          height: 1px
+          background-color: #bbb
+        .count
+          background: #ff4040
+          border-radius: 3px
+          padding: 4px 8px 1px
+          color: white
+      &:not(.active)
+        a span
+          background-color: #bbb !important
+      &.active
+        a
+          background: white
+          border-color: #bbb
+          &:after
+            display: none
+  .tab-content
+    position: relative
+    z-index: 1
+    top: -1px
+    header
+      height: 50px
+      padding: 9px 10px 10px 0
+      border: 1px solid #bbb
+      border-bottom: none
+      menu
+        float: right
+        background-color: #eee
+        border-radius: 4px
+        position: relative
+        &:before,
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          height: 1px
+          left: 6px
+          right: 6px
+          top: 0px
+          background-color: #ddd
+          z-index: 1
+        &:after
+          top: auto
+          bottom: 0
+        a
+          @extend .small-gray-caps
+          @extend .no_decoration
+          position: relative
+          z-index: 2
+          float: left
+          padding: 0 18px
+          height: 30px
+          line-height: 30px
+          border: 1px solid #ddd
+          &:first-child
+            border-radius: 4px 0 0 4px
+            border-right: 0
+          &:last-child
+            border-radius: 0px 4px 4px 0
+            border-left: 0
+          &:hover:not(.active)
+            color: shade(#bbb, 10%)
+          &.active
+            border-radius: 4px
+            border: 1px solid #bbb
+            background-color: white
+            color: #a8a8a8
+            cursor: default
+            +box-shadow(rgba(0,0,0,0.1) 0 0px 2px 0px)
+
+
+    table
+      margin: 0
+      border: 0
+      thead
+
+        tr
+          position: relative
+
+          th
+            @extend .small-gray-caps
+            //border-bottom: 1px solid #bbb
+            border-left: 1px solid #eee
+            padding: 6px 0 4px 20px
+            position: relative
+            // &:before
+            //   display: block
+            //   content: ""
+            //   position: absolute
+            //   left: 0
+            //   top: 0
+            //   bottom: 0
+            //   width: 1px
+            //   background-color: #eee
+            &:first-child
+              border-radius: 0
+              border-left: 1px solid #bbb
+              &:before
+                display: none
+            &:last-child
+              border-radius: 0
+              border-right: 1px solid #bbb
+            &.title
+              width: 54.255%
+            &.section
+              width: 26.851%
+            &.date, &.c_date
+              width: 18.893%
+            &.c_title
+              width: 42.55%
+            &.c_section
+              width: 25.53%
+            &.c_action
+              width: 13.02%
+      tbody
+        &:last-child
+          tr:last-child > td:first-child
+            border-radius: 0
+          tr:last-child > td:last-child
+            border-radius: 0
+        > tr:first-child td
+          border-top: 1px solid #bbb
+        tr
+          td
+            border: 0
+            border-bottom: 1px solid #eee
+            padding: 14px 0 12px 20px
+            font-size: 14px
+            &.linkable
+              cursor: pointer
+              &:hover
+                background-color: #f4f4f4
+            a
+              color: inherit
+              text-decoration: none
+            &.title
+              font-weight: bold
+              a
+                @extend .inline-block
+                margin-right: 8px
+            .icon:before
+              padding-right: 15px
+              font-size: 24px
+              color: #d9dbdb
+            .icon
+              @extend .inline-block
+              height: 20px
+              padding-left: 30px
+            .icons-support
+              @extend .icon-faqs
+            .icons-release
+              @extend .icon-releases
+            .icons-feature
+              @extend .icon-upcoming-features
+            .icons-roadmap
+              @extend .icon-roadmap
+            .icons-manual
+              @extend .icon-user-manual
+            &.show_more
+              background: #f4f4f4
+              border-bottom: 0
+              color: $bright-blue
+              text-align: center
+              border-radius: 0
+              cursor: pointer
+
+          &.unread
+            td
+              color: #777
+          &.read
+            td
+              color: #ccc
+              .indicator
+                display: none
+
+
+.tab-content
+  .tab-pane
+    display: none
+    &.active
+      display: block

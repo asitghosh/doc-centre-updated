@@ -1,0 +1,69 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  general:
+    click_here: 'click here'
+  pages:
+    headline: "Manuals"
+  features:
+    headline: "Upcoming Features"
+    missing: "No upcoming features to announce at this time. Check back soon."
+  releases:
+    headline: "Release Notes"
+    missing: "No releases at this time. Check back soon."
+    no_content: "This release contains no notes for your marketplace."
+    channel_specific_headline: "Channel Specific Data"
+    pdf: "Download PDF of Release %{release_number}"
+    short_pdf: "Download PDF"
+  supports:
+    pdf: "Download PDF of %{title}"
+  faqs:
+    headline: "FAQs"
+  roadmap:
+    headline: "Roadmap"
+  home:
+    user_guide: "Comprehensive how-to information that explains the marketplace features."
+    faqs: "Answers to frequently asked questions about the marketplace."
+    releases: "Weekly release notes that detail updates and improvements to the platform."
+    upcoming_features: "Information about planned improvements to the marketplace and platform."
+    roadmap: "Outline of major planned updates to the platform."
+    current: "Current Release"
+    account_rep: "Your Account Contacts"
+    support: "Support"
+    links: "Links"
+  updates:
+    headline: "Updates to the Doc Center"
+    flash: "We've made some updates to the Doc Center"
+    link_text: "Check it out!"
+    dismiss_text: "x Hide until next update"
+  impersonation:
+    ready: "View Site As"
+    active: "Viewing Site As"
+    stop: "Stop Impersonating"
+    close: "Close"
+    default_list: "Select Partner"
+    menu_item: "Impersonate"
+  pdf:
+    generating_flash: 'Your PDF is being created, please wait then %{href} to try again.'
+    generating: "Your PDF is being created, please wait."
+    complete: "Your PDF is downloading now."
+    error: "An error has occurred, click to try again."
+  marketplace-manager:
+    headline: "Marketplace Documentation Overview"
+    tagline: "Everything you need to know about creating and managing your Marketplace"
+  marketplace:
+    headline: "Marketplace Documentation Overview"
+    tagline: "Everything you need to know about creating and managing your Marketplace"
+  developer:
+    headline: "Checkout & Distribution Documentation Overview"
+    tagline: "Everything you need to know about using AppDirect for taking payments and distributing your product in the AppDirect network"
+  reseller:
+    headline: "Reseller Documentation Overview"
+    tagline: "this is the reseller subhead"
+  help-support:
+    headline: "AppDirect Help & Support"
+    tagline: "Get help with the AppDirect product suite"
+  training:
+    headline: "AppDirect Training Center"
+    tagline: "Choose from a variety of learning options"

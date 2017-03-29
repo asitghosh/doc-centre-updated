@@ -1,0 +1,48 @@
+- @release = release
+.container.twelve-three
+  .left-col.channel_color_headlines
+    .release_overview
+      %h2.number_box.channel_color_background= @release.title
+      %span.updated
+        Last Updated #{raw datetime_to_date @release.updated_at, true}
+      .summary= raw @release.summary
+      .meta
+        %span.release_type
+          %strong= release_period_label @release
+        %span.release_date
+          Published: #{@release.release_date.to_s :long_ordinal}
+        - if !@release.features.blank?
+          %span.appended_features
+            %a{:href => "#appended_features"}= pluralize(@release.features.count, 'Appended Feature')
+    - if !@release.marketplace_improvements.blank?
+      #improvements
+        %h3#marketplace_improvements.h5.all-caps.nine.section_separator Marketplace Improvements
+        = raw @release.marketplace_improvements
+    - if !@release.manager_improvements.blank?
+      #manager_improvements
+        %h3#manager_improvements.h5.all-caps.nine.section_separator Marketplace Manager Improvements
+        = raw @release.manager_improvements
+    - if !@release.devcenter_improvements.blank?
+      #devcenter_improvements
+        %h3#devcenter_improvements.h5.all-caps.nine.section_separator Developer Center Improvements
+        = raw @release.devcenter_improvements
+    - if !@release.api_improvements.blank?
+      #api_improvements
+        %h3#api_improvements.h5.all-caps.nine.section_separator Marketplace API Improvements
+        = raw @release.api_improvements
+    - unless @release_features["#{release.title}"].empty?
+      #appended_features
+        %h3.h5.all-caps.nine.section_separator Appended Features
+        %ul
+          - @release_features["#{release.title}"].each do |feature|
+            %header
+              %h4= feature.title
+            = raw feature.summary
+            = raw feature.content
+    - if !@specific_content.blank?
+      #channel_specific
+        %h2= t :channel_specific_headline, :scope => :releases
+        - @specific_content.each do |channel_partner, content|
+          - if channel_partner == current_user.channel_partner.name or current_user.can_see_all?
+            = raw content.content
+  / /left-col

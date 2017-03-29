@@ -1,0 +1,32 @@
+- cache ["flexbox", current_user.channel_partner.id, cache_key_for_record(release)] do
+  - time_data = release_period release
+  - any_content = release.any_content_for?(current_user)
+  %div{class: "release rbox #{'empty_release' unless any_content} #{period_class ||= time_data[:class]} #{'channel_color_50_background' if period_class == 'current' || time_data[:class] == 'current'} "}
+    %div{class: "wrapper #{'channel_color_border' if period_class == 'current' || time_data[:class] == 'current'}"}
+
+      - content_for :flexbox do
+        %header.release_meta
+          .meta_content
+            %h3.h1= release.title
+            = cache_replace_key 'unread_badge' if any_content
+            %p= datetime_to_date release.release_date
+            %p
+              %strong= period ||= time_data[:label]
+        .summary
+          - if any_content
+            %p= raw truncate_html(strip_tags(release.summary), :length => 80, :omission => '...')
+          - else
+            = (content_tag :p, t(:no_content, :scope => :releases))
+
+      - if any_content
+        %a{href: release_path(release)}
+          = yield_content! :flexbox
+      - else
+        %div
+          = yield_content! :flexbox
+
+      - if any_content
+        %span#hover_title.hover_title
+      %footer
+        %menu
+          = render "releases/release_footer_links", :release => release if any_content

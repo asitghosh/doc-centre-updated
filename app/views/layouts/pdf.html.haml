@@ -1,0 +1,10 @@
+!!! 5
+%html
+  - content_for(:alternate_css) do
+    %style
+      = Rails.application.assets.find_asset('application-all').to_s.html_safe
+      = Rails.application.assets.find_asset('application-print').to_s.html_safe
+  = render "head"
+  %body{:class => "#{controller_name} #{action_name}"}
+    #main{:role => "main"}
+      = yield

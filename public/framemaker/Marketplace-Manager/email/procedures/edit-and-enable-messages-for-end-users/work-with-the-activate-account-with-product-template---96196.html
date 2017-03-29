@@ -1,0 +1,196 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1437309"></a><a name="96196"></a>Work with the Activate Account with Product template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1448181"></a>You can edit content in the Activate Account with Product template. However, because this template is required, you cannot stop it from sending email notification messages to a new user who registered to join your marketplace while buying a product from it. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1448183"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1448184"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Accounts | <span class="EH-EmphasisHeavy">
+Activate Account with Product</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1448185"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1448186"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1448187"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1448188"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1448189"></a>	Click <span class="EH-EmphasisHeavy">
+Activate Account with Product</span>
+ in the Accounts area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-1470577"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+Attention: Before you can have {APPLICATION_NAME}, you must activate your registered account on {PARTNER_STORE LABEL}</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1451115"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4012498"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068260"></a><code class="S-Sample">
+{ACTIVATION_URL}</code>
+ — Inserts the one-time URL on your marketplace where the message recipient can validate his or her email address — which might be new or changed, depending on this template’s context — as the legitimate username for a registered account on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068262"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068264"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068266"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068268"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose <span class="EI-EmphasisItalic">
+channel administrators</span>
+ operate and manage your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068270"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068272"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068274"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068276"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4068278"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="SB-StepBody">
+<a name="pgfId-3893997"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-15.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-16.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-17.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-1453544"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456105"></a><code class="S-Sample">
+Hello,</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456107"></a><code class="S-Sample">
+Thank you for your interest in purchasing {APPLICATION_NAME} on {PARTNER_LABEL}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456109"></a><code class="S-Sample">
+We created a free {PARTNER_LABEL} account for you with the username {USER_EMAIL}. To activate your account please use the following link:</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456111"></a><code class="S-Sample">
+{ACTIVATION_URL}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456113"></a><code class="S-Sample">
+Once you activate your {PARTNER_LABEL} account, you may purchase and use {APPLICATION_NAME}, as well many other awesome business applications.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1456116"></a><code class="S-Sample">
+If you have any questions, our support team is standing by. You can email us at {SUPPORT_EMAIL}, call us at {SUPPORT_PHONE}, or start a chat with us on the website at {SUPPORT_URL}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3264740"></a><code class="S-Sample">
+</code>
+ </p>
+<p class="SB-StepBody">
+<a name="pgfId-1456120"></a><code class="S-Sample">
+Thank you!</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1453545"></a><code class="S-Sample">
+Your friends at {PARTNER_LABEL}</code>
+</p>
+<p class="Anchor">
+<a name="pgfId-1453546"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1460266"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2442198"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1460267"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1448192"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1448196"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1448197"></a><a href="/fm/82498" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for end­users</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

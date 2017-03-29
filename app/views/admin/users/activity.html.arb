@@ -1,0 +1,23 @@
+activity = assigns[:activity]
+if activity.blank?
+  h1 "User has read all resources"
+else
+  h2 "User has #{activity[:releases].length} unread Release Notes"
+  ul do 
+    activity[:releases].each do |r|
+      li link_to r.title, release_path(r)
+    end
+  end
+  h2 "User has #{activity[:pages].length} unread Pages"
+  ul do 
+    activity[:pages].each do |p|
+      li link_to p.title, page_path(p)
+    end
+  end
+  h2 "User has #{activity[:features].length} unread Features"
+  ul do 
+    activity[:features].each do |f|
+      li link_to f.title, feature_path(f)
+    end
+  end
+end

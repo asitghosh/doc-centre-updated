@@ -1,0 +1,248 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1471363"></a><a name="89402"></a>Work with the Reseller Linked template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2056377"></a>You can edit content in the Reseller Linked template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2056378"></a>When the template is turned On, it sends an informational message to the reseller whose account was linked to a customer company. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2056379"></a>When the template is turned off, the <span class="EI-EmphasisItalic">
+reseller</span>
+ is not notified when his or her account is linked to a customer company. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2058814"></a>Similarly, the message recipient can stop receiving the generated message by clicking its automatically injected “Unsubscribe” link. You, the channel administrator, configure the link’s phrasing globally for all message templates that incorporate it.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2056380"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-2056381"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Accounts | <span class="EH-EmphasisHeavy">
+Reseller Linked</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-2056382"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2056383"></a>Log in to your marketplace as its administrator.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2800709"></a>Make sure that your marketplace has the <span class="EI-EmphasisItalic">
+reseller</span>
+ user role enabled.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2056384"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-2056385"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-2056386"></a>	Click <span class="EH-EmphasisHeavy">
+Reseller Linked </span>
+in the Accounts area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3669247"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-360.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-361.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-2056399"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+Reseller linked</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-2056400"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4022953"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185855"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185857"></a><code class="S-Sample">
+{LINKED_COMPANY_ADMIN_EMAIL}</code>
+ — Inserts the email address of the company administrator whose associated company is now linked to the described <span class="EI-EmphasisItalic">
+reseller</span>
+ or <span class="EI-EmphasisItalic">
+sales support</span>
+ representative. This address is also the company administrator’s username on your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185859"></a><code class="S-Sample">
+{LINKED_COMPANY_ADMIN}</code>
+ — Inserts the name of the company administrator whose associated company is now linked to the described <span class="EI-EmphasisItalic">
+reseller</span>
+ or <span class="EI-EmphasisItalic">
+sales support</span>
+ representative.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185861"></a><code class="S-Sample">
+{LINKED_COMPANY}</code>
+ — Inserts the name of the company that is now linked to the described <span class="EI-EmphasisItalic">
+reseller</span>
+ or <span class="EI-EmphasisItalic">
+sales support</span>
+ representative.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185863"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose channel administrators operate and manage your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185865"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185867"></a><code class="S-Sample">
+{RESELLER_COMPANY_NAME}</code>
+ — Inserts the name of whichever company association was the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, login context while he or she completed the described work.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185869"></a><code class="S-Sample">
+{RESELLER_EMAIL}</code>
+ — Inserts the same email address that is the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185871"></a><code class="S-Sample">
+{RESELLER_FIRST_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, given name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185873"></a><code class="S-Sample">
+{RESELLER_FULL_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185875"></a><code class="S-Sample">
+{RESELLER_LAST_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185877"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185879"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4185881"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-2056415"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3913395"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-362.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-363.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-364.gif" alt="" class="block-image">
+</div>
+<p class="Anchor">
+<a name="pgfId-2056428"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-2056429"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2451565"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-2056430"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-2056431"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-2056433"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2056434"></a><a href="/fm/93127" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for resellers</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

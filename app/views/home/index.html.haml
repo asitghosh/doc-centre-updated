@@ -1,0 +1,53 @@
+.container
+  %header
+    - unless current_user.channel_partner.logo.blank?
+      = image_tag magick(current_user.channel_partner.logo, resize: 230), class: "partner_logo" , alt: "#{current_user.channel_partner.name} Logo"
+    %h1.h2 Documentation Center
+= render 'welcome'
+.container.home
+  .twelve-three
+    %section.left-col= render 'updates_table'
+    %aside.right-col
+      - if @current_release && current_user.channel_partner.able_to_see_releases?
+        %div{class: "current_container widget #{'empty_release' unless @cr_has_content}"}
+          %h2.h6= t :current, :scope => :home
+          %h1{title: "release number", class: "number_box small channel_color_background headline_reset current_release"}
+            = link_to_if @cr_has_content, "#{@current_release.title}", release_path(@current_release)
+          %ul.release_footer_links
+            - if @cr_has_content
+              - release_notes_count = @current_release.count_notes_for(current_user) ? @current_release.count_notes_for(current_user) : 0
+              - if release_notes_count > 0
+                %li= link_to t(:channel_specific_headline, :scope => :releases), release_path(@current_release, :anchor => "channel_specific"), :class => "channel_color"
+              %li= link_to t('short_pdf', scope: :releases), release_path(@current_release, format: :pdf), :class => "channel_color"
+            - else
+              %li= t(:no_content, :scope => :releases)
+      - unless current_user.channel_partner.account_reps.blank?
+        .widget
+          %h2.h6= t :account_rep, :scope => :home
+          - current_user.channel_partner.account_reps.each do |account_rep|
+            = render 'rep_card', :account_rep => account_rep
+      - unless @support_links.blank?
+        .widget
+          %h2.h6= t :support, :scope => :home
+          %ul.support_links
+            - @support_links.each do |link|
+              %li
+                %a{href: link.url, target: "_blank"}= link.label
+        - #since the marketplace url is used here, this section will never be blank?
+        .widget
+          %h2.h6= t :links, :scope => :home
+          %ul.custom_links
+            %li= link_to "Your Marketplace", marketplace_url
+            - @general_links.each do |link|
+              %li
+                %a{href: link.url, target: "_blank"}= link.label
+- if false
+  .middle-col
+    .updated_content
+      %h2.h6= @updates[:title]
+      %ul
+        - @updates[:data].reverse.each do |update|
+          - link = update.class.to_s.downcase == "page" ? update.permalink : update
+          %li
+            = link_to truncate_html(format_update_item(update), :length => 75, :omission => '...'), link, {:class => "icons-#{update.class.to_s.downcase}"}
+            = raw datetime_to_date update.updated_at, true

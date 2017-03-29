@@ -1,0 +1,3 @@
+class ChannelPartnersController < ApplicationController
+
+end

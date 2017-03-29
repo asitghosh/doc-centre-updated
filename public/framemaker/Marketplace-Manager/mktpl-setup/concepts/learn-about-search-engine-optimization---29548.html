@@ -1,0 +1,268 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1831831"></a><a name="29548"></a>Learn about search engine optimization</h3>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1836263"></a>You can influence how search engines index your marketplace, how they summarize it, and how they rank it when they return their responses to search queries. Topics in this section explain what’s possible.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1836265"></a><a href="/fm/83600" class="XRef"><span class="EH-EmphasisHeavy">
+Understand marketplace metadata</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1836266"></a><a href="/fm/10417" class="XRef"><span class="EH-EmphasisHeavy">
+Understand robots.txt</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1836248"></a><a name="83600"></a>Understand marketplace metadata</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1831832"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1831833"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1978073"></a>Search engines use a website’s <code class="S-Sample">
+&lt;meta description&gt;</code>
+ blurb to summarize its value and purpose in site listings, and use its <code class="S-Sample">
+&lt;meta keywords&gt;</code>
+ to sort the returned URLs in their responses to various queries. </p>
+<p class="B1-Body1">
+<a name="pgfId-1981613"></a>You can edit these values for your marketplace.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1980595"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1980627"></a><a href="/fm/42478" class="XRef"><span class="EH-EmphasisHeavy">
+Work with marketplace metadata</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1832348"></a><a name="10417"></a>Understand robots.txt</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1832349"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1832350"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1817807"></a>Search engine webcrawlers use a website’s <code class="S-Sample">
+robots.txt</code>
+ file to learn which parts of a site should be indexed and which parts should not. You can edit the <code class="S-Sample">
+robots.txt</code>
+ file for your marketplace. Its logic should be parallel with these examples:</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-2840925"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Replace <code class="S-Sample">
+{spider_name*}</code>
+ in these examples with the actual name of the search engine spider whose behavior you mean to constrain, such as <code class="S-Sample">
+googlebot</code>
+, <code class="S-Sample">
+bingbot</code>
+, or <code class="S-Sample">
+slurp</code>.</p>
+<table>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981850"></a><span class="EI-EmphasisItalic">
+All spiders can index everything</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1982017"></a><code class="S-Sample">
+User-agent: *</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1981852"></a><code class="S-Sample">
+Allow: /</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981854"></a><span class="EI-EmphasisItalic">
+All spiders are forbidden to index anything</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1982324"></a><code class="S-Sample">
+User-agent: *</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1981856"></a><code class="S-Sample">
+Disallow: /</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981858"></a><span class="EI-EmphasisItalic">
+All spiders are forbidden to index specified subdirectories</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1982456"></a><code class="S-Sample">
+User-agent: *</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1982457"></a><code class="S-Sample">
+Disallow: /example1/</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1982458"></a><code class="S-Sample">
+Disallow: /example2/</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1981860"></a><code class="S-Sample">
+Disallow: /example3/</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981862"></a><span class="EI-EmphasisItalic">
+All spiders are forbidden to index a specified file</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1982681"></a><code class="S-Sample">
+User-agent: *</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1981864"></a><code class="S-Sample">
+Disallow: /example/examplefile.html</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981866"></a><span class="EI-EmphasisItalic">
+A specified spider is forbidden to index anything</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1982873"></a><code class="S-Sample">
+User-agent: {spider_name}</code>
+  </p>
+<p class="CB-CellBody">
+<a name="pgfId-1982874"></a><code class="S-Sample">
+Disallow: /</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981870"></a><span class="EI-EmphasisItalic">
+Two specified spiders are forbidden to index a specified subdirectory</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1981872"></a><code class="S-Sample">
+User-agent: {spider_name1}</code>
+  </p>
+<p class="CB-CellBody">
+<a name="pgfId-1983247"></a><code class="S-Sample">
+User-agent: {spider_name2}</code>
+  </p>
+<p class="CB-CellBody">
+<a name="pgfId-1983272"></a><code class="S-Sample">
+Disallow: /example/</code>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1981874"></a><span class="EI-EmphasisItalic">
+Differing permissions for different spiders</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1983546"></a><code class="S-Sample">
+User-agent: {spider_name1}</code>
+  </p>
+<p class="CB-CellBody">
+<a name="pgfId-1983547"></a><code class="S-Sample">
+Allow: /example1/</code>
+</p>
+<p class="CB-CellBody">
+<a name="pgfId-1983551"></a> </p>
+<p class="CB-CellBody">
+<a name="pgfId-1983552"></a><code class="S-Sample">
+User-agent: {spider_name2}</code>
+  </p>
+<p class="CB-CellBody">
+<a name="pgfId-1981876"></a><code class="S-Sample">
+Disallow: /example2/</code>
+</p>
+</td>
+</tr>
+</table>
+<p class="BL-BlockLabel">
+<a name="pgfId-1982138"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1982164"></a><a href="/fm/17597" class="XRef"><span class="EH-EmphasisHeavy">
+Edit robots.txt</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

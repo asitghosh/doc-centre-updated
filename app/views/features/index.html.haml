@@ -1,0 +1,14 @@
+.container
+  = render "feature_head"
+  - if @features.empty?
+    %h2.h3.features_missing= t :missing, :scope => :features
+  - else
+    %ul.list-reset.item_list
+      - @features.each do |feature|
+        %li
+          %h2.h3
+            = link_to feature.title, feature_path(feature)
+          %time.small-gray-caps= feature.release ? feature.release.release_date.to_s(:long_ordinal) : "Release Date Unknown"
+          .feature_summary
+            = raw feature.summary
+          = link_to "View Upcoming Feature", feature_path(feature), :class => "icons-small-blue-arrow no_decoration all-caps"

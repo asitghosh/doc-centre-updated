@@ -1,0 +1,22 @@
+%section.container.twelve-three
+  %header
+    %h1.h2= t :headline, :scope => :updates
+  .left-col
+    %ul.list-reset.item_list
+      - @updates.each do |update|
+        %li.spy_this{:id => "v#{update.title.parameterize}"}
+          %header.page-head
+            %time.small-gray-caps= update.release_date.to_s(:long_ordinal)
+            %h2.channel_color
+              Version #{update.title}
+          .update_content
+            = raw update.content
+  %aside.right-col
+    .fix_wrap
+      %h2.h6.all-caps Contents
+      %nav#jumpnav
+        %ul.side-nav.jumpnav.nav.right
+          - @updates.each do |update|
+            %li
+              %a.channel_color_border{:href => "#v#{update.title.parameterize}"}
+                v#{update.title}, released #{update.release_date.to_s(:long_ordinal)}

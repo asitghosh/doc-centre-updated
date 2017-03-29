@@ -1,0 +1,7 @@
+<ol class="pagelist sortable" data-sort-url="<%= sort_pages_path() %>">
+  <% @public_pages.each do |api| %>
+    <% if api.parent_id == 0 || api.parent_id == nil %>
+      <%= render "listitem", :api => api %>
+    <% end %>
+  <% end %>
+</ol>

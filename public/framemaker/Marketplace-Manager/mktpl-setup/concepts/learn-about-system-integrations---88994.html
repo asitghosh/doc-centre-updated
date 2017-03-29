@@ -1,0 +1,440 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1824281"></a><a name="88994"></a>Learn about system integrations</h3>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1847035"></a>Topics in this section cover the following subjects.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1847036"></a><a href="/fm/43663" class="XRef"><span class="EH-EmphasisHeavy">
+Understand API encryption key pair editing</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1847037"></a><a href="/fm/42483" class="XRef"><span class="EH-EmphasisHeavy">
+Understand data migration</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1847040"></a><a href="/fm/92400" class="XRef"><span class="EH-EmphasisHeavy">
+Understand webhooks</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1824906"></a><a name="43663"></a>Understand API encryption key pair editing</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1847262"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1847263"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Integration | <span class="EH-EmphasisHeavy">
+API Clients &gt; Create API Client</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1897483"></a>An API system integration to your AppDirect-powered marketplace is possible when each system that underlies the outside service has its own, unique key pair for data encryption purposes. </p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-2841965"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ The initiating party — the one that sends a request — is considered the API client. Do not confuse the API client with his or her REST client software for composing and sending API requests.</p>
+<p class="B1-Body1">
+<a name="pgfId-2842276"></a>You can generate, edit, regenerate, or revoke any number of these key pairs upon demand and associate them with the necessary permissions, authentication types, and return URLs for integrated systems. Basic key management is essential to maintaining the security of your API integrations.</p>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-1918475"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ You can read our authentication documentation for API developers at <code class="S-Sample">
+htps://docs.appdirect.com/marketplace-manager/apis/introduction/authentication</code>.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1918268"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1918272"></a><a href="/fm/98861" class="XRef"><span class="EH-EmphasisHeavy">
+Work with encryption key pairs for API service and system integrations</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1825169"></a><a name="42483"></a>Understand data migration</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1847318"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1847319"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Integration | <span class="EH-EmphasisHeavy">
+Migration &gt; Create Dataset</span>
+</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1956841"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Before you can migrate data, you must pay for AppDirect migration service. Otherwise, all UI elements for the data migration feature set are turned Off.</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1825170"></a>You can upload well-formed datasets and merge them into the database tables that describe various entities, relationships, and states in your marketplace. The supported data set types are:</p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919676"></a>Users</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1918928"></a>Companies</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1918945"></a>Memberships</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1918964"></a>Reseller Associations</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1918993"></a>Discount Codes</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919015"></a>Company Entitlements (meaning, subscription states) </li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919043"></a>User Entitlements (meaning, seat assignments) </li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919266"></a>Microsoft Customers</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919293"></a>Microsoft Subscriptions</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1919324"></a>Microsoft Domains</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2463215"></a>Google Accounts<br>
+</li>
+</ul>
+</ul>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-1919198"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ To learn about the conventions that define what is valid or not valid in a migration data set, see the read-only sample spreadsheet in the Upload Files area <span class="EH-EmphasisHeavy">
+at Manage &gt; Channel &gt; Settings &gt; </span>
+Integration | <span class="EH-EmphasisHeavy">
+Migration &gt; </span>
+[<span class="EH-EmphasisHeavy">
+Create Dataset</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Download</span>
+]. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1918820"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1918824"></a><a href="/fm/81670" class="XRef"><span class="EH-EmphasisHeavy">
+Work with migration data</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1825661"></a><a name="92400"></a>Understand webhooks</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1847352"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1847353"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Integration | <span class="EH-EmphasisHeavy">
+Webhooks</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1825663"></a>While APIs wait for, and respond to, client requests before transmitting a given dataset, webhooks transmit data to their clients in something close to real time, bypassing the requirement for client requests. Specified client systems receive refreshed data on configured endpoint URLs as soon as events on the host system create, change, or delete records of a given type.</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1965536"></a>You can configure your AppDirect-powered marketplace to:</p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2855023"></a>Share information with its webhook client systems following the creation, modification, or deletion of any company, discount, invoice, membership (company-user association), order, payment, payment Instrument, quote, reseller, sales lead, sales opportunity, subscription, or user.</li>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1966229"></a>Authenticate itself to its webhook client systems via OAuth 2, via tokens, or not at all.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2858123"></a>Notification body</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2858405"></a>Webhook notifications include the expected resource payload but also show a link to the API URL where you can submit an HTTP GET request to receive the same <code class="S-Sample">
+content</code>
+ object payload. For example, your marketplace could send a notification like the following when a sales opportunity is created:</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858124"></a><code class="S-Sample">
+{</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858125"></a><code class="S-Sample">
+ "uuid": "8241cbe0-40da-4673-91e5-abf16c063d86",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858126"></a><code class="S-Sample">
+ "timestamp": 1432311484,</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858127"></a><code class="S-Sample">
+ "resource": {</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858128"></a><code class="S-Sample">
+  "type": "SALES_OPPORTUNITY",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858129"></a><code class="S-Sample">
+  "uuid": "0729adc2-fc66-40ac-a59d-9a3f81dd4c69",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858130"></a><code class="S-Sample">
+  "url": "http://api.example.com/api/v2/crm/reseller/opportunity/0729adc2-fc66-40ac-a59d-9a3f81dd4c69</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858131"></a><code class="S-Sample">
+  "content": {</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858132"></a><code class="S-Sample">
+   "uuid": "0729adc2-fc66-40ac-a59d-9a3f81dd4c69",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858133"></a><code class="S-Sample">
+   "externalIdentifier": "some_external_id",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858134"></a><code class="S-Sample">...</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858135"></a><code class="S-Sample">
+  }</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858136"></a><code class="S-Sample">
+ },</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858137"></a><code class="S-Sample">
+ "resourceAction": "CREATED",</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2858138"></a><code class="S-Sample">
+}</code>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2858139"></a>Consider the following.</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2858140"></a>Each notification includes a <code class="S-Sample">
+"content"</code>
+ object as a child of the <code class="S-Sample">
+"resource"</code>
+ element. Its value is identical to what you would receive in response to an HTTP GET call to the value of the <code class="S-Sample">
+"url"</code>
+ element.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2858141"></a>Each notification <code class="S-Sample">
+"type"</code>
+ — such as <code class="S-Sample">
+SALES_OPPORTUNITY</code>
+ or <code class="S-Sample">
+RESELLER_REGISTRANT</code>
+ — contains a <code class="S-Sample">
+"content"</code>
+ object that is relevant to it. Correct interpretation of a <code class="S-Sample">
+"content"</code>
+ object’s value can occur only in relation to the same notification’s  <code class="S-Sample">
+"type"</code>.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2858333"></a>User entity notification triggers</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2858449"></a>Webhook notifications for the <code class="S-Sample">
+user</code>
+ entity are triggered by changes to any of the following of its direct attributes.</p>
+<table>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858769"></a>boolean</p>
+</td>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859256"></a>activated</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859434"></a>corporateAdmin</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859409"></a>deleted</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859470"></a>impersonateRequested</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859443"></a>invitationRequired</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859180"></a>layoutDesigner</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859499"></a>remindedToConfirm</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859364"></a>showChannelGettingStarted</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859313"></a>showGettingStarted</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859342"></a>showMarketing</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859286"></a>showSetupGuide</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859224"></a>tester</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858773"></a>billingCycleFrequency</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2858775"></a>billingCycleFrequency</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858777"></a>currency</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2858779"></a>currency</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858781"></a>date</p>
+</td>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2858783"></a>activationDate</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859627"></a>impersonateAuthorizationExpiration null</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859674"></a>lastPasswordReminderDatepasswordLastChange</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2859537"></a>integer</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2859539"></a>billingCycleDay</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2859548"></a>locale</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2859550"></a>locale</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858785"></a>string</p>
+</td>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2858787"></a>activationToken</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859964"></a>emailAddress</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859745"></a>externalIdentifier</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859794"></a>firstName</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859811"></a>idmSessionId</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2860039"></a>lastName</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859827"></a>ldapId</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2860081"></a>partner</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859760"></a>profilePic</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859868"></a>profileTeamPic</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859890"></a>registrationCode</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2859941"></a>username</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858789"></a>title</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2858791"></a>title</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="CH2-CellHeading2">
+<a name="pgfId-2858793"></a>user</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="B1-Body1">
+<a name="pgfId-2858795"></a>salesRep</p>
+</td>
+</tr>
+</table>
+<p class="BL-BlockLabel">
+<a name="pgfId-1967355"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1920248"></a><a href="/fm/65119" class="XRef"><span class="EH-EmphasisHeavy">
+Work with webhooks</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1827093"></a><a name="24357"></a>Understand Google Analytics</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1828889"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1827094"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-2338006"></a>Your marketplace can send user activity data for processing in and by Google Analytics. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-2338187"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2338191"></a><a href="/fm/37525" class="XRef"><span class="EH-EmphasisHeavy">
+Work with Google Analytics</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

@@ -1,0 +1,40 @@
+%div{:class => "welcome_intro #{"hidden" unless @welcome} "}
+  .container
+    %menu.welcome
+      %ul
+        %li.channel_color_background{ :class => ("disabled" unless current_user.channel_partner.able_to_see_user_guides?) }
+          %a.no_decoration{:href => "/guides"}
+            %figure
+              %span.user-guide= t :headline, :scope  => :pages
+              %figcaption
+                %h3= t :headline, :scope  => :pages
+          %p.tooltip= t :user_guide, :scope => :home
+        %li.channel_color_background{ :class => ("disabled" unless current_user.channel_partner.able_to_see_faqs?) }
+          %a.no_decoration{:href => "/faqs"}
+            %figure
+              %span.faqs FAQs
+              %figcaption
+                %h3 FAQs
+          %p.tooltip= t :faqs, :scope => :home
+        %li.channel_color_background{ :class => ("disabled" unless current_user.channel_partner.able_to_see_releases?) }
+          %a.no_decoration{:href => "/releases"}
+            %figure
+              %span.releases Releases
+              %figcaption
+                %h3 Releases
+          %p.tooltip= t :releases, :scope => :home
+        / %li.channel_color_background
+        /   %a.no_decoration{:href => "/features"}
+        /     %figure
+        /       %span.upcoming-features Upcoming Features
+        /       %figcaption
+        /         %h3 Upcoming Features
+        /   %p.tooltip= t :upcoming_features, :scope => :home
+
+        %li.channel_color_background{ :class => ("disabled" unless current_user.channel_partner.able_to_see_roadmaps?) }
+          %a.no_decoration{:href => "/roadmaps"}
+            %figure
+              %span.roadmap Roadmap
+              %figcaption
+                %h3 Roadmap
+          %p.tooltip= t :roadmap, :scope => :home

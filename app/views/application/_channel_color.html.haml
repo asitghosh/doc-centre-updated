@@ -1,0 +1,78 @@
+:ruby
+  if current_user and current_user.channel_partner and current_user.channel_partner.color
+    color = current_user.channel_partner.color.blank? ? '#2395ff' : "##{current_user.channel_partner.color}"
+  else
+    color = '#009abf'
+  end
+  thirty = color_to(color, 30)
+  fifty = color_to(color, 50)
+
+:css
+  .channel_color{
+    color: #{color} !important;
+  }
+
+  .channel_color_hover:hover{
+    color: #{color} !important;
+  }
+
+  .channel_color_headlines h1, .channel_color_headlines h2, .channel_color_headlines h3, .channel_color_headlines h4{
+    color: #{color};
+  }
+
+  .channel_color_50{
+    color: #{fifty} !important;
+  }
+
+  .channel_color_background{
+    background-color: #{color} !important;
+  }
+
+  .channel_color_background_hover:hover:not(.unread, .loading){
+    background-color: #{color} !important;
+  }
+
+  .disabled .channel_color_background{
+    background-color: #ccc !important;
+  }
+
+  .channel_color_30_background{
+    background-color: #{thirty} !important;
+  }
+
+  .channel_color_30_background_hover:hover{
+    background-color: #{thirty} !important;
+  }
+
+  .channel_color_50_background{
+    background-color: #{fifty} !important;
+  }
+
+  .channel_color_50_background_hover:hover{
+    background-color: #{fifty} !important;
+  }
+
+  .channel_color_border{
+    border-color: #{color} !important;
+  }
+
+  .channel_color_border_hover:hover{
+    border-color: #{color} !important;
+  }
+
+  a{
+    color: #{color};
+  }
+
+  a:hover{
+    color: #{fifty};
+  }
+
+  .rbox.current:hover{
+    background-color: #{color} !important;
+  }
+
+  html .main_nav li.selected:before{
+    background-color: #{color} ;
+  }
+</style>

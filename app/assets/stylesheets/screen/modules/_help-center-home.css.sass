@@ -1,0 +1,194 @@
+.public_pages
+  .help-center-home
+    &#main
+      padding-top: 0
+    .three-up
+      padding: 50px
+      clear: both
+      overflow: auto
+      h2
+        //font-family: $black-stack
+        color: #3998bf
+        font-size: 24px
+        text-align: center
+        padding-bottom: 10px
+      img
+        display: block
+        width: 50%
+        margin: 20px auto
+      .doc-link
+        height: 550px
+        position: relative
+      .doc-link-text
+        padding-top: 25px
+        p
+          width: 70%
+          margin: 0 auto 15px auto
+
+      .col
+        +span-columns(7, 14)
+
+        &:last-of-type
+          +omega
+
+        a
+          display: block
+          text-decoration: none
+          text-align: center
+          padding: 25px
+          border: 1px solid #ccc
+          border-radius: 4px
+          button, a, p
+            opacity: 1
+            -webkit-transition: opacity .2s, -webkit-transform .2s
+            transition: opacity .2s, transform 2s
+          &:hover
+            border-color: #ddd
+            box-shadow: 0 0 15px #eee
+            button, a, p, span
+              opacity: .8
+          p
+            color: #565656
+            font-size: 14px
+        .cta
+          margin-top: 18px
+          border-top: 1px solid #ccc
+          h3
+            font-size: 16px
+            margin: 0 0 10px 0
+
+
+    .get-started
+      clear: both
+      overflow: auto
+      margin: 0 50px
+      background: #e9e9e9
+      border: 1px solid #ccc
+      border-radius: 4px
+      position: relative
+      .col
+        width: 68%
+        float: left
+        display: inline
+        background: #fff
+        border-right: 1px solid #ccc
+        h3
+          margin: 15px 0 0 0
+          padding-left: 15px
+
+      .promo
+        +span-columns(5, 15)
+        +omega
+        overflow: auto
+        height: 100%
+        background: transparent
+        .button
+          padding: 15px 30px
+          text-transform: uppercase
+          border-radius: 4px
+          color: #fff
+          background: #3a99c1
+          border: 1px solid #2b7596
+          position: absolute
+          top: 30%
+          right: 65px
+          font-family: $black-stack
+          text-decoration: none
+          opacity: 1
+          transition: opacity .25s ease-in-out
+          -moz-transition: opacity .25s ease-in-out
+          -webkit-transition: opacity .25s ease-in-out
+          &:after
+            content: ""
+            //background: rgba(255, 255, 255, .65)
+            border: 5px solid rgba(255, 255, 255, .65)
+            position: absolute
+            border-radius: 6px
+            right: -5px
+            left: -5px
+            top: -5px
+            bottom: -5px
+          &:hover
+            opacity: .75
+.nav_column
+  display: none
+.section-title
+  border-bottom: 1px solid #565656
+
+.chapter-grid
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -webkit-align-content: flex-start
+  -ms-flex-line-pack: start
+  align-content: flex-start
+  -webkit-align-items: flex-start
+  -ms-flex-align: start
+  align-items: flex-start
+  margin-bottom: 60px
+
+.chapter-grid-entry
+  display: inline-block
+  height: 250px
+  width: 100%
+  text-align: center
+  margin: 30px 0 0 0
+  border: 1px solid #ccc
+  position: relative
+  text-decoration: none
+  background: #f5f5f5
+  padding: 15px
+  &:hover
+    border-color: #ddd
+    box-shadow: 0 0 15px #eee
+    background: #f8f8f8
+  @include at-breakpoint(31.25em)
+    width: 48%
+  @include at-breakpoint(56.25em)
+    width: 31%
+  
+.chapter-grid-entry-title
+  width: 100%
+  font-family: $bold-stack
+  color: #6d6d6d
+  font-size: 18px
+  text-transform: uppercase
+  text-align: center
+  margin-top: 15px
+
+.chapter-grid-entry-summary
+  font-size: 16px
+  color: #6d6d6d
+  padding: 0 30px
+  font-family: $accent-stack
+
+.chapter-grid-entry-image
+  max-width: 30%
+  margin-top: 5px
+  -webkit-transition: opacity .2s, -webkit-transform .2s
+  transition: opacity .2s, transform 2s
+
+.module-list
+  list-style: none
+  margin: 0
+  padding: 0 15px
+  li 
+    padding: 0
+    a
+      display: block
+      text-decoration: none
+      font-size: 14px
+      border-top: 1px solid #ccc
+      padding: 15px 0
+  li:first-of-type
+    a
+      border-top: none

@@ -1,0 +1,27 @@
+%section#fl_container.public_pages.three-nine-three.fl_container.fixed{ :class => "#{'right_nav_hidden' if @subsection_headings.empty?}", :data => { :object_id => @support.id }}
+  .fluid_wrapper.fixed{ :class => "#{request.path.split('/')[2]} #{request.path.gsub(".html", "").split("/")[3]}" }
+    .left-col.no-pad
+      %ul.side.page_nav.depth-0.public_nav
+        = render "leftnav", :print => true, :pages => @navigation
+    %article.middle-col.channel_color_headlines
+      = render "messages", fluid: true
+      %header.support-head
+        %time.small-gray-caps
+          Last Updated #{datetime_to_date @support.updated_at}
+        %h2.h1.channel_color= @support.title
+        - unless @support.is_root?
+          %ul.breadcrumbs
+            - @support.ancestors.each do |ancestor|
+              %li= link_to(ancestor.title, ancestor.permalink)
+            %li= @support.title
+
+        = raw @support.body
+        - if @support.passages.present?
+          - @support.passages.each do |passage|
+            - if passage.content.present?
+              .content-passage
+                = raw passage.output
+            - else
+              .remote-content-passage
+                = raw passage.output
+

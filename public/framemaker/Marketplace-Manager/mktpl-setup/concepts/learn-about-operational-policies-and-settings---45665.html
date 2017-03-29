@@ -1,0 +1,190 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1861555"></a><a name="45665"></a>Learn about operational policies and settings</h3>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1861726"></a>Topics in this section introduce operational policies and settings — the directives that cover system access, security, and transaction processing.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1861727"></a><a href="/fm/26324" class="XRef"><span class="EH-EmphasisHeavy">
+Understand stealth mode</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1861728"></a><a href="/fm/70337" class="XRef"><span class="EH-EmphasisHeavy">
+Understand OpenID trusted realm editing</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1861729"></a><a href="/fm/22582" class="XRef"><span class="EH-EmphasisHeavy">
+Understand payment gateway editing</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1861898"></a><a href="/fm/84369" class="XRef"><span class="EH-EmphasisHeavy">
+Understand the importance of password policy</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1861921"></a><a href="/fm/32108" class="XRef"><span class="EH-EmphasisHeavy">
+Understand the sitewide default user role setting</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1827411"></a><a name="26324"></a>Understand stealth mode</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1829239"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1827412"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality &gt; </span>
+Marketplace Password | <span class="EH-EmphasisHeavy">
+Password Protected Marketplace</span>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1817728"></a>You can configure your marketplace to deny all requests from anyone who does not provide valid sitewide credentials when prompted. This feature restricts access while you configure and test marketplace settings. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1910773"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1910807"></a><a href="/fm/40853" class="XRef"><span class="EH-EmphasisHeavy">
+Configure stealth mode</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1831884"></a><a name="70337"></a>Understand OpenID trusted realm editing</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1831885"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1831886"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality &gt; </span>
+Security | <span class="EH-EmphasisHeavy">
+Add an OpenID Trusted Realm</span>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1885365"></a>You can configure OpenID authorization to apply implicitly and automatically to incoming requests from trusted realms. Your marketplace server then becomes an OpenID identity provider (IdP) to requests from white-listed URLs.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1911927"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1911849"></a><a href="/fm/59044" class="XRef"><span class="EH-EmphasisHeavy">
+Configure OpenID IdP service to your trusted realms</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1839091"></a><a name="22582"></a>Understand payment gateway editing</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1845934"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1845935"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Billing Settings | <span class="EH-EmphasisHeavy">
+Billing Functionality &gt; </span>
+Billing Settings | <span class="EH-EmphasisHeavy">
+Payment Gateway</span>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1887593"></a>When you contracted with a financial services firm to authorize and process all incoming payments for your marketplace, that firm issued text strings to you, which your marketplace must return exactly to the firm’s payment gateway during each transaction. </p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1913871"></a>AppDirect has already configured your marketplace to return these mandatory values correctly. However, you can edit them if they change for any reason.</p>
+<p class="Sp-SignpostParagraph
+ caution_banner">
+<a name="pgfId-1912589"></a><span class="SpF-SignpostFlag">
+ CAUTION: </span>
+ Do not change payment gateway entries frivolously. Doing so can cause billing operations to fail. This, in turn, can lead vendors to suspend user access to their products. Such disruptions can jeopardize your organization’s reputation, partnerships, and revenue.</p>
+<p class="B1-Body1">
+<a name="pgfId-2844723"></a>Supported payment gateways include <span class="EH-EmphasisHeavy">
+Authorize.net</span>
+, <span class="EH-EmphasisHeavy">
+Beanstream</span>
+, <span class="EH-EmphasisHeavy">
+BlueSnap</span>
+, <span class="EH-EmphasisHeavy">
+PayPal Payflow Pro</span>
+, and <span class="EH-EmphasisHeavy">
+Worldpay</span>. See <code class="S-Sample">
+https://docs.appdirect.com/developer/billing/third-party-integrations/paym,ent gateways</code>.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1912009"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1912013"></a><a href="/fm/74736" class="XRef"><span class="EH-EmphasisHeavy">
+Reconfigure payment gateway settings, as needed</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1836309"></a><a name="84369"></a>Understand the importance of password policy</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1830609"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1830610"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality &gt; </span>
+Security | <span class="EH-EmphasisHeavy">
+Password Policy</span>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1818943"></a>User account passwords help to protect your customers against data theft, social engineering, and financial fraud, while also helping to preserve your own organization’s reputation as a provider of trustworthy services.</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1915502"></a>You must choose and apply a password security policy from among three predefined options. These alternatives differ in their rules for password length and complexity.</p>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-1915729"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ We recommend that you always choose and apply the most secure policy. We recommend this because strong passwords are objectively better than weak ones at doing what a password is meant to do. Strong passwords are more effective than weak ones at preventing fraud and theft. Strong passwords are more effective than weak ones at protecting intangible assets, including your organization’s reputation and brand equity. Also, strong passwords are less vulnerable than weak ones to social engineering, dictionary attacks, and brute force attacks. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1914958"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1914962"></a><a href="/fm/32971" class="XRef"><span class="EH-EmphasisHeavy">
+Set a sitewide password security policy</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H3-Head3">
+<a name="pgfId-1830298"></a><a name="32108"></a>Understand the sitewide default user role setting</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1830299"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1830300"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality &gt; </span>
+Customer Roles | <span class="EH-EmphasisHeavy">
+User’s Default Role</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1831459"></a>You can set which user role is preselected on the page where company administrators choose a user role to grant by default to their respective companies’ associated users. </p>
+<p class="B1-Body1">
+<a name="pgfId-1917110"></a>Although you set which option is preselected for company administrators, each one of them is free to choose a different option than one that you set to be their default. Furthermore, they are free to assign different roles to their users than whichever role is their respective companies’ default.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1916638"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1916234"></a><a href="/fm/91646" class="XRef"><span class="EH-EmphasisHeavy">
+Set sitewide default user role assignments</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

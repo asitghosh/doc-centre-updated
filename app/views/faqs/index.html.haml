@@ -1,0 +1,27 @@
+%section.container.three-nine-three
+  %header
+    %h1.h2= t :headline, :scope => :faqs
+    = render 'search_header'
+  = render 'leftnav'
+  %article.middle-col.channel_color_headlines
+    - @faq_nav.each do |cat|
+      %h3.channel_color
+        %a{ :href => "/faqs/#{cat.name.parameterize}" }
+          = cat.name
+      - if cat.description.present?
+        %p= cat.description.description
+
+    -# %ul.list-reset.item_list
+    -#   - @faqs.each do |faq|
+    -#     %li.spy_this{:id => faq.question.parameterize}
+    -#       %h3.channel_color= faq.question
+    -#       .answer
+    -#         = raw faq.answer
+  %aside.right-col
+    -# .fix_wrap
+    -#   %h2.h6.all-caps Contents
+    -#   %nav#jumpnav
+    -#     %ul.side-nav.jumpnav.nav.right
+    -#       - @faqs.each do |faq|
+    -#         %li
+    -#           %a.channel_color_border{:href => "##{faq.question.parameterize}"}= faq.question

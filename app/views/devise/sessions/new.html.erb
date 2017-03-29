@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="login_block">
+    <div class="wrap">
+      <h1>Documentation Center</h1>
+        <%- if @current_channel_partner && !@current_channel_partner.is_multitenant?%>
+          <%= image_tag(@current_channel_partner.logo)%>
+          <%- Devise.omniauth_providers.each do |provider| %>
+            <%= link_to "Sign in with #{@current_channel_partner.name}", omniauth_authorize_path(User, provider), :class => "after-icon-right-arrow no_decoration all-caps", :id => "login_link", :style => "color: ##{@current_channel_partner.color}" %>
+          <% end %>
+        <%- elsif @current_channel_partner && @current_channel_partner.is_multitenant? %>
+          <h3>Please login through the "Documentation Center" tile on your MyApps page</h3>
+        <%- else %>
+          <%= form_for(resource, as: resource_name, url: login_proxy_path) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+            <div class="actions">
+              <%= f.submit "Log in" %>
+            </div>
+          <% end %>
+        <%- end %>
+    </div>
+  </div>
+        <a href="http://appdirect.com" class="copyright no_decoration no_icon">&copy; <%= Time.now.year %> AppDirect, Inc.</a>
+</div>

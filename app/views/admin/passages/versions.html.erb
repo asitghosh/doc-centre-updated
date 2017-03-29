@@ -1,0 +1,11 @@
+<% @passage.versions.reverse_each do |v, i| %>
+<div class="version">
+  <%= render "admin/shared/vheading", :v => v %>
+  <% if v.index + 1  == @passage.versions.length %>
+    <strong>Current Version</strong>
+  <% else %>
+    <%= link_to "Rollback to this version", passage_rollback_path(:version => (v.id)), :method => :post %>
+  <% end %>
+  <%= render "admin/shared/diff", :v => v %>
+</div>
+<% end %>

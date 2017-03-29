@@ -1,0 +1,20 @@
+f.inputs "Information for specific channel partners" do
+  f.has_many :channel_specific_contents do |sform|
+    sform.input :whitelist, :as => :select, :label => "Partner List Type", :collection => options_for_select([["Whitelist", "true"], ["Blacklist", "false"]], sform.object.whitelist), :include_blank => false
+    sform.input :channel_partners, :input_html => { :class => "chosen-input",  :style => "width: 700px;"}
+    # sform.input :tag_list,
+    #   label: "Tags",
+    #   input_html: {
+    #     data: {
+    #       placeholder: "Enter tags",
+    #       saved: sform.object.tags.map{|t| {id: t.name, name: t.name}}.to_json,
+    #       url: autocomplete_tags_path },
+    #     class: 'tagselect'
+    #   },
+    #   hint: "if you accidentally delete a tag, save the page and re-edit to add it back."
+    sform.input :content, :as => :rich, :config => { :width => '76%', :height => '400px' }
+    sform.input :_destroy, :as => :boolean
+
+  end
+
+end

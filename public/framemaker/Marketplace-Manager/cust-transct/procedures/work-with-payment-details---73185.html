@@ -1,0 +1,337 @@
+<div class="procedure">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1405716"></a><a name="73185"></a>Work with payment details</h3>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1710718"></a>You can explore the fine-grained details of any payment, in isolation from all other payments. </p>
+<p class="Sp2-SignpostParagraph2
+ note_banner">
+<a name="pgfId-1799854"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Although a UI toggle above the Payments table labels its two view states Overview and Details (<img src="/images/chadm-cust-transct-62.jpg" align="BASELINE" alt="">
+), the latter view is not what we mean in this guide when we mention “payment details.” Instead, we mean the modal popup that opens — which describes only one payment record in detail — when you click through one row in the Payments table, regardless of that table’s toggled view state when you click it. <br>
+<br>
+Relative to your payments ledger: <br>
+<br>
+  •   The Overview toggle exposes seven values per payment record.<br>
+  •   The Details toggle exposes 11 values. <br>
+  •   These two views share five of their values in common. So:<br>
+<br>
+         <span class="EH-EmphasisHeavy">
+–</span>
+   Two values per record are unique to the Overview view.<br>
+         <span class="EH-EmphasisHeavy">
+–</span>
+   Six values per record are unique to the Details view.<br>
+<br>
+Choose whichever view exposes more values that matter to you.<br>
+<br>
+  •   Values that both views expose are <span class="EH-EmphasisHeavy">
+Payment ID</span>
+, <span class="EH-EmphasisHeavy">
+Date</span>
+, <span class="EH-EmphasisHeavy">
+Customer</span>
+, <span class="EH-EmphasisHeavy">
+Vendor</span>
+, and <span class="EH-EmphasisHeavy">
+Total</span>. <br>
+  •   Unique values in the Overview view are <span class="EH-EmphasisHeavy">
+Payment Method</span>
+ and <span class="EH-EmphasisHeavy">
+Payment Result</span>.<br>
+  •   Unique values in the Details view are <span class="EH-EmphasisHeavy">
+Payout Status</span>
+, <span class="EH-EmphasisHeavy">
+Invoice ID</span>
+, <span class="EH-EmphasisHeavy">
+Product</span>
+, <span class="EH-EmphasisHeavy">
+Edition</span>
+, <span class="EH-EmphasisHeavy">
+Description</span>
+, <br>
+       and <span class="EH-EmphasisHeavy">
+Vendor Share</span>.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1406107"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1406108"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Payments &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+payment</span>
+}</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1800902"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1800903"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1406111"></a>Procedure</p>
+<ul class="step-list">
+<ul class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1682821"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1406113"></a>	Click past Billing | <span class="EH-EmphasisHeavy">
+Payments</span>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-1711869"></a>	Click a Payments table row whose underlying record you want to review.</span></p>
+</ul>
+</ul>
+<p class="SB-StepBody">
+<a name="pgfId-1683473"></a>A modal popup opens, which describes the corresponding payment in full.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1684037"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Do any of the following.</span></p>
+<table>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711108"></a><span class="EI-EmphasisItalic">
+Do you want to know what billed party remitted the payment?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1711110"></a>Check who remitted the payment</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1711111"></a>a.	Look in the page heading’s far-left column, under the marketplace provider logo.</li>
+</ol>
+</ol>
+</ol>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711113"></a><span class="EI-EmphasisItalic">
+Do you want to see the payment processing date?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1712035"></a>Check when the payment was processed</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1712036"></a>a.	Look in the page heading’s far-right column, next to the Payment date label.</li>
+</ol>
+</ol>
+</ol>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711411"></a><span class="EI-EmphasisItalic">
+Do you want to see exactly what amount was paid?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1711415"></a>Check what amount was paid</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1712009"></a>a.	Look in the page heading’s far-right column, next to the Total Paid label.</li>
+</ol>
+</ol>
+</ol>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711123"></a><span class="EI-EmphasisItalic">
+Do you want to know which invoices the payment covers?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1711125"></a>Check which invoices applied the payment</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1712023"></a>a.	Look all throughout the Invoice ID column in the Invoices Paid table.</li>
+</ol>
+</ol>
+</ol>
+<p class="Sp2-SignpostParagraph2 note_banner block-element">
+<a name="pgfId-1712831"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ When the Invoices Paid table contains more records than the Invoice Details modal can render all together at once, your marketplace causes the table to span multiple pages. In this case, you can use pagination controls under the table to navigate from one page to another. Each such page contains additional rows, and each row cites an invoice (in the Invoice ID column) that applied some part of the modal’s described payment.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711128"></a><span class="EI-EmphasisItalic">
+Do you want to refund all or part of the payment?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1711130"></a>Refund all or part of a disputed or erroneous payment</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1711131"></a>a.	Click <span class="EH-EmphasisHeavy">
+Refund Payment</span>
+ in the page heading’s far-right column.</li>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1713429"></a>The Refund Payment modal opens.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1713427"></a>b.	Check each line item that should be refunded.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1714203"></a>You must check at least one line item.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1713534"></a>c.	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Enter an explanation for the refund.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1713595"></a>Any explanation that you enter is then visible on all UI renderings of the corresponding payment record.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1713734"></a>d.	Click <span class="EH-EmphasisHeavy">
+Refund</span>.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1713761"></a>The Refund Payment modal closes.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1711136"></a><span class="EI-EmphasisItalic">
+Do you want to make note of a refund that you already issued outside of the AppDirect platform?</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CAD-CellAreaDivider">
+<a name="pgfId-1712038"></a>Save a notation that payment occurred outside your marketplace</p>
+<ol>
+<ol>
+<ol>
+<li class="SSFT-StepSubFirstTable">
+<a name="pgfId-1712039"></a>a.	Click <span class="EH-EmphasisHeavy">
+Enter Manual Refund</span>
+ in the page heading’s far-right column.</li>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1713879"></a>The Enter Manual Refund modal opens.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1713919"></a>b.	Check each line item that you refunded previously, outside the AppDirect platform.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1714248"></a>You must check at least one line item.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1714042"></a>c.	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Enter an explanation for the refund.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1714043"></a>Any explanation that you enter is then visible on all UI renderings of the corresponding payment record.</p>
+<ol>
+<ol>
+<ol>
+<p class="SSNT-StepSubNextTable">
+<a name="pgfId-1714018"></a>d.	Click <span class="EH-EmphasisHeavy">
+Refund</span>.</p>
+</ol>
+</ol>
+</ol>
+<p class="SSBT-StepSubBodyTable">
+<a name="pgfId-1714078"></a>The Enter Manual Refund modal closes.</p>
+</td>
+</tr>
+</table>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1406114"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1406118"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1406119"></a><a href="/fm/37005" class="XRef"><span class="EH-EmphasisHeavy">
+Understand payment details</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

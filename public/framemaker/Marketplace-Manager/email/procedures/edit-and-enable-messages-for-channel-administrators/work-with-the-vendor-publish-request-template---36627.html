@@ -1,0 +1,278 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-2043957"></a><a name="36627"></a>Work with the Vendor Publish Request template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2045633"></a>You can edit content in the Vendor Publish Request template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2045634"></a>When the template is turned On, it sends an informational message to you, the channel administrator, whenever a vendor whose product is already integrated with your marketplace requests your approval to publish or republish it. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2045635"></a>When the template is turned Off, you are not notified of such vendor requests. Lacking your approval, the vendor cannot publish or republish the product’s latest version.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2050873"></a>Similarly, you can stop receiving the generated message by clicking its automatically injected “Unsubscribe” link. You configure the link’s phrasing globally for all message templates that incorporate it.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2045636"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-2045637"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Marketplace | <span class="EH-EmphasisHeavy">
+Vendor Publish Request</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-2045638"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2045639"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2045640"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-2045641"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-2045642"></a>	Click <span class="EH-EmphasisHeavy">
+Vendor Publish Request </span>
+in the Marketplace area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3673274"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-482.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-483.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-2045655"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+The vendor for {APPLICATION_NAME} requests your permission to publish version {VERSION_NUMBER}</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-2045656"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4012339"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196417"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196419"></a><code class="S-Sample">
+{APPROVAL_URL}</code>
+ — Inserts the navigable web address where you — as the <span class="EI-EmphasisItalic">
+channel administrator</span>
+ — can approve the vendor’s publication request.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196421"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196423"></a><code class="S-Sample">
+{COMPANY_COUNTRY}</code>
+ — Inserts the billed company’s country of record on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196425"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196427"></a><code class="S-Sample">
+{COMPANY_PHONE}</code>
+ — Inserts the billed company’s telephone number of record on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196429"></a><code class="S-Sample">
+{COMPANY_UUID}</code>
+ — Inserts the unique (on your marketplace) identifier for the billed company.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196431"></a><code class="S-Sample">
+{COMPANY_WEBSITE}</code>
+ — Inserts the billed company’s navigable web address.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196433"></a><code class="S-Sample">
+{DOWNLOADABLE_APP_ID}</code>
+ — Inserts a unique (on your marketplace) identifier for the described product, supposing that the product is downloadable and not hosted SaaS.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196435"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose channel administrators operate and manage your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196437"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196439"></a><code class="S-Sample">
+{REQUESTER_NAME}</code>
+ — Inserts the name of the registered developer who submitted the product publication request.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196441"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196443"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196445"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196447"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4196449"></a><code class="S-Sample">
+{VERSION_NUMBER}</code>
+ — Inserts the release version number, supposing that the described product is downloadable and not hosted SaaS.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-2045658"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3916664"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-484.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-485.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-486.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-2045669"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-2051806"></a><code class="S-Sample">
+Hi, {PARTNER_LABEL} administrator!</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361500"></a><code class="S-Sample">
+A registered developer on {PARTNER_STORE_LABEL}, {REQUESTER_NAME}, just requested your approval to publish the product {APPLICATION_NAME}. Please find additional details below.<br>
+</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361501"></a><span class="EH-EmphasisHeavy">
+REQUEST DETAILS</span>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361502"></a><code class="S-Sample">
+Product Name:              {APPLICATION_NAME}<br>
+Version:                   {VERSION_NUMBER}<br>
+Downloadable App ID:       {DOWNLOADABLE_APP_ID}<br>
+UUID:                      {COMPANY_UUID}<br>
+Company Name:              {COMPANY_NAME}<br>
+Website:                   {COMPANY_WEBSITE}<br>
+Phone:                     {COMPANY_PHONE}<br>
+Country:                   {COMPANY_COUNTRY}<br>
+</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361510"></a><code class="S-Sample">
+To approve this request, click the button below:</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361511"></a><span class="EH-EmphasisHeavy">
+Approve Request<br>
+</span>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361512"></a><code class="S-Sample">
+Or, you can approve the request at this URL: {APPROVAL_URL}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3362988"></a><code class="S-Sample">
+</code>
+ </p>
+<p class="SB-StepBody">
+<a name="pgfId-3361514"></a><code class="S-Sample">
+Sincerely,</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-3361482"></a><code class="S-Sample">
+{PARTNER_LABEL} Team </code>
+</p>
+<p class="Anchor">
+<a name="pgfId-2045671"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-2045672"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-3220030"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-2045673"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-2045674"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-2045678"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2045679"></a><a href="/fm/51914" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for channel administrators</span></a>
+</li>
+</ul>
+</ul>
+<p class="B1-Body1">
+<a name="pgfId-1646971"></a> </p>
+</div>
+</div>

@@ -1,0 +1,12 @@
+<% @roadmap.versions.reverse_each do |v, i| %>
+<% #next if v.event != "update" %>
+<div class="version">
+  <%= render "admin/shared/vheading", :v => v %>
+  <% if v.index + 1  == @roadmap.versions.length %>
+    <strong>Current Version</strong>
+  <% else %>
+    <%= link_to "Rollback to this version", roadmap_rollback_path(:version => v.id), :method => :post %>
+  <% end %>
+  <%= render "admin/shared/diff", :v => v %>
+</div>
+<% end %>

@@ -1,0 +1,7 @@
+- if current_user && current_user.has_role?(:appdirect_employee) && current_user.show_update == true
+    #flash_posted.flash_container
+        .container
+            %span.msg
+                = "#{t :flash, :scope => :updates}: "
+                = link_to t(:link_text, :scope => :updates), updates_path
+            %button#dismiss_updates.dismiss_flash{:href => "#"}= t(:dismiss_text, :scope => :updates)

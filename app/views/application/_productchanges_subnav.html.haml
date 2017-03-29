@@ -1,0 +1,6 @@
+.subnavigation
+	%nav.container
+		= render_navigation do |subnav|
+			- subnav.item :sub_releases, 'Release Notes', releases_path, :highlights_on => /release(s)?/, :class => 'channel_color_border', :if => Proc.new{ current_user.channel_partner.able_to_see_releases? }
+			- #subnav.item :features, 'Upcoming Features', features_path, :highlights_on => /feature(s)?/, :class => 'channel_color_border'
+			- subnav.item :sub_roadmap, 'Roadmap', "/roadmaps", :highlights_on => /roadmaps/, :class => 'channel_color_border', :if => Proc.new { current_user.channel_partner.able_to_see_roadmaps? }

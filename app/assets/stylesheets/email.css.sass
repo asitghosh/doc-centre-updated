@@ -1,0 +1,145 @@
+@import "screen/fonts/fonts"
+
+$heading-stack : "AauxNext-Regular-Web", Arial, Helvetica, sans-serif
+
+
+h1, h2, h3, h4, h5, h6, .big_number
+	font-family: $heading-stack
+
+.big_number
+	font-weight: bold
+
+.heading_note
+	margin: 0
+	padding: 0
+	font-size: 18px
+	color: #565656
+
+.parent
+	color: #565656
+	font-family: Arial, Helvetica, sans-serif
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+	table-layout: fixed
+	font-family: Arial, Helvetica, sans-serif
+	&.container
+		width: 800px
+	th
+		text-align: left
+		text-transform: uppercase
+		color: #c3c3c3
+		font-size: 12px
+	td,
+	p,
+	a
+		font-family: Arial, Helvetica, sans-serif
+	td,p
+		color: #999999
+	&.updates_table
+		thead
+			tr
+				th
+					padding: 8px 10px 8px 20px
+					border: 1px solid #bbb
+					&.border
+						border-right: 1px solid #eee
+		tbody
+			tr
+				border-bottom: 1px solid #eee
+				td
+					padding: 8px 10px 8px 20px
+					text-align: left
+					font-size: 14px
+					color: #54565b
+					&.strong
+						font-weight: bold
+.date_info
+	text-align: right
+	h5
+		font-size: 10px
+		color: #b1b1b1
+		text-transform: uppercase
+		margin: 0
+		line-height: 1
+	h6
+		line-height: 1
+		margin: 0
+		font-size: 14px
+		color: #565656
+		margin-top: 5px
+.spacer
+	width: 20px !important
+
+.summary
+	font-size: 14px
+	line-height: 22px
+
+.logo
+	max-height: 35px
+
+.appdirect_watermark
+	height: 110px
+	background: url(https://s3.amazonaws.com/doc-center/rich/rich_files/rich_files/299/original/watermark.gif) no-repeat 50% 50%
+
+.update_count
+	display: inline-block
+	color: white
+	border-radius: 3px
+	padding: 3px 8px
+	margin-left: 5px
+	vertical-align: center
+
+.indicator
+	display: inline-block
+	text-transform: uppercase
+	border-radius: 3px
+	font-weight: normal
+	background: #e9e9e9
+	padding: 6px 6px 4px 6px
+	font-size: 11px
+	color: white
+	line-height: 1
+	vertical-align: top
+	position: relative
+	overflow: hidden
+	&.updated
+		background: #d9f8d9
+		border: 1px solid #68e366
+		color: #629261
+	&.published
+		background: #d8f6f9
+		border: 1px solid #65dde6
+		color: #608f93
+	&.merged
+		background: #fff0c0
+		border: 1px solid #ffd442
+		color: #9d8b4f
+	&.hotfix
+		background: #ffbfbf
+		border: 1px solid #ff7f7f
+		color: #9d6060
+
+.footer
+	p
+		font-size: 12px
+		color: #c4c5c5
+		line-height: 18px
+		&.bigger_space
+			margin-top: 1.3em
+	strong
+		color: #b2b3b4
+		font-size: 12px
+		line-height: 16px
+		&.stronger
+			color: #909193
+	.bump_down
+		display: block
+		margin-top: 4px
+	a
+		font-size: 10px
+
+.notification
+	.update_count
+		margin-left: 0

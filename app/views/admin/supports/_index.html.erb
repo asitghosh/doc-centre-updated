@@ -1,0 +1,7 @@
+<ol class="pagelist sortable" data-sort-url="<%= sort_pages_path() %>">
+  <% @supports.each do |support| %>
+    <% if support.parent_id == 0 || support.parent_id == nil %>
+      <%= render "listitem", :support => support %>
+    <% end %>
+  <% end %>
+</ol>

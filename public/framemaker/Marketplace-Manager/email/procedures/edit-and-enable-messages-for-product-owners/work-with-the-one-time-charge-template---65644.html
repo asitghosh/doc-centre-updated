@@ -1,0 +1,231 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1474801"></a><a name="65644"></a>Work with the One-time Charge template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1476028"></a>You can edit content in the One-time Charge template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1476029"></a>When the template is turned On, it notifies a contract’s billed user that one-time charges — such as the per-unit setup fees that sometimes apply to a recurring edition or a tiered edition — have been added to his or her upcoming invoice, or that a one-time credit has been applied to the upcoming invoice. Such charges are sometimes called <span class="EI-EmphasisItalic">
+off-order charges</span>.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1476030"></a>When the template is turned Off, the billed user does not receive this formal notification. </li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476031"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1476032"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+One-time Charge</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476033"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1476034"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476035"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1476036"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1476037"></a>	Click <span class="EH-EmphasisHeavy">
+One-time Charge </span>
+in the Billing area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3659328"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-262.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-263.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1476045"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+A one-time charge of {TOTAL_PRICE} applies to order No. {ORDER_ID} on {PARTNER_STORE_LABEL}</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1476046"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4021300"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163202"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163204"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163206"></a><code class="S-Sample">
+{ORDER_ID}</code>
+ — Inserts a numeric identifier that your marketplace associates with the referenced purchase order. This identifier is unique on your marketplace, distinguishing one order from all others.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163208"></a><code class="S-Sample">
+{ORDER_REASON}</code>
+ — Inserts the vendor-entered explanation, if one was entered, for the unscheduled charge or credit.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163210"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose <span class="EI-EmphasisItalic">
+channel administrators</span>
+ operate and manage your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163212"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163214"></a><code class="S-Sample">
+{PAYMENT_METHOD}</code>
+ — Inserts a human-readable designation for the message recipient’s payment method. The list of available payment method types varies per marketplace, according to each provider’s active billing gateway integrations.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163216"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163218"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163220"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163222"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163224"></a><code class="S-Sample">
+{TOTAL_PRICE}</code>
+ — Inserts the sum — from only the current billing period — of all line items. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163226"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163228"></a><code class="S-Sample">
+{USER_FIRST_NAME}</code>
+ — Inserts the message recipient’s given name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163230"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the message recipient’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163232"></a><code class="S-Sample">
+{USER_LAST_NAME}</code>
+ — Inserts the message recipient’s surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163234"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4163236"></a><code class="S-Sample">
+{VENDOR}</code>
+ — Inserts the name of the vendor whose product the message cites.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1476050"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3904684"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-264.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-265.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-266.gif" alt="" class="block-image">
+</div>
+<p class="Anchor">
+<a name="pgfId-1476053"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1476054"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2450165"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1476055"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-1476056"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1476060"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2599127"></a><a href="/fm/12533" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for product owners</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

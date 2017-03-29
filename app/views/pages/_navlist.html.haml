@@ -1,0 +1,6 @@
+%ul.side-nav
+  - childs.each_with_index do |(page, kids), index | 
+    %li{ :class => "#{selected_if_path_includes(page.permalink)} channel_color_border simple-navigation-active-leaf" }
+      = link_to page.title, page.permalink, :class => "#{selected_if_path_includes(page.permalink)} channel_color_border"
+      - unless kids.empty?
+        = render "navlist", :childs => kids

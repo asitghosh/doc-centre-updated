@@ -1,0 +1,841 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1393964"></a><a name="36225"></a>Revenue management basics</h3>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1400413"></a>Topics in this section describe many concepts about managing your marketplace revenue.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400435"></a><a href="/fm/84155" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your orders ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400436"></a><a href="/fm/30016" class="XRef"><span class="EH-EmphasisHeavy">
+Understand order details</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400437"></a><a href="/fm/96583" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your invoices ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400438"></a><a href="/fm/21413" class="XRef"><span class="EH-EmphasisHeavy">
+Understand invoice details</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400439"></a><a href="/fm/13309" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your payments ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400440"></a><a href="/fm/37005" class="XRef"><span class="EH-EmphasisHeavy">
+Understand payment details</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1805357"></a><a href="/fm/52365" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your quotes ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400441"></a><a href="/fm/50827" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your reconciliation records ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400442"></a><a href="/fm/70717" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your payouts ledger</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400444"></a><a href="/fm/43509" class="XRef"><span class="EH-EmphasisHeavy">
+Understand your ledger of current revenue share percentages per product</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1400431"></a><a href="/fm/47155" class="XRef"><span class="EH-EmphasisHeavy">
+Understand the revenue sharing history for one product</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1369364"></a><a name="84155"></a>Understand your orders ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400460"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400461"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Orders</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1668488"></a>Your orders ledger shows an almost-live representation of orders as they occur, rendered separately at the product level and at the product edition level. The ledger does not refresh automatically in your browser, so its representation of orders is only as recent as when your browser loaded it. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1778928"></a>Product</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1778943"></a>The product-level view renders seven columns in its UI version and 27 columns in its exported CSV version. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1668931"></a>The UI version is searchable by: </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1778636"></a><span class="EH-EmphasisHeavy">
+order cost</span>
+ — when the query string is any number of digits preceding a decimal point, which then precedes any number of digits. </li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1778663"></a><span class="EH-EmphasisHeavy">
+order ID</span>
+ — when the query string is a sequence of no more than 18 contiguous digits.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1779118"></a><span class="EH-EmphasisHeavy">
+company name</span>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1779141"></a><span class="EH-EmphasisHeavy">
+company external ID</span>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1779168"></a><span class="EH-EmphasisHeavy">
+product name</span>
+</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1779586"></a> </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1778648"></a>The UI version supports filtering by:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1669382"></a><span class="EH-EmphasisHeavy">
+Status</span>
+ — The order state. Any one of these: <code class="S-Sample">
+ACTIVE</code>
+, <code class="S-Sample">
+CANCELED</code>
+, <code class="S-Sample">
+FAILED</code>
+, <code class="S-Sample">
+FREE_TRIAL</code>
+, <code class="S-Sample">
+FREE_TRIAL_EXPIRED</code>
+, <code class="S-Sample">
+INITIALIZED</code>
+, or <code class="S-Sample">
+SUSPENDED</code>.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1669383"></a><span class="EH-EmphasisHeavy">
+Cost</span>
+ — <code class="S-Sample">
+PAID</code>
+ or <code class="S-Sample">
+FREE</code>.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1669373"></a><span class="EH-EmphasisHeavy">
+Created between</span>
+ — when the order was created. A date range.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1669399"></a><span class="EH-EmphasisHeavy">
+Pending</span>
+ (checkbox) — whether to include orders in any of the PENDING states.</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1780068"></a> </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1780056"></a>The UI version supports sorting by the ascending or descending values in any of these columns:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1780044"></a><span class="EH-EmphasisHeavy">
+ID</span>
+ — the subscription ID </li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1780178"></a><span class="EH-EmphasisHeavy">
+Created</span>
+ — the order creation date</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1780238"></a><span class="EH-EmphasisHeavy">
+Status</span>
+ — the order state</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1780270"></a><span class="EH-EmphasisHeavy">
+Company</span>
+ — the name of the billable user’s associated company</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1780362"></a><span class="EH-EmphasisHeavy">
+Product</span>
+ — the product name</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1780956"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-1780901"></a>The UI version of the Orders ledger does not support sorting by values in either the Frequency column or the Total Fee column. Its platform-default sorting order is by descending values in the ID column.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1778982"></a>Edition</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1668969"></a>The product edition-level view renders eight columns in its UI version and 25 columns in its exported CSV version. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1781398"></a>The UI version is searchable against values in these columns: </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1781415"></a><span class="EH-EmphasisHeavy">
+ID</span>
+ — the order ID. </li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1782385"></a><span class="EH-EmphasisHeavy">
+Company</span>
+ — the name of the billable user’s associated company.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1782346"></a><span class="EH-EmphasisHeavy">
+Product</span>
+ — the product name.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1781593"></a><span class="EH-EmphasisHeavy">
+Total Fee</span>
+ — the invoice amount per billing cycle.</li>
+</ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1781372"></a>The UI version supports filtering by:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783013"></a><span class="EH-EmphasisHeavy">
+Status</span>
+ — The order state. Any one of these: <code class="S-Sample">
+ACTIVE</code>
+, <code class="S-Sample">
+CANCELED</code>
+, <code class="S-Sample">
+FAILED</code>
+, <code class="S-Sample">
+FREE_TRIAL</code>
+, <code class="S-Sample">
+FREE_TRIAL_EXPIRED</code>
+, <code class="S-Sample">
+INITIALIZED</code>
+, or <code class="S-Sample">
+SUSPENDED</code>.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783014"></a><span class="EH-EmphasisHeavy">
+Cost</span>
+ — <code class="S-Sample">
+PAID</code>
+ or <code class="S-Sample">
+FREE</code>.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783015"></a><span class="EH-EmphasisHeavy">
+Created between</span>
+ — when the order was created. A date range.</li>
+</ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1781459"></a>The UI version supports sorting by the ascending or descending values in any of these columns:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783067"></a><span class="EH-EmphasisHeavy">
+ID</span>
+ — the order ID.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783068"></a><span class="EH-EmphasisHeavy">
+Created</span>
+ — the order creation date.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783069"></a><span class="EH-EmphasisHeavy">
+Status</span>
+ — the order state.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783070"></a><span class="EH-EmphasisHeavy">
+Company</span>
+ — the name of the billable user’s associated company.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783071"></a><span class="EH-EmphasisHeavy">
+Product</span>
+ — the product name.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783072"></a><span class="EH-EmphasisHeavy">
+Edition</span>
+ — the product edition name.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783073"></a><span class="EH-EmphasisHeavy">
+Frequency</span>
+ — the billing cycle interval between invoices.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783074"></a><span class="EH-EmphasisHeavy">
+Total Fee</span>
+ — the amount due per invoice.</li>
+</ul>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400463"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777214"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400464"></a><a href="/fm/37309" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your orders ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1399825"></a><a name="30016"></a>Understand order details</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400547"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400548"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Orders &gt; </span>
+{<span class="EH-EmphasisHeavy">
+order</span>
+}</p>
+<p class="B1-Body1">
+<a name="pgfId-1669460"></a>Clicking any row in the orders ledger causes a modal popup to open, wherein we describe the corresponding order in massive detail. </p>
+<p class="B1-Body1">
+<a name="pgfId-1669661"></a>At a high level, these details describe the buyer, the billing amount and frequency, the consumption of allocated seats, the order creation date and contract expiration date, the next invoice date, the order history, the assigned users, the overall order history, and more.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400550"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400551"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777259"></a><a href="/fm/20892" class="XRef"><span class="EH-EmphasisHeavy">
+Work with order details</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1399874"></a><a name="96583"></a>Understand your invoices ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400575"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400576"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Invoices</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1669975"></a>Your invoices ledger shows an almost-live representation of invoices as your marketplace issues them. (The ledger does not refresh automatically in your browser, so its representation of invoices is only as recent as when your browser loaded it.) It renders five columns in its UI version and 14 columns in its exportable CSV version. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1783657"></a>The UI version is searchable against these values: </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783705"></a>the billed user’s first name, last name, and email address</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783693"></a>the name and ID of the billed user’s associated company</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1783875"></a>an invoice number (when the query string is digits only and its length ranges from 1 to 18 characters long)</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784019"></a>an amount due (when the query string is any number of digits offset by one decimal point from any other number of digits)</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1784636"></a> </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1783673"></a>The UI version supports filtering by:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784465"></a>an invoice state (<code class="S-Sample">
+PAID</code>
+, <code class="S-Sample">
+UNPAID</code>
+, or <code class="S-Sample">
+CARRIED</code>
+)</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784530"></a>an invoice creation date range</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1784650"></a> </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1784378"></a>The UI version supports sorting by the ascending or descending values in any of these columns:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784379"></a><span class="EH-EmphasisHeavy">
+ID</span>
+ — the invoice ID.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784885"></a><span class="EH-EmphasisHeavy">
+Date</span>
+ — the invoice creation date</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784901"></a><span class="EH-EmphasisHeavy">
+Customer</span>
+ — the name of the billed user’s associated company</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784917"></a><span class="EH-EmphasisHeavy">
+Total</span>
+ — the amount due</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1784930"></a><span class="EH-EmphasisHeavy">
+Status</span>
+ — <code class="S-Sample">
+PAID</code>
+, <code class="S-Sample">
+UNPAID</code>
+, or <code class="S-Sample">
+CARRIED</code>
+</li>
+</ul>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400578"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400579"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777293"></a><a href="/fm/15963" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your invoices ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1399927"></a><a name="21413"></a>Understand invoice details</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400599"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400600"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Invoices &gt; </span>
+{<span class="EH-EmphasisHeavy">
+invoice</span>
+}</p>
+<p class="B1-Body1">
+<a name="pgfId-1669981"></a>Clicking any row in the invoices ledger causes a modal popup to open, wherein we describe the corresponding invoice in detail. At a high level, these details describe the billed party, the billable product or service, the billable amount, any payments remitted thus far, and any remaining balance. </p>
+<p class="B1-Body1">
+<a name="pgfId-1671621"></a>In addition, clicking the PDF button (<img src="/images/chadm-cust-transct-3.jpg" align="BASELINE" alt="">
+) in the Invoice Details modal causes your marketplace to generate a downloadable — and printable — invoice upon demand. This PDF includes exactly the same details that the Invoice Details modal includes.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400602"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400603"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777330"></a><a href="/fm/54754" class="XRef"><span class="EH-EmphasisHeavy">
+Work with invoice details</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1399975"></a><a name="13309"></a>Understand your payments ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400692"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400693"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Payments</span>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1671952"></a>Your payments ledger shows an almost-live representation of payments as your billing system receives them. (The ledger does not refresh automatically in your browser, so its representation of payments is only as recent as when your browser loaded it.) </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1785269"></a>Overview</p>
+<p class="B1-Body1">
+<a name="pgfId-1785293"></a>The overview-level view — via this toggled state above the table: <img src="/images/chadm-cust-transct-4.jpg" align="BASELINE" alt="">
+ — cites the combination of all successful and unsuccessful payments, excluding only those payments that applied a 100 percent discount. The Overview view renders seven columns in its UI version and 17 columns in its exportable CSV version. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1785158"></a>The UI version is searchable against these values: </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1785252"></a>payment ID</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-2372817"></a>customer</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1785260"></a>vendor</li>
+</ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1785184"></a>The UI version supports filtering by:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672559"></a>payment method</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672597"></a>payments versus refunds</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672616"></a>payment attempt outcome</li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1785218"></a><br>
+ </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1672424"></a>Details</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1785319"></a>The detail-level view — via this toggled state above the table: <img src="/images/chadm-cust-transct-5.jpg" align="BASELINE" alt="">
+ — cites only the line items from successful payments. This excludes failed payments. The Details view renders eleven columns in its UI version and 35 columns in its exportable CSV version. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1785330"></a>The UI version is searchable against these values: </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1785331"></a>payment ID</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1785332"></a>customer</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-2372936"></a>vendor</li>
+</ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1785334"></a>The UI version supports filtering by:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672828"></a>payment method</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672847"></a>payments versus refunds</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672872"></a>invoice line type</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672892"></a>whether a 100 percent discount was applied</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1672936"></a>when your marketplace processed the payment (or refund)</li>
+</ul>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400695"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400696"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777372"></a><a href="/fm/87130" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your payments ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1400024"></a><a name="37005"></a>Understand payment details</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400722"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400723"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Payments &gt; </span>
+{<span class="EH-EmphasisHeavy">
+payment</span>
+}</p>
+<p class="B1-Body1">
+<a name="pgfId-1673050"></a>Clicking any row in the payments ledger’s Overview view (or any Payment ID link in the same ledger’s Details view) causes a modal popup to open, wherein we describe the corresponding payment in detail. At a high level, these details describe the billed party, the payment itself, and every invoice that it applies to. </p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1673318"></a>In addition, two UI buttons facilitate refunds when all or part of the described payment is disputed or was erroneous. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1673575"></a><span class="EH-EmphasisHeavy">
+Refund Payment</span>
+ — Opens the Refund Payment modal popup. Here, after you choose which invoiced amounts to refund, and you submit the form:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1673995"></a>Your marketplace backend makes API calls to your payment gateway and commands that it process the configured refund as instructed. </li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1674004"></a>Your marketplace records are updated to show the payment as refunded.</li>
+</ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1673596"></a><span class="EH-EmphasisHeavy">
+Enter Manual Refund</span>
+ — Opens the Enter Manual Refund modal popup. Here, after you choose which invoiced amounts to refund, and you submit the form, your marketplace records are updated to show the payment as refunded.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400725"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400726"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777408"></a><a href="/fm/73185" class="XRef"><span class="EH-EmphasisHeavy">
+Work with payment details</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1804733"></a><a name="52365"></a>Understand your quotes ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1804780"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1804803"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Quotes</span>
+</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1804812"></a>Your quotes ledger shows an almost live representation of all saved quotes for your marketplace. Sales agents initialize quotes for consumers at one or the other of these UI paths: </p>
+<table>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1807210"></a><span class="EI-EmphasisItalic">
+reseller</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1807212"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Reseller &gt;</span>
+ Reseller | <span class="EH-EmphasisHeavy">
+Users &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+user</span>
+} <span class="EH-EmphasisHeavy">
+&gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Make Purchase</span>
+] &gt; {<span class="EH-EmphasisHeavy">
+product</span>
+} &gt; [<span class="EH-EmphasisHeavy">
+Start Purchase</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Save as Quote</span>
+]</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<ul>
+<ul>
+<li class="CBu-CellBullet">
+<a name="pgfId-1807280"></a><span class="EI-EmphasisItalic">
+sales support representative</span>
+</li>
+</ul>
+</ul>
+</td>
+<td rowspan="1" colspan="1">
+<p class="CB-CellBody">
+<a name="pgfId-1807282"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt;</span>
+ Home | <span class="EH-EmphasisHeavy">
+Users &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+user</span>
+} &gt; [<span class="EH-EmphasisHeavy">
+Make Purchase</span>
+] <span class="EH-EmphasisHeavy">
+&gt;</span>
+ {<span class="EH-EmphasisHeavy">
+product</span>
+} <span class="EH-EmphasisHeavy">
+&gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Start Purchase</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Save as Quote</span>
+]</p>
+</td>
+</tr>
+</table>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2373055"></a>A quote has two possible states: <code class="S-Sample">
+PENDING PURCHASE</code>
+ and <code class="S-Sample">
+COMPLETED</code>. </p>
+<p class="B1-Body1">
+<a name="pgfId-1806894"></a>The ledger does not refresh automatically in your browser, so its representation of quotes is only as recent as when your browser loaded it. When a refreshed view no longer includes a quote that was previously visible, it means that the corresponding quote was either completed or deleted in the interim.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1804841"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1808174"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1804863"></a><a href="/fm/18413" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your quotes ledger</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1805446"></a><a href="/fm/76851" class="XRef"><span class="EH-EmphasisHeavy">
+Edit a quote</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1805466"></a><a href="/fm/89350" class="XRef"><span class="EH-EmphasisHeavy">
+Delete a quote</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1400064"></a><a name="50827"></a>Understand your reconciliation records ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400746"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400747"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Reconciliation</span>
+ (Reconciliation)</p>
+<p class="B1-Body1">
+<a name="pgfId-1675357"></a>Your reconciliations ledger shows an almost-live representation of open and closed revenue sharing payments made and due among all financial stakeholders as your marketplace tracks these reciprocal obligations. (The ledger does not refresh automatically in your browser, so its representation of reconciliations is only as recent as when your browser loaded it.)</p>
+<p class="B1-Body1">
+<a name="pgfId-1672370"></a>The ledger renders eight columns in its UI version and eight columns in its exportable CSV version. Although it is not searchable against any field, it supports filtering by creation date.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400749"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400750"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777463"></a><a href="/fm/87581" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your reconciliation records ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1400123"></a><a name="70717"></a>Understand your payouts ledger</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400776"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400777"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Reconciliations</span>
+ (Payouts)</p>
+<p class="B1-Body1">
+<a name="pgfId-1677362"></a>Your payouts ledger shows an almost-live representation of revenue sharing payouts as your marketplace pays its vendors. The ledger does not refresh automatically in your browser, so its representation of reconciliations is only as recent as when your browser loaded it.</p>
+<p class="B1-Body1">
+<a name="pgfId-1677363"></a>The ledger renders seven columns in its UI version and eight columns in its exportable CSV version. It is searchable by vendor name and supports filtering by:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1677422"></a>payout status</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1677455"></a>creation date</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400779"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400780"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777499"></a><a href="/fm/60784" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your payouts ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1400202"></a><a name="43509"></a>Understand your ledger of current revenue share percentages per product</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400850"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400851"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Reconciliations</span>
+ (Revenue Shares)</p>
+<p class="B1-Body1">
+<a name="pgfId-1677892"></a>Your revenue shares ledger shows an almost-live representation of revenue sharing percentage agreements per product, between your marketplace and your revenue partners. The ledger does not refresh automatically in your browser, so its representation of these agreements is only as recent as when your browser loaded it.</p>
+<p class="B1-Body1">
+<a name="pgfId-1677715"></a>The ledger renders seven columns in its UI version and 14 columns in its exportable CSV version. It is searchable by product name and supports filtering by activity date. </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400853"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400854"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777543"></a><a href="/fm/99539" class="XRef"><span class="EH-EmphasisHeavy">
+Work with your revenue shares ledger</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1400279"></a><a name="47155"></a>Understand the revenue sharing history for one product</h4>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400882"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1400883"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Reconciliations</span>
+ (Revenue Shares) <span class="EH-EmphasisHeavy">
+&gt;</span>
+ {<span class="EH-EmphasisHeavy">
+product</span>
+}</p>
+<p class="B1-Body1">
+<a name="pgfId-1677733"></a>Clicking a row in the revenue shares ledger opens a modal popup that shows both the current version of the specified product’s revenue sharing percentages agreement and all of its previous revisions, including the identity of whomever edited </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1400885"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1400886"></a><a href="/fm/36225" class="XRef"><span class="EH-EmphasisHeavy">
+Revenue management basics</span></a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1777593"></a><a href="/fm/40116" class="XRef"><span class="EH-EmphasisHeavy">
+Work with the revenue shares history for a product</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

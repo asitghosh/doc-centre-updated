@@ -1,0 +1,26 @@
+.subnavigation
+  - if @api.present?
+    %nav.fl_container
+      %ul.dynamic-nav{ :class => "#{'anon' unless current_user }"}
+        %li.bold
+          #{@api.root.title}
+          %span.black
+            >
+        %li.channel_color_border
+          = link_to "Overview", @api.root.permalink, { :class => "#{'active' if request.fullpath == @api.root.permalink}"}
+        - @api.root.children.each do |child|
+          - if child.published?
+            %li.channel_color_border
+              = link_to "#{child.title}", "#{child.permalink}", { :class => "#{'active' if request.fullpath.include?(child.permalink)}"}
+
+  - if @support.present?
+    %nav.fl_container
+      %ul.dynamic-nav{ :class => "#{'anon' unless current_user }"}
+        %li.bold Help & Support
+
+
+    / = form_tag search_path, method: :get, class: 'search_form' do
+    /   = text_field_tag :q, params[:q], :placeholder => "Search #{@api.root.title}", :class => 'icons-magnifying_glass book-query'
+    /   = hidden_field_tag :index, "Api"
+    /   = hidden_field_tag :book_title, @api.root.title
+    /   = submit_tag "GO", name: nil, class: "book-submit"

@@ -1,0 +1,77 @@
+- if (attr? 'navtype')
+  - if (attr 'navtype') == 'tabs'
+    nav class=(attr 'navrole')
+      ul class=(attr 'listrole')
+        - items.each do |item|
+          - itemTarget = "#{attr 'name'}#{item.text.downcase}"
+          li class=((item.attr? :checked) ? "#{attr 'itemrole'} active" : "#{attr 'itemrole'}")
+            a class="#{attr 'linkrole'}" data-toggle="tab" href="##{itemTarget}" =item.text
+  - elsif (attr 'navtype') == 'accordion'
+    div class=(attr 'containerrole') id="accordion-group"
+      div class="#{attr 'triggerrole'} collapsed" data-parent="accordion-group" data-toggle="collapse" href="##{id}-item"
+        =items.first.text
+      div class="#{attr 'targetrole'} collapse" id="#{id}-item"
+        |include::{generated}/error-example/response-fields.adoc[]
+  - elsif (attr 'navtype') == 'bsaccordion'
+    div class='panel-group' id="bs-accordion-#{attr 'bsid'}" role="tablist" aria-multiselectable="true"
+      div class="panel panel-default"
+        div class="panel-heading" role="tab" id="bs-heading-#{attr 'bsid'}"
+          a data-toggle="collapse" data-parent="#bs-accordion-#{attr 'bsid'}" href="#bs-collapse-#{attr 'bsid'}" aria-expanded="false" aria-controls="bs-collapse-#{attr 'bsid'}" =items.first.text
+        div id="bs-collapse-#{attr 'bsid'}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bs-heading-#{attr 'bsid'}"
+          div class="panel-body"
+            - if (attr? 'bsfile')
+              - filename = "#{attr 'bsfile'}"
+              - if (File.exist?(filename))
+                = Asciidoctor.convert(IO.read(filename), base_dir: @document.base_dir, safe: @document.safe)
+              - else
+                = filename + " does not exist"
+            - else
+              = "bsfile attribute missing!"
+  - elsif (attr 'navtype') == 'bstabs'
+    ul id="bs-tab-#{attr 'bsid'}" class="nav nav-tabs" role="tablist"
+      - items.each do |item|
+        - itemTarget = "#{attr 'bsid'}#{item.text.downcase}"
+        - itemClass = ((item.attr? :checked) ? "active" : "")
+        - tabStatus = ((item.attr? :checked) ? "true" : "false")
+        li role="presentation" class="#{itemClass}"
+          a href="##{itemTarget}" id="#{itemTarget}-tab" role="tab" data-toggle="tab" aria-controls="#{itemTarget}" aria-expanded="#{tabStatus}" =item.text
+      div id="bs-content-#{attr 'bsid'}" class="tab-content"
+        - items.each do |item|
+          - itemTarget = "#{attr 'bsid'}#{item.text.downcase}"
+          - tabClass = ((item.attr? :checked) ? " active in" : "")
+          div role="tabpanel" class="tab-pane fade#{tabClass}" id="#{itemTarget}" aria-labelledby="#{itemTarget}-tab"
+            - adFileName = "#{attr 'generated'}/error-example/http-request-#{item.text.downcase}.adoc"
+            = Asciidoctor.convert(IO.read(adFileName), base_dir: @document.base_dir, safe: @document.safe)
+  - elsif (attr 'navtype') == 'bstabs2'
+    - if (attr? 'fileprefix') and (attr? 'filedir') and (attr? 'tabnames') and (attr? 'activetab')
+      /- files = Dir.glob(filedir + "/" + fileprefix + "*")
+      /- files.map!{|x|x + ":" + x.split("-lang-")[1].split(".adoc")[0]}
+      - tabs = (attr 'tabnames').split(",")
+      ul id="bs-tab-#{attr 'bsid'}" class="nav nav-tabs" role="tablist"
+        - tabs.each do |tab|
+          - itemTarget = "#{attr 'bsid'}-#{tab.downcase}"
+          - isTabActive = (tab == (attr 'activetab')) 
+          - itemClass = (isTabActive ? "active" : "")
+          - tabStatus = (isTabActive ? "true" : "false")
+          li role="presentation" class="#{itemClass}"
+            a href="##{itemTarget}" id="#{itemTarget}-tab" role="tab" data-toggle="tab" aria-controls="#{itemTarget}" aria-expanded="#{tabStatus}" =tab
+      div id="bs-content-#{attr 'bsid'}" class="tab-content"
+        - tabs.each do |tab|
+          - itemTarget = "#{attr 'bsid'}-#{tab.downcase}"
+          - isTabActive = (tab == (attr 'activetab'))
+          - tabClass = (isTabActive ? " active in" : "")
+          div role="tabpanel" class="tab-pane fade#{tabClass}" id="#{itemTarget}" aria-labelledby="#{itemTarget}-tab"
+            - filename = "#{attr 'filedir'}/#{attr 'fileprefix'}-#{tab}.adoc"
+            - if (File.exist?(filename))
+              = Asciidoctor.convert(IO.read(filename), base_dir: @document.base_dir, safe: @document.safe)
+            - else
+              = filename + " not found"
+    - else
+      = "Missing configuration..."
+- else
+  ul class=role
+    - items.each do |item|
+      li
+        =item.text
+        - if item.blocks?
+          

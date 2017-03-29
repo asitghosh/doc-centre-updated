@@ -1,0 +1,25 @@
+!!! 5
+%html.fluid
+  - content_for :alternate_css do
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400", :media => "all"
+    = stylesheet_link_tag "api-docs", :media => "all"
+    = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css", :media => "all"
+    
+  = render "head"
+  %body{:class => "#{controller_name} #{action_name}", :data => { :color => "#{(!current_user || current_user.channel_partner.color.empty?) ? '009abf' : current_user.channel_partner.color}" } }
+    .fixed-header
+      = render 'navigation',  :fluid => true, :search => true
+      = render 'guides_subnav'
+
+    #main{:role => "main"}
+      = yield
+
+    - content_for :api_js do
+      = javascript_include_tag "api-bootstrap.min"
+
+    = render 'footer_includes'
+    - if current_user && current_user.sees_annotations?
+      = javascript_include_tag "annotator.min"
+      = javascript_include_tag "annotations"
+      = stylesheet_link_tag "annotator.min"
+    = render 'usersettings'

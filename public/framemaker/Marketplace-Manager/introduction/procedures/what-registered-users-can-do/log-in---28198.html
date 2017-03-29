@@ -1,0 +1,136 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1206170"></a><a name="28198"></a>Log in</h4>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1213652"></a>The registered users of a given marketplace can, in most cases, log in to it. However, various scenarios can cause login procedures to differ from one instance to another. Procedures in this section tell you how to log in, no matter how your marketplace is configured.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1211577"></a><a href="/fm/29812" class="XRef"><span class="EH-EmphasisHeavy">
+Access a password-protected server</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1213518"></a><a href="/fm/72821" class="XRef"><span class="EH-EmphasisHeavy">
+Log in to a typical marketplace</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1200770"></a><a name="29812"></a>Access a password-protected server</h5>
+<p class="B1-Body1">
+<a name="pgfId-1207922"></a>AppDirect-powered marketplaces support the option, via a UI control that adjusts <span class="EH-EmphasisHeavy">
+httpd.conf</span>
+ on the backend, to password-protect everything on their host server, including even its standard login form for individual users. </p>
+<p class="B1-Body1">
+<a name="pgfId-1217610"></a>This feature is used most commonly when a marketplace is not yet open for business, while it undergoes basic testing. It prevents user dissatisfaction with a site that is reachable but not actually ready for use. However, your relationship with a given marketplace — maybe as one of its administrators or developers — might require your engagement with it long before ordinary consumers learn that the server even exists.</p>
+<p class="B1-Body1">
+<a name="pgfId-1212656"></a>In such cases (or whenever else this option is used), you must know the sitewide credentials that compel the server to send page data to your browser. These credentials almost certainly differ from your personal username and your personal password, which you must then enter as usual.</p>
+<p class="B1-Body1">
+<a name="pgfId-1213252"></a>Most marketplaces are not secured in this way.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1211942"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1384696"></a>	Go to <span class="EI-EmphasisItalic">
+https://</span>
+<code class="S-Sample">
+{marketplace}</code>
+, where <code class="S-Sample">
+{marketplace}</code>
+ is the fully qualified and DNS resolvable server name for your marketplace instance.</span>
+</li>
+</ol>
+</ol>
+<p class="SB-StepBody">
+<a name="pgfId-1383102"></a>Your browser does not receive any data to render the usual user interface for your marketplace. Instead, a modal dialog box opens, which prompts you to enter sitewide credentials.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1383301"></a>	Enter the sitewide username and the sitewide password. Then, press <span class="EH-EmphasisHeavy">
+Enter</span>.</span></p>
+</ol>
+</ol>
+<p class="SB-StepBody">
+<a name="pgfId-1383382"></a>When you submit valid sitewide credentials, the modal dialog box closes and the server returns enough information that your browser can render the marketplace user interface — including the standard login form for individual users. </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-1293361"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1383744"></a>What to do next</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1383748"></a><a href="/fm/72821" class="XRef"><span class="EH-EmphasisHeavy">
+Log in to a typical marketplace</span></a>
+</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1383760"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1383764"></a><a href="/fm/71977" class="XRef"><span class="EH-EmphasisHeavy">
+Sign up to use an AppDirect-powered marketplace</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1200771"></a><a name="72821"></a>Log in to a typical marketplace</h5>
+<p class="BL-BlockLabel">
+<a name="pgfId-1211995"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1384677"></a>	Go to <span class="EI-EmphasisItalic">
+https://</span>
+<code class="S-Sample">
+{marketplace}</code>
+<span class="EI-EmphasisItalic">
+/login</span>
+, where <code class="S-Sample">
+{marketplace}</code>
+ is the fully qualified and DNS resolvable server name for your marketplace instance.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1384597"></a>	Enter your username and password in the fields provided.</span></p>
+</ol>
+</ol>
+<p class="SpP3-SignpostParagraph3
+ note_banner">
+<a name="pgfId-1384155"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Some marketplace <a href="/fm/50589" class="XRef"><span class="EH-EmphasisHeavy">
+provider</span></a>s enforce the case-sensitivity of usernames, but others do not. To prevent needless complications on a marketplace that imposes this requirement, always enter your username as if case-sensitivity matters.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-1384553"></a>	Press <span class="EH-EmphasisHeavy">
+Enter</span>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1293385"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1293389"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1211622"></a><a href="/fm/92621" class="XRef"><span class="EH-EmphasisHeavy">
+Password restrictions</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

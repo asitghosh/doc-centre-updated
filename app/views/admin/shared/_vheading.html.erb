@@ -1,0 +1,7 @@
+<h2 class="vheading">
+  <span> (<%= v.index + 1 %>) [<%= v.event %>]: </span>
+  <span> by: <%= author_name_by_id(v.whodunnit) %></span>
+  <% if v.created_at.present? %>
+    <span> on: <%= v.created_at.to_s :long_ordinal %> &nbsp; &nbsp; </span>
+  <% end %>
+</h3>

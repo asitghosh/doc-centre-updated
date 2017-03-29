@@ -1,0 +1,28 @@
+<h2><%= @warn %></h2>
+<%= semantic_form_for [:admin, @page], :html => { :data => { :class => "page", :id => @page.id } } do |f| %>  
+
+    <%= f.inputs "Basic info" do %>
+      <%= f.input :title %>
+      <% pagez = Page.all.map { |c| ["-" * c.depth + c.title,c.id] }
+      #Rails.logger.debug(pagez)
+      if params[:parent_id]
+        selected_index = params[:parent_id]
+      elsif @page.parent_id != nil
+        selected_index = @page.parent_id
+      else
+        selected_index = nil
+      end
+
+      status = @page.pub_status ||= "draft"
+      %>
+      <%= f.input :parent_id, :as => :select, :collection => options_for_select(pagez, selected_index) %>
+      <%= f.input :pub_status, :as => :select, :collection => options_for_select([["Draft", "draft"], ["Published", "published"]], status), :include_blank => false %>
+      <%= f.input :page_pub_date %>
+      <%= f.input :file_upload, :as => :rich_picker, :config => { :style => 'width: 400px !important;' } %>
+      <%= f.input :body, :as => :rich, :config => { :width => '76%', :height => '400px' } %>
+      <% f.has_many :channel_specific do |cs| %>
+        <%= cs.input :content %>
+      <% end %>
+    <% end %>
+  <%= f.actions %>
+<% end %>

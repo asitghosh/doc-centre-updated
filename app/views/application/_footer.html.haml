@@ -1,0 +1,23 @@
+%footer
+  %div{ :class => "#{'fl_' if fluid }container" }
+
+    = render_navigation :expand_all => true do |footer|
+      - footer.item(:footer_guides, 'Guides', '/guides', :html => { :class => 'foot_nav_column' }, :if => Proc.new { current_user }) do |subnav|
+
+        - subnav.item :footer_user_manual, 'Manuals', "/manuals/", :highlights_on => /manual(s)?/, :html => { :class => "channel_color_border #{'disabled' unless current_user && current_user.channel_partner.able_to_see_user_guides?}" }, :if => Proc.new { current_user }
+
+        - subnav.item :footer_isv_info, "ISV App Info", "/isv-info", :hightlights_on => /isv-info/, :html => { :class => "channel_color_border #{'disabled' unless current_user && current_user.channel_partner.able_to_see_isv}" }, :if => Proc.new { current_user }
+
+        - subnav.item :footer_faq, 'FAQs', faqs_path, :highlights_on => /faq(s)?/, :html => { :class => "channel_color_border #{'disabled' unless current_user && current_user.channel_partner.able_to_see_faqs?}" }, :if => Proc.new { current_user }
+      - footer.item(:footer_product_changes, 'Product Changes', releases_path, :html => { :class => 'foot_nav_column' }, :if => Proc.new { current_user }) do |subnav|
+        - subnav.item :footer_releases, 'Release Notes', releases_path, :highlights_on => /release(s)?/, :html => { :class => "channel_color_border #{'disabled' unless current_user && current_user.channel_partner.able_to_see_releases?}" }, :if => Proc.new { current_user }
+        - #subnav.item :footer_features, 'Upcoming Features', features_path, :highlights_on => /feature(s)?/, :class => 'channel_color_border'
+        - subnav.item :footer_roadmap, 'Roadmap', "/roadmaps", :highlights_on => /roadmap/, :html => { :class => "channel_color_border #{'disabled' unless current_user && current_user.channel_partner.able_to_see_roadmaps?}" }, :if => Proc.new { current_user }
+      - if current_user
+        - footer.item(:footer_account, 'Account', '#', :html => {:class => 'disabled foot_nav_column'}) do |subnav|
+          - subnav.item :footer_admin, 'Admin', '/admin', :if => Proc.new { current_user && current_user.is_admin? }
+          - subnav.item :footer_marketplace, 'Your Marketplace', current_user.channel_partner.marketplace_url, :unless => Proc.new { current_user && current_user.channel_partner.marketplace_url.blank? }
+          - subnav.item :footer_logout, 'Logout', destroy_user_session_path, :method =>'delete', :unless => Proc.new {current_user.nil? }
+
+    %a.copyright.small-gray-caps.no_icon{:href => "http://appdirect.com"}
+      \&copy; #{Time.now.year} AppDirect, Inc

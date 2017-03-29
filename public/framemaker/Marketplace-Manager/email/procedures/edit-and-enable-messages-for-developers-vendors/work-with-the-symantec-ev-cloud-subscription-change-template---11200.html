@@ -1,0 +1,361 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-2043496"></a><a name="11200"></a>Work with the Symantec EV Cloud Subscription Change template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2044203"></a>You can edit content in the Symantec EV Cloud Subscription Change template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2044204"></a>When the template is turned On, it sends an informational message to the vendor (Symantec) regarding any Symantec EV Cloud purchase, cancellation, or upgrade. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2044205"></a>When the template is turned Off, Symantec is not notified about relevant transactions and cannot provision them. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2052946"></a>This template does not automatically inject the “Unsubscribe” link, which many other templates do inject. </li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2044206"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-2044207"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Custom Product Emails | <span class="EH-EmphasisHeavy">
+Symantec EV Cloud Subscription Change</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-2044208"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2044209"></a>Log in to your marketplace as its administrator.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2799996"></a>Make sure that your marketplace has a Developer Center.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-2044210"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-2044211"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-2044212"></a>	Click <span class="EH-EmphasisHeavy">
+Symantec EV Cloud Subscription Change </span>
+in the Custom Product Emails area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3671134"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-415.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-416.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-2044225"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+An event on {PARTNER_STORE_LABEL} just affected an ‘EV Cloud’ subscription contract</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-2044226"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4011907"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191507"></a><code class="S-Sample">
+{ACCOUNT_IDENTIFIER}</code>
+ — Inserts the same value that the <code class="S-Sample">
+&lt;payload&gt;</code>
+ object returned in its <code class="S-Sample">
+&lt;accountIdentifier&gt;</code>
+ field when your marketplace notified the product vendor about the <code class="S-Sample">
+SUBSCRIPTION_NOTICE</code>
+ event that corresponds to the described change.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191509"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191511"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191513"></a><code class="S-Sample">
+{BILLING_PHONE}</code>
+ — Inserts the telephone number of the billed party or, on a telco-managed marketplace with consolidated billing, inserts the telephone number whose upcoming invoice should itemize any charges for the described transaction. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192437"></a><code class="S-Sample">
+{COMPANY_COUNTRY}</code>
+ — Inserts the billed company’s country of record on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192680"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192439"></a><code class="S-Sample">
+{COMPANY_PHONE}</code>
+ — Inserts the billed company’s telephone number of record on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192441"></a><code class="S-Sample">
+{COMPANY_UUID}</code>
+ — Inserts the unique (on your marketplace) identifier for the billed company.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192443"></a><code class="S-Sample">
+{COMPANY_WEBSITE}</code>
+ — Inserts the billed company’s navigable web address.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191517"></a><code class="S-Sample">
+{EDITION_CODE}</code>
+ — Inserts the vendor-supplied alphanumeric string — such as RECURRING or PLATINUM or TURBO — that identifies the cited edition outside your marketplace. The vendor populated this parameter while configuring the described edition.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191519"></a><code class="S-Sample">
+{EVENT_TYPE}</code>
+ — Inserts the API notification label that corresponds to this API event.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191521"></a><code class="S-Sample">
+{ORDER_ITEMS}</code>
+ — Inserts an inventory of all items on the order.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191523"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose channel administrators operate and manage your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191525"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191527"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191529"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191531"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191533"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191535"></a><code class="S-Sample">
+{USER_CITY}</code>
+ — Inserts the cited user’s city, town, or village name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4192292"></a><code class="S-Sample">
+{USER_COUNTRY}</code>
+ — Inserts the cited user’s country name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191537"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191539"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the message recipient’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191541"></a><code class="S-Sample">
+{USER_LANGUAGE}</code>
+ — Inserts a citation of the cited user’s preferred language on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191994"></a><code class="S-Sample">
+{USER_POSTAL_CODE}</code>
+ — Inserts the cited user’s: </span></li>
+<ul>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4191995"></a>postal code (many countries)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4191996"></a>postcode (many countries)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4191997"></a>zip code (US and Philippines)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4191998"></a>Eircode (Ireland)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4191999"></a>PIN code (India)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4192000"></a>CAP (Italy)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4192001"></a>CEP (Brazil)</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-4192002"></a>or equivalent.</li>
+</ul>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191543"></a><code class="S-Sample">
+{USER_STATE}</code>
+ — Inserts the cited user’s state, province, or territory name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191545"></a><code class="S-Sample">
+{USER_STREET}</code>
+ — Inserts the cited user’s street address or, in some cases, P.O. box.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191547"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4191549"></a><code class="S-Sample">
+{USER_UUID}</code>
+ — Inserts the unique (on your marketplace) identifier for the cited user account.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-2044256"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3914845"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-417.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-418.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-419.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-2044267"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-2044268"></a><code class="S-Sample">
+Hi, {USER_FULL_NAME}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2055316"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL} sells {APPLICATION_NAME} ({EDITION_CODE}) at {BASE_URL}, and an event just affected one of your product contracts in this context.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2055234"></a><code class="S-Sample">
+Please provision accordingly.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2055301"></a><code class="S-Sample">
+Thank you,<br>
+AppDirect</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2053760"></a><code class="S-Sample">
+//// \\\\</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2053552"></a><code class="S-Sample">
+Product:      {APPLICATION_NAME}<br>
+Edition:      {EDITION_CODE}<br>
+Event type:   {EVENT_TYPE}<br>
+Order items:  {ORDER_ITEMS}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2053570"></a><code class="S-Sample">
+Consumer:     {USER_TITLE} {USER_FULL_NAME} -- {USER_EMAIL}<br>
+              {COMPANY_NAME}, {CUSTOMER_COUNTRY}<br>
+              {USER_STREET}<br>
+              {USER_CITY}<br>
+              {USER_STATE}<br>
+              {USER_POSTAL_CODE}<br>
+              {USER_COUNTRY}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2054379"></a><code class="S-Sample">
+              User language:            {USER_LANGUAGE}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2053879"></a><code class="S-Sample">
+              Company UUID:             {COMPANY_UUID}<br>
+              Account identifier:       {ACCOUNT_IDENTIFIER}<br>
+              User UUID:                {USER_UUID}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2054545"></a><code class="S-Sample">
+              Company URL:              {COMPANY_WEBSITE}<br>
+              Company telephone number: {COMPANY_PHONE}<br>
+              Billing telephone number: {BILLING_PHONE}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2054976"></a><code class="S-Sample">
+Marketplace:  {PARTNER_STORE_LABEL}<br>
+              {SUPPORT_EMAIL}<br>
+              {SUPPORT_PHONE}<br>
+              {SUPPORT_URL}</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-2053613"></a><code class="S-Sample">
+</code>
+ </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-2044270"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-3218769"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-2044271"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-2044272"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-2044276"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2044277"></a><a href="/fm/99910" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for developers (vendors)</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

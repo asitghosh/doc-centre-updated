@@ -1,0 +1,43 @@
+= render "impersonation" if current_user && (current_user.has_role?(:appdirect_employee) || current_user.is_impersonating?)
+%header
+  %div{ :class => "#{'fl_' if fluid }container" }
+    %nav.main_nav{ :class => "#{'anon' unless current_user }"}
+      = render_navigation :expand_all => true
+    -if search
+      = render "header_search"
+
+    %menu.user_menu
+      %ul
+        - if user_signed_in?
+          %li.subnav.training
+            = link_to "Training", "/training"
+          %li.subnav.help-support
+            = link_to "Help & Support", "/help-support"
+          %li#user_list.subnav
+            = link_to avatar_for(current_user), "javascript:void(0)", { :class => "user_name" }
+            %ul
+              %li
+                = link_to "My Settings", user_iframesettings_path, :data => { :toggle => "modal", :target => "#modal--user_settings", :keyboard => "true" }
+                - if current_user.is_admin?
+                  %li
+                    = link_to 'Admin', admin_root_path, id: "admin"
+                - if current_user.has_role?(:appdirect_employee)
+                  %li
+                    %a#start_impersonation{:href => "#"}= t(:menu_item, :scope => :impersonation)
+                  %li
+                    = link_to "Doc Center Updates", updates_path
+                %li
+                  = link_to 'Your Marketplace', marketplace_url
+                %li
+                  = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+        - else
+          %li.subnav.help-support
+            = link_to "Help & Support", "/help-support"
+          %li#user_list.subnav.login
+            = link_to "Log In", "/login"          
+
+          -# %li#user_list.subnav.login
+          -#   = link_to "Sign in", new_user_session_path()
+          -#   - if false
+          -#     - Devise.omniauth_providers.each do |provider|
+          -#       = link_to "Sign in", omniauth_authorize_path(User, provider)

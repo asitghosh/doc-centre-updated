@@ -1,0 +1,346 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1474776"></a><a name="54545"></a>Work with the Product Purchased by Sales Agent template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1477831"></a>You can edit content in the Product Purchased by Sales Agent template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages.</p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1477832"></a>When the template is turned On, it notifies the contract’s billed user that a <span class="EI-EmphasisItalic">
+sales support</span>
+ representative or a <span class="EI-EmphasisItalic">
+reseller</span>
+ purchased the described subscription on his or her behalf. The message summarizes the subscription contract and explains where and how to start using the corresponding product.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1477833"></a>When the template is turned Off, the contract’s billed user does not receive this formal notification.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1477834"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1477835"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Billing | <span class="EH-EmphasisHeavy">
+Product Purchased by Sales Agent</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1477836"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1477837"></a>Log in to your marketplace as its administrator.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2800520"></a>Make sure that your marketplace has the <span class="EI-EmphasisItalic">
+reseller</span>
+ user role enabled.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1477838"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1477839"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1477840"></a>	Click <span class="EH-EmphasisHeavy">
+Product Purchased by Sales Agent </span>
+in the Billing area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3656883"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-187.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-188.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1477848"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+Attention: A sales agent for {PARTNER_STORE_LABEL} just ordered {APPLICATION_NAME} in your name</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1477849"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4017131"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3473996"></a><code class="S-Sample">
+{APP_DOC_LOCATION}</code>
+ — Inserts a vendor-supplied URL where the message recipient can find technical documentation for the described product or service. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3473997"></a><code class="S-Sample">
+{APP_KNOWLEDGE_BASE_URL}</code>
+ — Inserts a vendor-supplied URL where the message recipient can find a knowledge base for the described product or service.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3473998"></a><code class="S-Sample">
+{APP_SUPPORT_PHONE}</code>
+ — Inserts the vendor-supplied telephone number where the message recipient can obtain support for the described product or service.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3473999"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3479890"></a><code class="S-Sample">
+{AUTOMATIC_EXTENSION_OF_CONTRACT}</code>
+ — Supposing that the vendor configured all subscription contracts for the described product to renew automatically upon expiration, this parameter inserts a value — such as “6 months” — that matches the vendor-specified minimum contract duration. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474000"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474001"></a><code class="S-Sample">
+{BILLING_FREQUENCY}</code>
+ — Inserts the interval of recurrence between billing periods, such as monthly or yearly.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474541"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3476501"></a><code class="S-Sample">
+{CONTRACT_EXPIRY_DATE}</code>
+ — Inserts the actual calendar date when the message recipient’s subscription contract for the described product is scheduled to expire.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3476502"></a><code class="S-Sample">
+{CONTRACT_DURATION}</code>
+ — Inserts an integer that counts how many billing cycles the subscription contract spans in total, paired with a plural descriptor for the interval between invoices, such as “months.”</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474002"></a><code class="S-Sample">
+{CREATION_DATE}</code>
+ — Inserts the order creation date.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474003"></a><code class="S-Sample">
+{EDITION_NAME}</code>
+ — Inserts the vendor-designated name of the relevant product edition/pricing plan.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-2563205"></a><code class="S-Sample">
+{FREE_TRIAL_DURATION}</code>
+ — Inserts a value that cites either <span class="EI-EmphasisItalic">
+N</span>
+ days or <span class="EI-EmphasisItalic">
+N</span>
+ months — this being the full duration of the free trial period— where <span class="EI-EmphasisItalic">
+N</span>
+ is a positive integer.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3608933"></a><code class="S-Sample">
+{GRACE_PERIOD_CANCELLATION}</code>
+ — Inserts the number of days that you or another <span class="EI-EmphasisItalic">
+channel administrator</span>
+ entered in the Grace Period field at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Billing Settings | <span class="EH-EmphasisHeavy">
+Billing Functionality &gt;</span>
+ Subscriptions. </span></li>
+<ul>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-3608934"></a>This is called the early termination grace period. An unpaid invoice must persist beyond this sitewide maximum before the described subscription can be suspended for late payment. </li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-3608935"></a>The early termination grace period’s platform-enforced minimum value, which you cannot edit, is 5 days.</li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-3608936"></a>You can pad the maximum value of this grace period by adding days to it, but each vendor can also set a product-specific maximum anywhere in the range between the platform minimum and the sitewide maximum. </li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-3608937"></a>No termination fee applies to a canceled subscription during this grace period, supposing that stipulations of the corresponding subscription contract state that it carries any such grace period. </li>
+<li class="SBu2-StepBullet2">
+<a name="pgfId-3608938"></a>Any cancellation after the early termination grace period has elapsed carries the product’s standard termination fees.</li>
+</ul>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3476550"></a><code class="S-Sample">
+{ORDER_ID}</code>
+ — Inserts a numeric identifier that your marketplace associates with the referenced purchase order. This identifier is unique on your marketplace, distinguishing one order from all others.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3470121"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose <span class="EI-EmphasisItalic">
+channel administrators</span>
+ operate and manage your marketplace. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3470122"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-2563686"></a><code class="S-Sample">
+{PAYMENT_METHOD}</code>
+ — Inserts a human-readable designation for the message recipient’s payment method. The list of available payment method types varies per marketplace, according to each provider’s active billing gateway integrations.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3478004"></a><code class="S-Sample">
+{RESELLER_COMPANY_NAME}</code>
+ — Inserts the name of whichever company association was the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, login context while he or she completed the described work.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3478040"></a><code class="S-Sample">
+{RESELLER_EMAIL}</code>
+ — Inserts the same email address that is the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3478076"></a><code class="S-Sample">
+{RESELLER_FIRST_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, given name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-2607996"></a><code class="S-Sample">
+{RESELLER_FULL_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-1488648"></a><code class="S-Sample">
+{RESELLER_LAST_NAME}</code>
+ — Inserts the <span class="EI-EmphasisItalic">
+reseller’s</span>
+, or the <span class="EI-EmphasisItalic">
+sales support</span>
+ representative’s, surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-1663157"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3471948"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3471949"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3471950"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3476632"></a><code class="S-Sample">
+{TOTAL_PRICE}</code>
+ — Inserts the sum — from only the current billing period — of all line items. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3471868"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the same email address that is the message recipient’s username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-1526660"></a><code class="S-Sample">
+{USER_FIRST_NAME}</code>
+ — Inserts the message recipient’s given name. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3474597"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the message recipient’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-1525514"></a><code class="S-Sample">
+{USER_LAST_NAME}</code>
+ — Inserts the message recipient’s surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-3471902"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-1668680"></a><code class="S-Sample">
+{VENDOR}</code>
+ — Inserts the name of the vendor whose product the message cites.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1477853"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3902901"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-189.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-190.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-191.gif" alt="" class="block-image">
+</div>
+<p class="Anchor">
+<a name="pgfId-1477856"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1477857"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2448455"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1477858"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-1477859"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1477863"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2593578"></a><a href="/fm/12533" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for product owners</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

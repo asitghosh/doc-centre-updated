@@ -1,0 +1,255 @@
+@import "compass"
+@import "susy"
+@import "normalize"
+
+$print-text-color: #58595B
+$print-heading-color: #57585a
+$print-border-radius: 4px
+$print-border-color: #b2b2b2
+$header-footer-color: #ccc
+
+//Prince XML Settings
+@page
+  margin: 36px 102px 36px 162px
+  prince-caption-page: all
+  @bottom
+    content: flow(footer)
+    // content: flow(release) "Page" counter(page) "of" counter(pages) string(updated_on) string(copyright)
+
+
+
+
+
+%display-none
+  display: none !important
+
+%full-width
+  border: none
+  padding: 0
+  margin: 0
+  display: block
+  float: none
+  width: 100%
+
+%gray-bar
+  background: #eaeaea !important
+  border: 0
+  border-radius: $print-border-radius
+  color: #939598
+
+%header-footer
+  color: $header-footer-color
+  font: normal 10px/1em "AauxNext-Medium-Web", Arial, Helvetica, sans-serif
+  text-transform: uppercase
+  text-align: center
+
+
+//Format Overrides
+body
+  color: $print-text-color
+body > header,
+body > .subnavigation,
+body > #flash_notice,
+.container > header,
+form.search_form
+  @extend %display-none
+
+.left-col, .right-col, .middle-col
+  padding-top: 0px
+
+.three-eight-four
+  .left-col
+    @extend %display-none
+  .middle-col
+    @extend %full-width
+  .right-col
+    @extend %display-none
+
+.three-nine-three
+  .left-col
+    @extend %display-none
+  .middle-col
+    @extend %full-width
+  .right-col
+    @extend %display-none
+
+.three-ten
+  .left-col
+    @extend %display-none
+  .right-col
+    @extend %full-width
+
+.twelve-three
+  img
+    border: 1px solid #d2d2d2
+    border-radius: $print-border-radius
+    box-sizing: content-box
+    padding: 6px 4px
+    max-height: 550px //Based on the width of the printed doc, roughly 550px
+  .right-col
+    @extend %display-none
+  .left-col
+    @extend %full-width
+    .content_separator,
+    .section_separator,
+    .caution_banner,
+    .warning_banner,
+    .note_banner,
+    .timesaver_banner,
+    .tips_banner
+      margin-right: auto
+      page-break-after: avoid
+
+
+// General Style Overrides
+h2
+  font-size: 14px
+  line-height: 16px
+  font-weight: bold
+  + p, + table, + img
+    margin-top: 5px
+
+.spy_this >
+  ul
+    margin-left: 35px
+  ol
+    margin-left: 40px
+
+ol li
+  display: list-item
+  &:before
+    display: none
+
+
+.updated
+  letter-spacing: auto
+
+.code
+  @extend %gray-bar
+  border-radius: 8px
+  color: #000
+  font-size: 10px
+  padding: 4px
+
+.content_separator,
+.section_separator
+  background: none
+  border-bottom: 2px solid #999
+  color: $print-heading-color !important
+  font: normal 2.7em/1em "AauxNext-Medium-Web", Arial, Helvetica, sans-serif !important
+  letter-spacing: -0.5px
+  padding: 0 0 3px
+  margin-bottom: 25px
+
+.gray-paper, pre.code-paper
+  max-height: none
+
+.banner,
+.warning_banner,
+.timesaver_banner,
+.tips_banner,
+.note_banner,
+.caution_banner,
+.alert_banner,
+div.warning_banner,
+div.timesaver_banner,
+div.tips_banner,
+div.note_banner,
+div.caution_banner,
+div.notes-paper
+  @extend %gray-bar
+  margin: 24px auto
+  padding: 12px 2.5em
+  min-height: initial
+  strong
+    font-size: 11px
+  &:before
+    display: none
+
+
+.releases
+  font-size: 11px
+  line-height: 14px
+  .release_overview
+    margin: 45px 0 165px
+    padding: 0
+    .partner_logo
+      border: 0
+      padding: 0
+      max-height: 22px
+      float: none
+    .number_box
+      background: none
+      display: block
+      float: none
+      font-size: 98px
+      line-height: 98px
+      margin: 5px 0 0 0
+      padding: 0
+      text-align: left
+      width: auto
+    .summary_container
+      color: $print-text-color
+    .updated
+      margin-top: 1em
+    .summary_headline
+      margin-top: 1.8em
+    .updated, .summary_headline
+      color: $print-heading-color
+      font-size: 1em
+    .release_date, .summary
+      color: $print-text-color
+      font-size: 11px
+      line-height: 14px
+      display: block
+    .page_footer_content
+      flow: static(footer) //Prince-specific property that pulls this selector's HTML out of the main doc and puts it into the footer
+      @extend %header-footer
+      span + span
+        &:before
+          content: ""
+          border-left: 1px solid $header-footer-color
+          height: 8px
+          display: inline-block
+          margin: 0 20px
+      .page_number
+        content: "Page " counter(page)
+
+  .release_content
+    .table_wrapper //Placing table styles underneath the .table_wrapper so that they don't apply to the .table_wrapper itself
+      td, th //This is actually setting the line height of the page's content because the table_wrapper wraps everything in a TD
+        line-height: 14px
+      table
+        table-layout: fixed //PrinceXML Options
+        border-top: 0
+        td
+          page-break-inside: avoid
+          > ul
+            margin-left: 15px
+        &, td, th
+          border-color: $print-border-color
+          border-width: 2px
+          border-radius: 0 !important
+        td, th
+          border-top: 2px solid $print-border-color
+          border-left: 2px solid $print-border-color
+          padding: 4px
+        td .code
+          background: none !important
+      .code-paper
+        page-break-inside: avoid
+
+ul, ol
+  // page-break-inside: avoid
+
+
+.table_wrapper
+  border: 0
+  margin: 0
+  caption
+    @extend %header-footer
+    margin-bottom: 1em
+  > tbody > tr > td
+    border: 0
+    margin: 0
+    padding: 0

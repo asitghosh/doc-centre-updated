@@ -1,0 +1,276 @@
+<div class="concept">
+<div>
+<h3 class="H2-Head2">
+<a name="pgfId-1200726"></a><a name="69874"></a>User interface patterns</h3>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1216360"></a>To help you understand them quickly, user interface (UI) elements on an AppDirect-powered marketplace exhibit traits and behaviors that follow certain patterns. </p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1207446"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1207452"></a><a href="/fm/73011" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Carousels/Sliders</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1200729"></a><a name="37456"></a>Learn the basics: Tables</h4>
+<p class="B1-Body1">
+<a name="pgfId-1207387"></a>UI tables gather and organize records about a given population, inventory, accumulation, collection, or other set of peers — such as users, companies, products, or orders. Any kind of broadly similar records from your marketplace might be pooled together into a UI table.</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1268576"></a>Each row in a table presents attributes about exactly one <a href="/fm/35205" class="XRef"><span class="EH-EmphasisHeavy">
+entity</span></a>. Its attributes, when taken as a whole, can be broadly informative.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1268589"></a>Each cell in a given row cites the value of one attribute. Cell values are sometimes linked to related information. In such a case, click the link in a table cell to load its related material in your browser.<br>
+</li>
+</ul>
+</ul>
+<div class="MTB-MiniTOC"><p class="MTB-MiniTOCBlurb">
+<a name="pgfId-1270543"></a>Much of the UI on an AppDirect-powered marketplace is organized around and within tables. Topics in this section explain table UI patterns.</p></div>
+<div class="MTB-MiniTOC"><ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1267572"></a><a href="/fm/70642" class="XRef"><span class="EH-EmphasisHeavy">
+Table pagination patterns</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1267569"></a><a href="/fm/82850" class="XRef"><span class="EH-EmphasisHeavy">
+Table sorting patterns</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1267414"></a><a href="/fm/19323" class="XRef"><span class="EH-EmphasisHeavy">
+Table searching patterns</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1267418"></a><a href="/fm/99475" class="XRef"><span class="EH-EmphasisHeavy">
+Table filtering patterns</span></a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1267426"></a><a href="/fm/13339" class="XRef"><span class="EH-EmphasisHeavy">
+Table record detail patterns</span></a>
+</li>
+</ul>
+</ul></div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1267239"></a><a name="70642"></a>Table pagination patterns</h5>
+<p class="B1-Body1">
+<a name="pgfId-1269637"></a>The first and most vital thing to understand about a UI table is that it could contain more records than the maximum number of rows it exposes to you — where each row represents only one record. In such cases, the table flows its additional rows automatically across as many virtual pages as it must straddle, given the constraint that its number of rows imposes upon it.</p>
+<p class="B1-Body1">
+<a name="pgfId-1271536"></a>This means, a UI table might <span class="EI-EmphasisItalic">
+hide</span>
+ many more records from you than it <span class="EI-EmphasisItalic">
+shows</span>
+ — until you understand how to navigate easily to its hidden records.</p>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1270109"></a>Suppose for example that a given table exposes only 20 rows on screen at one time even though it contains 100 records. Pagination controls under the table help you to:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270673"></a>Discover that those hidden records are available and navigable.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1271346"></a>Navigate <span class="EI-EmphasisItalic">
+through</span>
+ any of its hidden records <span class="EI-EmphasisItalic">
+to</span>
+ any of its hidden records.<br>
+</li>
+</ul>
+</ul>
+<p class="B1-Body1">
+<a name="pgfId-1272604"></a>Whenever pagination controls are visibly present under a UI table, you know immediately that the table contains more records than it has rows. After all, when the rendered rows in a table are perfectly sufficient to represent its every record, there is no need for it to straddle multiple pages.</p>
+<div>
+<img src="/images/introduction-7.gif" alt="" class="block-image">
+</div>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-2147423"></a>The illustrative screenshot here, for example, indicates that the table’s visible rows on screen constitute — at most — just one-fifth of its navigable records. </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2147424"></a>You can tell from the highlighted page number “1” in these pagination controls that only the first subset of table rows is visible on screen currently.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2147425"></a>You can click any page number to replace the table’s currently rendered subset of rows with your preferred subset. </li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1270875"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270876"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1200727"></a><a name="82850"></a>Table sorting patterns</h5>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1269633"></a>Many tables support re-sorting their records by the values in one column or another. </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1273054"></a>Column heading labels that are blue — such as <span class="EH-EmphasisHeavy">
+Customer ID</span>
+ in the first screenshot here or <span class="EH-EmphasisHeavy">
+Created</span>
+ in the second one — are clickable, and, clicking them re-sorts the table’s rows accordingly.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1273159"></a>Column heading labels that are black — such as <span class="EH-EmphasisHeavy">
+Active</span>
+ in the first screenshot here or <span class="EH-EmphasisHeavy">
+Frequency</span>
+ in the second one — are not clickable. You cannot re-sort the table by the value under a black column heading.</li>
+</ul>
+</ul>
+<div>
+<img src="/images/introduction-8.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/introduction-9.gif" alt="" class="block-image">
+</div>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1322819"></a>Where the values in a column are numeric, they sort in numeric (or reverse-numeric) order. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1273713"></a>Where the values in a column are letters, they sort in alphabetical (or reverse-alphabetical) order.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1273716"></a>Where the values in a column combine numbers with letters, they sort in alphabetical order, but numerals sort before the letter A.</li>
+</ul>
+</ul>
+<p class="SpP2-SignpostParagraph2
+ tip_banner">
+<a name="pgfId-1273863"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ Click a column heading twice to toggle its imposed sorting order. For example, when a table is sorted alphabetically by the A–Z values in one of its columns, click that column’s heading to flip its sorting order to Z–A.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1270895"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270899"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1267290"></a><a name="19323"></a>Table searching patterns</h5>
+<p class="B1-Body1">
+<a name="pgfId-1207411"></a>Depending on the combination of all your user role assignments on a given marketplace, you might have access to as many as 50 search forms in various parts of its user interface. However, most users are authorized to see and use fewer than five of these. Nevertheless, all of the search forms that you can access share certain traits in common.</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1219288"></a><span class="EH-EmphasisHeavy">
+Search context</span>
+ — The context for each search form gives you an immediate sense of what it can help you to find, as well as what it cannot. For example, your search for user accounts cannot succeed when initiated from an inventory of published products. Instead, you would search for users in a list of users. Similarly, you would not start your search for registered companies from a ledger of processed payments. When you want to find records of a particular kind, the only possibly effective way to search for them is from a pertinent search form, which accompanies a pertinent listing. <br>
+<br>
+Furthermore, when the context for a search form has already limited its scope to a single <a href="/fm/35205" class="XRef"><span class="EH-EmphasisHeavy">
+entity</span></a>— such as a listing of all products associated with one user in particular or of all payments associated with one registered company in particular — understand that what the form actually can search is always constrained to exactly that same scope. You cannot find what is not there.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1219304"></a><span class="EH-EmphasisHeavy">
+Supported characters</span>
+ — We do not forbid or reject any characters in search form queries. Instead, our security best practices prevent any inadvertent processing of special characters, such as <span class="EH-EmphasisHeavy">
+~!@#$%^&amp;*()_+=&lt;&gt;?</span>
+, as executable code. Even so, such characters are not likely to match any valid records. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1219326"></a><span class="C-Comment">
+</span>
+<span class="EH-EmphasisHeavy">
+Minimum and maximum query lengths</span>
+ — We do not enforce any maximum or minimum query length. Nonetheless, extremely terse queries are likely to return at least some low-value matches, whereas overly verbose queries might omit some records that you would hope to find. <br>
+</li>
+</ul>
+</ul>
+<p class="B1-Body1">
+<a name="pgfId-1223060"></a>Click in a search field to activate it for text entry. Then, type your query string in the search field and press <span class="EH-EmphasisHeavy">
+Enter</span>. Or, enter your query string and click the form’s submission button. In most cases, this button is labeled “Search” or is an icon — overlaid upon the search field itself — that resembles a stylized magnifying glass (<img src="/images/introduction-10.gif" align="BASELINE" alt="">
+). </p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1270913"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270917"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1200728"></a><a name="99475"></a>Table filtering patterns</h5>
+<p class="B1-Body1">
+<a name="pgfId-1207399"></a>Filtering is a technique for attributing high value to portions of a set that match for a certain trait, and low value to all other portions. It sifts undesirable portions from a set, exposing only what matters most to whomever defined the filter.</p>
+<p class="B1-Body1">
+<a name="pgfId-1219806"></a>An AppDirect-powered marketplace is liable to provide more than one approach to filtering. In some cases, you might use check boxes to whitelist information subtypes that matter to you and, in other cases, you might choose options from one or more lists.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1270931"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270935"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+</ul>
+</ul>
+</div>
+<div>
+<h5 class="H4-Head4">
+<a name="pgfId-1200731"></a><a name="13339"></a>Table record detail patterns</h5>
+<p class="B1-Body1">
+<a name="pgfId-1207344"></a>An AppDirect-powered marketplace can represent various kinds of records very broadly, as it does for example when it shows authorized users the complete, historical set of all orders that it has ever received. Your marketplace can also tighten a given set’s focus to any narrowed subset. A good example of such narrowing might limit the scope to cover only the orders from one company in particular — hiding every irrelevant record. </p>
+<p class="B1-Body1">
+<a name="pgfId-1228467"></a>Even more pointedly, a marketplace can expose the granular details from one record in isolation. The effect amounts broadly — but not exactly — to an executive summary along these lines: </p>
+<p class="B1-Body1">
+<a name="pgfId-1228043"></a><code class="S-Sample">
+User X from Company Y ordered a year-long subscription to Product Z on August 1 of last year, payable in installments on a monthly billing cycle, to which she applied a 10 percent discount and for which her current payment is now 30 days past due — relative to the product’s configured 10-day grace period for late payments.<br>
+</code>
+</p>
+<p class="B1-Body1">
+<a name="pgfId-1226247"></a>That is not literally how we represent information in the details view for one order. It is illustrative, however, of the types of granular detail that such a record can expose in its details view. Records of any given type expose supporting details that are pertinent to its type most especially. </p>
+<p class="B1-Body1">
+<a name="pgfId-1228069"></a>And of course, orders are not the only kind of record that your marketplace stores. It keeps records about products, product editions, users, companies, orders, payments, subscription contracts, and dozens of other things that help to make your marketplace useful and help to keep your marketplace trustworthy. Most stored records include the kinds of supporting details that lend depth and insight to your understanding of them.</p>
+<p class="B1-Body1">
+<a name="pgfId-1226097"></a>Access to any given record’s detail view is restricted to the same users who can load any list that cites the record. When your account has the necessary authority to list all records in a set, or all records in a subset, you are also authorized to view details about each record that the list cites.</p>
+<p class="B1-Body1">
+<a name="pgfId-1228729"></a>Depending on your user role assignments, you might have access to a wide range of record types and sets. However, most users have access to a limited number of records, drawn from a limited pool of record types. Any details that you might have access to view are a part of this set.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1270955"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1270959"></a><a href="/fm/37456" class="XRef"><span class="EH-EmphasisHeavy">
+Learn the basics: Tables</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1200730"></a><a name="73011"></a>Learn the basics: Carousels/Sliders</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1207375"></a>Carousels in the marketplace UI are a way to showcase the products or bundles that most embody certain traits. For example, one carousel might feature the most popular products sitewide, while another carousel could showcase a small set of products that administrators like to promote.</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1210953"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1210954"></a><a href="/fm/69874" class="XRef"><span class="EH-EmphasisHeavy">
+User interface patterns</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>
+</div>

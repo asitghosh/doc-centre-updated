@@ -1,0 +1,16 @@
+- pages.each do |parent, children|
+  - if parent.published? || (current_user && current_user.can_see_all?)
+    %li.channel_color_border.simple-navigation-active-leaf{ :class => "#{'open' if request.fullpath.include? parent.permalink}"}
+      - if parent.depth == 0
+        %h2.h5.all-caps.js-book-toggle.book{ :class => "channel_color #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink} #{'active' if request.fullpath == parent.permalink}" }
+          = link_to "#{parent.draft? ? "(draft) " : ""}#{parent.title}", parent.permalink, :class => " #{'active' if request.fullpath.include? parent.permalink}"
+      - elsif children.present?
+        %span.expand
+          %span.arrow
+        %h2.h6.all-caps.js-chapter-toggle.chapter{ :class => "channel_color_border #{'ascendent open' if request.fullpath.include? parent.permalink and request.fullpath != parent.permalink} #{' active' if request.fullpath == parent.permalink}" }
+          = link_to parent.title, parent.permalink, :class => ""
+      - else
+        = link_to "#{parent.draft? ? "(draft) " : ""}#{parent.title}", parent.permalink, :class => "channel_color_border #{'active' if request.fullpath == parent.permalink}"
+      - if children.present?
+        %ul.side-nav{ :class => "depth-#{parent.depth++ 1} #{'open' if request.fullpath.include? parent.permalink }" }
+          = render :partial => "leftnav", :locals => { :pages => children }

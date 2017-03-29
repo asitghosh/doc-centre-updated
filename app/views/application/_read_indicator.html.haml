@@ -1,0 +1,9 @@
+- if current_user and resource.unread?(current_user)
+  - status = resource.unread?(current_user) ? "unread" : "read"
+  %div{class: "#{status} indicator inline channel_color_background_hover", "data-resource-id" => "#{resource.class.to_s}-#{resource.id}", "data-state" => status}
+    .prefix
+      %ul
+        %li.check
+        %li.spinner-small
+        %li.un UN
+    = "READ"

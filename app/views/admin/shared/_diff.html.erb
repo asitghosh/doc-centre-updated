@@ -1,0 +1,7 @@
+<div class="changes">
+  <h4>Changes in this version:</h4>
+    <% v.changeset.each do |change| %>
+      <h5><%= change[0] %></h5>
+      <%=raw Diffy::Diff.new(change[1][0].to_s, change[1][1].to_s).to_s(:html) %>
+    <% end %>
+</div>

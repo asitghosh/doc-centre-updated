@@ -1,0 +1,181 @@
+@font-face
+  font-family: Icons
+  src: font-url("doc-icons.eot")
+  src: url("doc-icons.eot?#iefix") format("embedded-opentype"), url("doc-icons.woff") format("woff"), url("doc-icons.ttf") format("truetype"), url("doc-icons.svg#doc-icons") format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+=iconstyles
+  font-family: Icons !important
+  speak: none
+  @extend .inline-block
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none !important
+  text-decoration: none !important
+  line-height: 1
+  vertical-align: middle
+  -webkit-font-smoothing: antialiased
+
+// .icon-grid:before
+//   content: "\e600"
+//
+// .icon-impersonate:before
+//   content: "\e601"
+//
+// .icon-list:before
+//   content: "\e602"
+//
+// .icon-lock:before
+//   content: "\e603"
+//
+// .icon-grid2:before
+//   content: "\e604"
+//
+// .icon-impersonate2:before
+//   content: "\e605"
+//
+// .icon-list2:before
+//   content: "\e606"
+//
+// .icon-lock2:before
+//   content: "\e607"
+//
+// .icon-uniF000:before
+//   content: "\f000"
+//
+// .icon-uniE011:before
+//   content: "\e011"
+//
+// .icon-uniE012:before
+//   content: "\e012"
+//
+// .icon-uniE013:before
+//   content: "\e013"
+//
+// .icon-uniE014:before
+//   content: "\e014"
+//
+// .icon-uniE015:before
+//   content: "\e015"
+//
+// .icon-uniE016:before
+//   content: "\e016"
+//
+// .icon-uniE017:before
+//   content: "\e017"
+//
+// .icon-uniE018:before
+//   content: "\e018"
+//
+// .icon-uniE019:before
+//   content: "\e019"
+//
+// .icon-uniE01A:before
+//   content: "\e01a"
+//
+// .icon-uniE01B:before
+//   content: "\e01b"
+//
+// .icon-uniE01C:before
+//   content: "\e01c"
+//
+// .icon-uniE01D:before
+//   content: "\e01d"
+//
+// .icon-uniE01E:before
+//   content: "\e01e"
+//
+// .icon-uniE01F:before
+//   content: "\e01f"
+//
+// .icon-uniE020:before
+//   content: "\e020"
+//
+// .icon-uniE021:before
+//   content: "\e021"
+//
+// .icon-right-arrow:before
+//   content: "\e000"
+//
+// .icon-write:before
+//   content: "\e001"
+//
+// .icon-user-manual:before
+//   content: "\e002"
+//
+// .icon-upcoming-features:before
+//   content: "\e003"
+//
+// .icon-roadmap:before
+//   content: "\e004"
+//
+// .icon-arrow-next:before
+//   content: "\e005"
+//
+// .icon-right-arrow-circle:before
+//   content: "\e006"
+//
+// .icon-releases:before
+//   content: "\e007"
+//
+// .icon-print:before
+//   content: "\e008"
+//
+// .icon-plus:before
+//   content: "\e009"
+//
+// .icon-indent:before
+//   content: "\e00a"
+//
+// .icon-faqs:before
+//   content: "\e00b"
+//
+// .icon-external:before
+//   content: "\e00c"
+//
+// .icon-download:before
+//   content: "\e00d"
+//
+// .icon-arrow-down:before
+//   content: "\e00e"
+//
+// .icon-close:before
+//   content: "\e00f"
+//
+// .icon-circle-plus:before
+//   content: "\e010"
+//
+// .icon-uniE031:before
+//   content: "\e031"
+/* Use the following CSS code if you want to use data attributes for inserting your icons
+[data-icon]:before
+  +iconstyles
+
+/* Use the following CSS code if you want to have a class per icon
+//
+///*Instead of a list of all class selectors,
+//  you can use the generic selector below, but it's slower:
+//  [class*="icon-"] {
+//  */
+
+// Regex to format IcoMoon/FontCustom etc. generated stylesheets.
+// find: .([\w-]+):before\h\{\n\hcontent:\h("[\\\w]+");\n\}\n
+// replace: "$1" $2,
+
+$icons: "icon-circle-plus" "\e010", "icon-lock" "\e603" ,"icon-grid" "\e600" , "icon-list" "\e602" , "icon-close" "\e00f","icon-arrow-down" "\e00e", "icon-impersonate" "\e601", "icon-right-arrow" "\e000","icon-write" "\e001","icon-user-manual" "\e002","icon-upcoming-features" "\e003","icon-roadmap" "\e004","icon-right-arrow-circle" "\e006","icon-releases" "\e007","icon-print" "\e008","icon-plus" "\e009","icon-indent" "\e00a","icon-faqs" "\e00b","icon-external" "\e00c","icon-download" "\e00d","icon-hotfix" "\e031","icon-arrow-next" "\e005"
+
+$icon-classes: null
+@each $icon in $icons
+  $icon-classes: append($icon-classes, unquote(".#{nth($icon, 1)}:before"), comma)
+  $icon-classes: append($icon-classes, unquote(".after-#{nth($icon, 1)}:after"), comma)
+
+#{$icon-classes}
+  +iconstyles
+
+@each $icon in $icons
+  $classname: unquote("#{nth($icon, 1)}")
+  .#{$classname}:before, .after-#{$classname}:after
+    content: "#{nth($icon, 2)}"

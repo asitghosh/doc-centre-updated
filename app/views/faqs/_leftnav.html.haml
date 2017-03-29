@@ -1,0 +1,9 @@
+%nav.left-col.side
+  %ul.faq_nav
+    %li
+      %h2.h6.all-caps
+        Categories
+      %ul.side-nav
+        - @faq_nav.each do |tag|
+          %li{ :class => "#{selected_if_path_includes(tag.name.parameterize)} channel_color_border simple-navigation-active-leaf" }
+            %a{ :href => "/faqs/#{tag.name.parameterize}", :class => "#{selected_if_path_includes(tag.name.parameterize)} channel_color_border" }= tag.name.titleize

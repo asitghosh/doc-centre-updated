@@ -1,0 +1,19 @@
+#
+# Fill in the s3 details, rename file to application.yml
+#
+#
+#
+ROLES: [superadmin, editor, account_rep, channel_admin, appdirect_employee]
+SPECIFIC_CONTENT_TYPE: [Page, Release, Feature]
+
+#S3 Options for PaperClip
+S3_BUCKET: ADD_BUCKET
+S3_ACCESS_KEY_ID: ADD_KEY
+S3_SECRET_ACCESS_KEY: ADD_SECRET
+
+#sendgrid credentials
+SENDGRID_USERNAME: ADD_USERNAME
+SENDGRID_PASSWORD: ADD_PASSWORD
+
+ERRBIT_KEY: API_KEY
+ERRBIT_HOST: addc-errbit.herokuapp.com

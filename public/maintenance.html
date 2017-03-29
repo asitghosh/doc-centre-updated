@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temporarily Down For Maintenance.</title>
+  <style type="text/css">
+ body{
+    font-family: Helvetica, Arial, sans-serif;
+    background: #eee;
+  }
+@font-face {
+  font-family: "AauxNext-Medium";
+  src: url("https://s3.amazonaws.com/ad-dev-dc/fonts/26050D_7_0.eot");
+  src: url("https://s3.amazonaws.com/ad-dev-dc/fonts/26050D_7_0.eot?#iefix") format("embedded-opentype"), url("https://s3.amazonaws.com/ad-dev-dc/fonts/26050D_7_0.woff") format("woff"), url("https://s3.amazonaws.com/ad-dev-dc/fonts/26050D_7_0.ttf") format("truetype");
+}
+
+
+  .error_box{
+    width: 655px;
+    text-align: center;
+    background: white;
+    border-radius: 6px;
+    margin: 100px auto 200px;
+    border: 3px solid #ddd;
+  }
+
+  .error_box .wrap{
+    padding: 50px;
+    border-radius: 4px;
+    border: 1px solid #c9c9c9;
+  }
+
+  h1{
+    font: 58px/1 "AauxNext-Medium", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0 0 15px 0;
+    position: relative;
+  }
+  h1:before, h1:after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 165px;
+    background: #e0e0e0;
+    top: 30%;
+    left: 15px;
+  }
+  h1:after{
+    right: 15px;
+    left: auto;
+  }
+  h2{
+    font-family: "AauxNext-Medium";
+    font-weight: normal;
+    margin: 0;
+    color: #2395ff;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog error_box">
+    <div class="wrap">
+      <h1>Sorry!</h1>
+      <h2>Temporarily down for maintenance.</h2>
+      <p>Please check back shortly.</p>
+    </div>
+  </div>
+</body>
+</html>

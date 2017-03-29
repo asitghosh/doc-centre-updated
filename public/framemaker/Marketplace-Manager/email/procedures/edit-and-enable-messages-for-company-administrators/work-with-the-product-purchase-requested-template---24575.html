@@ -1,0 +1,266 @@
+<div class="procedure">
+<div>
+<h4 class="H3-Head3">
+<a name="pgfId-1527971"></a><a name="24575"></a>Work with the Product Purchase Requested template</h4>
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1528438"></a>You can edit content in the Product Purchase Requested template and turn its output On or Off. Because this template is optional, you can stop it from sending email notification messages. </p>
+<ul>
+<ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-1528439"></a>When the template is turned On — and when a <span class="EI-EmphasisItalic">
+company administrator</span>
+ has set up his or her company so its <span class="EI-EmphasisItalic">
+end-users</span>
+ cannot order products without approval — it sends an informational message to the <span class="EI-EmphasisItalic">
+company administrator</span>
+ when users request access to a product for which the company lacks either an active order or available seats. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1528440"></a>When the template is turned Off, <span class="EI-EmphasisItalic">
+company administrators</span>
+ do not receive this formal notification.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1528441"></a>Navigation path</p>
+<p class="NP-NavigationPath">
+<a name="pgfId-1528442"></a><span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI <span class="EH-EmphasisHeavy">
+| Customer Notifications &gt;</span>
+ Products | <span class="EH-EmphasisHeavy">
+Product Purchase Requested</span>
+</p>
+<p class="BL-BlockLabel">
+<a name="pgfId-1528443"></a>Before you begin</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1528444"></a>Log in to your marketplace as its administrator.</li>
+</ul>
+</ul>
+<p class="BL-BlockLabel">
+<a name="pgfId-1528445"></a>Procedure</p>
+<ol class="step-list">
+<ol class="step-list">
+<li class="SF-StepFirst">
+<span class="step-label">Step 1.</span><span class="step-text">
+<a name="pgfId-1528446"></a>	Go to <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>.</span>
+</li>
+<p class="SN-StepNext"><span class="step-label">Step 2.</span><span class="step-text">
+<a name="pgfId-1528447"></a>	Click <span class="EH-EmphasisHeavy">
+Product Purchase Requested </span>
+in the Products area.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 3.</span><span class="step-text">
+<a name="pgfId-3668420"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle right to turn the template <span class="EH-EmphasisHeavy">
+On</span>. <br>
+<br>
+<span class="EH-EmphasisHeavy">
+OR<br>
+</span>
+<br>
+Slide the <span class="EH-EmphasisHeavy">
+Enabled</span>
+ toggle left to turn the template <span class="EH-EmphasisHeavy">
+Off</span>.</span></p>
+</ol>
+</ol>
+<div>
+<img src="/images/chadm-email-322.gif" alt="" class="block-image">
+</div>
+<div>
+<img src="/images/chadm-email-323.gif" alt="" class="block-image">
+</div>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 4.</span><span class="step-text">
+<a name="pgfId-1528460"></a>	Enter an appropriate email subject line in the Subject field. For example, your subject line might be: <code class="S-Sample">
+Product purchase requested</code>.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 5.</span><span class="step-text">
+<a name="pgfId-1528461"></a>	Compose an appropriate message, which uses any or all of the template’s supported parameters. Each parameter injects variable and dynamic text into a generated message, based on the combination of all relevant factors.</span></p>
+</ol>
+</ol>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-4022737"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Each generated message is customized for relevance to the context that triggered it. When any parameter calls upon a database field that is not populated in the necessary context, the generated message shows the parameter label instead of a null value. </p>
+<ul class="step-list">
+<ul class="step-list">
+<ul class="step-list">
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178872"></a><code class="S-Sample">
+{APP_URL}</code>
+ — Inserts the navigable web address that points to the requested product edition’s purchase flow on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178874"></a><code class="S-Sample">
+{APPLICATION_NAME}</code>
+ — Inserts the full name of the relevant product, exactly as its vendor specified it during marketplace integration.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178876"></a><code class="S-Sample">
+{BASE_URL}</code>
+ — Inserts an HTTPS link to the fully qualified, DNS-resolvable server hostname that loads your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178878"></a><code class="S-Sample">
+{COMPANY_NAME}</code>
+ — Inserts the name of the message recipient’s associated company. When the message recipient is associated with more than one company at a time, the insertion is the name of that associated company which most recently invited the message recipient to join it as an associated user or which assigned a described product seat to the message recipient.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178880"></a><code class="S-Sample">
+{ESTIMATED_PRICE}</code>
+ — Inserts the price that applied to the requested product edition when the company’s associated user entered the purchase flow but was prevented from completing his or her purchase without the company administrator’s approval. Prices are subject to change. </span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178882"></a><code class="S-Sample">
+{ORDER_DETAILS}</code>
+ — Inserts high-level metadata about the described order.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178884"></a><code class="S-Sample">
+{PARTNER_LABEL}</code>
+ — Inserts the name of the organization whose channel administrators operate and manage your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178886"></a><code class="S-Sample">
+{PARTNER_STORE_LABEL}</code>
+ — Inserts your marketplace brand name, such as Acme Marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178888"></a><code class="S-Sample">
+{REQUESTER_NAME}</code>
+ — Inserts the name of a registered user who shares his or her company association with the message recipient, and who requests assignment to an allocated seat that the message recipient controls.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178890"></a><code class="S-Sample">
+{SALUTATION}</code>
+ — Inserts a formal and possibly gendered greeting, depending on which native language is the default language on your marketplace. For example, the salutation in English is ‘Dear.’</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178892"></a><code class="S-Sample">
+{SUPPORT_EMAIL}</code>
+ — Inserts the email address that receives technical support requests at your organization. You populate this parameter when you enter a Support Email value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178894"></a><code class="S-Sample">
+{SUPPORT_PHONE}</code>
+ — Inserts the telephone number that receives technical support calls at your organization. You populate this parameter when you enter a Support Phone value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178896"></a><code class="S-Sample">
+{SUPPORT_URL}</code>
+ — Inserts the navigable web address where your organization hosts a knowledge base, peer-to-peer support forum, paid customer support agents, or similar resources for your marketplace. You populate this parameter when you enter a Contact Support URL value in the Support Resources area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+General Settings</span>.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178898"></a><code class="S-Sample">
+{USER_EMAIL}</code>
+ — Inserts the requester’s email address, which is also his or her username on your marketplace.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178900"></a><code class="S-Sample">
+{USER_FIRST_NAME}</code>
+ — Inserts the requester’s given name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178902"></a><code class="S-Sample">
+{USER_FULL_NAME}</code>
+ — Inserts the requester’s full name.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178904"></a><code class="S-Sample">
+{USER_LAST_NAME}</code>
+ — Inserts the requester’s surname.</span></li>
+<li class="SBu1-StepBullet1"><span class="step-text">
+<a name="pgfId-4178906"></a><code class="S-Sample">
+{USER_TITLE}</code>
+ — Inserts a gendered honorific, when it is both available and known, such as ‘Mr.’ or ‘Ms.’ in English or ‘<span class="EI-EmphasisItalic">
+Herr</span>
+’ or ‘<span class="EI-EmphasisItalic">
+Frau’</span>
+ in German.</span></li>
+</ul>
+</ul>
+</ul>
+<p class="Anchor">
+<a name="pgfId-1528465"></a> </p>
+<p class="SB-StepBody">
+<a name="pgfId-3912376"></a>Then, use the provided toolbar to format your message body. As needed, you can edit its underlying source by clicking <img src="/images/chadm-email-324.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Edit HTML Source</span>
+). You can even insert graphics — such as a corporate logo — by clicking <img src="/images/chadm-email-325.gif" align="BASELINE" alt="">
+ (<span class="EH-EmphasisHeavy">
+Insert/Edit Image</span>
+).</p>
+<div>
+<img src="/images/chadm-email-326.gif" alt="" class="block-image">
+</div>
+<p class="SB-StepBody">
+<a name="pgfId-1528470"></a>For example:</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530536"></a><code class="S-Sample">
+Dear {USER_FIRST_NAME},</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530538"></a><code class="S-Sample">
+{REQUESTER_NAME} has requested to purchase {APPLICATION_NAME} from {PARTNER_STORE_LABEL}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530540"></a><code class="S-Sample">
+To approve the request, go to {APP_URL} and follow the prompts. </code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530542"></a><code class="S-Sample">
+If you have any questions, please take a look through our Frequently Asked Questions. Or, for other help, you can reach us at {SUPPORT_EMAIL} or {SUPPORT_PHONE}.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530544"></a><code class="S-Sample">
+Thank you for choosing {PARTNER_STORE_LABEL} to manage your business applications.</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1530546"></a><code class="S-Sample">
+Sincerely,</code>
+</p>
+<p class="SB-StepBody">
+<a name="pgfId-1528471"></a><code class="S-Sample">
+Your friends at {PARTNER_LABEL}</code>
+</p>
+<p class="Anchor">
+<a name="pgfId-1528472"></a> </p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 6.</span><span class="step-text">
+<a name="pgfId-1528473"></a>	(<span class="EH-EmphasisHeavy">
+Optional</span>
+) Click <span class="EH-EmphasisHeavy">
+Send a Sample Email</span>
+ to send yourself a copy of the generated message with all of its parameters populated.</span></p>
+</ol>
+</ol>
+<p class="Sp3-SignpostParagraph3
+ tip_banner">
+<a name="pgfId-2451179"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ The Subject field and message body field must each contain at least one character, or the Send a Sample Email button does not have any effect when clicked.</p>
+<ol class="step-list">
+<ol class="step-list">
+<p class="SN-StepNext"><span class="step-label">Step 7.</span><span class="step-text">
+<a name="pgfId-1528474"></a>	Click <span class="EH-EmphasisHeavy">
+Save</span>
+ to save your work.</span></p>
+<p class="SN-StepNext"><span class="step-label">Step 8.</span><span class="step-text">
+<a name="pgfId-1528475"></a>	Stop. You have completed this procedure.</span></p>
+</ol>
+</ol>
+<p class="BL-BlockLabel">
+<a name="pgfId-1528479"></a>Related topics</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1528480"></a><a href="/fm/12874" class="XRef"><span class="EH-EmphasisHeavy">
+Edit and enable messages for company administrators</span></a>
+</li>
+</ul>
+</ul>
+</div>
+</div>

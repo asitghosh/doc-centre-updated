@@ -1,0 +1,1254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>
+<h2 class="H1-Head1">
+<a name="pgfId-1370062"></a><a name="93087"></a>Glossary</h2>
+<p class="B1-Body1">
+<a name="pgfId-2172840"></a>The glossary terms in this section pertain to your management of products and addons as a <span class="EI-EmphasisItalic">
+channel administrator</span>
+ — whether they are native integrations to your marketplace, pulled from a network catalog, or referral-only — including merchandising, catalog stewardship, and vendor API integration events that you might have to resolve manually when anything disrupts, delays, or prevents provisioning.</p>
+<table>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="B1N-Body1-with-Next">
+<a name="pgfId-1241737"></a>Jump to terms that start with... [ <a href="/fm/29682" class="XRef">A</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/97599" class="XRef">B</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/18754" class="XRef">C</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/91405" class="XRef">D</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/14212" class="XRef">E</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/66491" class="XRef">F</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/68855" class="XRef">I</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/84299" class="XRef">L</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/39547" class="XRef">M</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/84677" class="XRef">N</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/67260" class="XRef">P</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/60436" class="XRef">Q</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/74251" class="XRef">R</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/26609" class="XRef">S</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/88639" class="XRef">U</a> <span class="EI-EmphasisItalic">
+|</span>
+ <a href="/fm/78792" class="XRef">W</a> ]</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1257383"></a><a name="29682"></a>A</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535243"></a>active discounts</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1537157"></a>Configured <a href="/fm/12872" class="XRef">discount</a>s, during the time while they are valid and can be redeemed.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535550"></a>addon</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535552"></a>Depending on your marketplace configuration, either our v1 or v2 implementation of supplemental integrated services.</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-2216041"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) An optional supplement to a given product. Addons are ordered separately and billed separately from the products that they enhance. However:</li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1538303"></a>Some marketplaces do not support the sale or use of addons. </li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1538455"></a>Even on marketplaces where addons are sold, not all vendors sell them.</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1538462"></a>Some vendors prepare addons for some of their available products but not others. </li>
+</ul>
+<li class="Bu1N-Bullet1-w-Next">
+<a name="pgfId-2216343"></a>(<span class="EH-EmphasisHeavy">
+addons v2</span>
+) See <a href="/fm/11549" class="XRef">Learn about addon versions v1 and v2</a>
+</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535253"></a><code class="S-Sample">
+ADDON_BIND</code>
+<a name="50413"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535255"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) The integration API event type that should fire when a given addon is bound to its associated product. Successful binding determines which addons are associated with which products on your marketplace. An addon cannot be sold on your marketplace until it is bound to a product that is also sold on your marketplace. Product vendors listen for this event on their <code class="S-Sample">
+Addon notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535257"></a><code class="S-Sample">
+ADDON_CANCEL</code>
+<a name="42382"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535259"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) The integration API event type that should fire when the active order for a given addon is canceled, whether manually by the consumer or automatically by the billing system. Product vendors listen for this event on their <code class="S-Sample">
+Addon notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535261"></a><code class="S-Sample">
+ADDON_CHANGE</code>
+<a name="71232"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535263"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) The integration API event type that should fire when a consumer changes his or her active order for an addon. For example, the consumer might double how many units (such as hours, gigabytes, messages, records, or what have you) he or she is entitled to consume through the addon. Product vendors listen for this event on their <code class="S-Sample">
+Addon notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535265"></a><code class="S-Sample">
+ADDON_ORDER</code>
+<a name="75670"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535267"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) The integration API event type that should fire when a product’s authorized user has ordered an addon to supplement it. Product vendors listen for this event on their <code class="S-Sample">
+Addon notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535269"></a><code class="S-Sample">
+ADDON_UNBIND</code>
+<a name="13930"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535271"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) The integration API event type that should fire when a given addon is divorced from whichever product it was formerly able to supplement. After the addon is unbound from its parent product, it is no longer available for consumers to order on your marketplace. Product vendors listen for this event on their <code class="S-Sample">
+Addon notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535293"></a>attributes</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535295"></a>Marketplace provider-defined traits — in the Attributes area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Products &gt;</span>
+ Groups | <span class="EH-EmphasisHeavy">
+Product Groups</span>
+ — that control if and where certain products are ever listed together in your catalog’s navigation logic. Advanced options during attribute definition include flags that can set which attributes are mandatory for publication, which attributes can be set exclusively by someone with the <span class="EI-EmphasisItalic">
+channel administrator</span>
+ role, and which attributes are visible to consumers.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697022"></a><a name="97599"></a>B</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535616"></a><a name="20230"></a>bundles</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535618"></a>Small collections of mutually complimentary products, promoted and sold together collectively, as one unit — typically at a discount, as compared to purchasing them all separately. In aggregate, the products that are joined together in a bundle serve at least one high-level goal of their target consumer. For example, the constituent products in a bundle could all support certain duties that are common among personnel managers at companies with fewer than 100 employees.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697044"></a><a name="18754"></a>C</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-2180129"></a>catalog</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2180131"></a>See <a href="/fm/42897" class="XRef">product catalog</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535309"></a>categories</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535311"></a>Marketplace provider-defined labels — in the Categories area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Products &gt;</span>
+ Groups | <span class="EH-EmphasisHeavy">
+Product Groups</span>
+ — to represent a product’s purpose in a very general way. For example, a product for conducting employee performance reviews and a product for payroll management might both share a “Human Resources” category label in common. And then, when a consumer clicked through the Human Resources category label on a product listings page, the returned result would include both of these products.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1808727"></a><a name="14018"></a>child marketplace</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2195770"></a>A way to characterize a corporate relationship that could connect two marketplaces.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1808729"></a>Relative to the AppDirect platform’s <a href="/fm/90051" class="XRef">network</a> <a href="/fm/92725" class="XRef">plan</a>, a given marketplace can be the ‘child’ of another that shares its same deployment environment, and with which it is joined together as parts of some larger conglomerate. The <span class="EI-EmphasisItalic">
+corporate administrator</span>
+ who operates a <a href="/fm/37617" class="XRef">parent marketplace</a> can oversee and override what a <span class="EI-EmphasisItalic">
+channel administrator</span>
+ does on any of its child marketplaces. See <a href="/fm/89818" class="XRef">sibling marketplace</a> </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535321"></a>customer events</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535323"></a>The types of product integration API events that are triggered when any of the following incidents occur: </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1788374"></a>A user is assigned to consume one of the seats that a product subscription contract allocates.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1788392"></a>A user account, for which the vendor has provisioned a seat, was changed.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1788401"></a>A product loses an established customer company — either through cancellation or because a contract reaches its natural completion date without renewal. </li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1788383"></a>See <a href="/fm/90048" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_ORDER</code>
+ event</a>, <a href="/fm/65164" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_CHANGE</code>
+ event</a>, and <a href="/fm/87065" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_CANCEL</code>
+ event</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535333"></a>customer posts</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535335"></a>See <a href="/fm/50314" class="XRef">user content</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697054"></a><a name="91405"></a>D</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535629"></a><a name="24013"></a>discounts</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535631"></a>Methods by which a product vendor or a marketplace provider can reduce consumer expense while promoting one product in particular or encouraging conversions generally. At a high level, there are two discount types:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1539947"></a><span class="EH-EmphasisHeavy">
+fixed price discounts</span>
+ — The redemption value of a fixed price discount is hard coded. For example, it might be $5.00 or $10.00, supposing that the default currency on your marketplace is US dollars (USD).</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1536648"></a><span class="EH-EmphasisHeavy">
+percentage discounts</span>
+ — The redemption value of a percentage discount varies according to the purchase price of whichever product edition you redeem it against. For example, it might be 10 percent or 60 percent.</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535337"></a>discount codes</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1669362"></a>Unique text strings that each identify one promotional <a href="/fm/12872" class="XRef">discount</a> in particular for purposes of configuration or redemption. Depending on how the discount is configured: </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1767433"></a>Either your marketplace applies its corresponding code to a given purchase automatically (in a case when the discount is correctly applicable) or the consumer must enter the code manually during purchase. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1767463"></a>Its redemption might be subject to any of several possible restrictions per user, per company, or per marketplace. </li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1764482"></a><a name="11724"></a>Domain Provider [<a href="/fm/94747" class="XRef">product types</a>]</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1765218"></a>A product type whose underlying business logic is cross-sell or up-sell of Internet domain registration service to buyers of Microsoft business products. Thus, we only ever expose the option to buy domain service under narrow and time-limited conditions, where all of the following statements are true simultaneously:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765222"></a>You, the <span class="EI-EmphasisItalic">
+channel administrator</span>
+, have specified a registrar to serve as your marketplace’s default provider of domain service.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765223"></a>The consumer has entered the purchase flow to obtain either a paid version or a no-cost trial version of a Microsoft business product.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765224"></a>The consumer does not have a Microsoft account, meaning, he or she has not previously obtained any hosted Microsoft product through your marketplace or elsewhere.</li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1765218"></a>Many things distinguish domain service from the other products and services that your marketplace sells. </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765681"></a>You can choose only one registrar to power Internet domain sales through your marketplace. The registrar that you choose is then the vendor in fact for any cross-sell or up-sell domains that consumers buy during their Microsoft product purchases on your marketplace.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1766067"></a>Your marketplace shows each such consumer the domain purchasing option only one time, no matter how he or she responds to it. Every later time that the consumer enters a Microsoft purchase flow, this option is removed. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765646"></a>While some marketplace providers cultivate business relationships with registrars directly, other providers depend upon AppDirect to build multi-tier relationships on their behalf, which serve the same purpose without incurring any provider expense. Direct relationships are both labor intensive and time consuming. The domain service procedures that you are able to complete as a <span class="EI-EmphasisItalic">
+channel administrator</span>
+ depend largely on whether your contractual connection to a given registrar is direct or multi-tier.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1765698"></a>You cannot sell domain service as a standalone offering. We support only the option to buy a domain while also buying a Microsoft product. </li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1788838"></a>Support for this product type is enabled or disabled per marketplace.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1732357"></a><a name="26511"></a>Download (Legacy) [<a href="/fm/94747" class="XRef">product types</a>]</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1732359"></a>A product that runs locally on the consumer’s client system, rather than following the standard <a href="/fm/98726" class="XRef">SaaS</a> paradigm. Such products typically require their consumer to: </p>
+<ol>
+<ol>
+<li class="NF-NumFirst">
+<a name="pgfId-1760938"></a>Obtain an installation utility from a generated URL that is valid only once.</li>
+<p class="NN-NumNext">
+<a name="pgfId-1760959"></a>Prove their identity.</p>
+<p class="NN-NumNext">
+<a name="pgfId-1760992"></a>Enter a unique registration code.</p>
+</ol>
+</ol>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1790873"></a>Support for this product type is enabled or disabled per marketplace.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697064"></a><a name="14212"></a>E</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1809953"></a>edition position</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1810840"></a>The result per product edition when a product’s vendor sets a left-to-right, top-to-bottom sequence for sorting what the Editions &amp; Pricing tab shows on the corresponding product’s marketing profile page. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1812808"></a>The vendor sets a given edition’s UI placement on the Editions &amp; Pricing tab by choosing an option from the Position list in the Edition Information area at either of two navigation paths: </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1817672"></a>When creating an edition — <span class="EH-EmphasisHeavy">
+Developer &gt; Products &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Add Product</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ Editions &amp; Pricing | [<span class="EH-EmphasisHeavy">
+Add New Edition</span>
+]</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1817691"></a>When editing an edition — <span class="EH-EmphasisHeavy">
+Developer &gt; Products &gt;</span>
+ {product} [<span class="EH-EmphasisHeavy">
+Edit</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ Editions and Pricing |<span class="EH-EmphasisHeavy">
+ Editions &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+edition</span>
+}</li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1817710"></a><br>
+A given edition’s Position value is relative. The Position list includes exactly the same number of options as the corresponding product has configured editions. For example, with a product that has five configured editions, each edition would show five options in its Position list: 1, 2, 3, 4, and 5. <span class="EH-EmphasisHeavy">
+The system default value is 1.</span>
+</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1810212"></a>When all editions share their Position value in common, the corresponding product’s marketing profile page sorts editions by their creation date. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1811491"></a>When some (but not all) editions share their Position value in common (such as three editions that all use the Position value 2), we sort just that subset by the creation dates of its constituent editions, and we sandwich these between editions with relatively lower Position values, before, and relatively higher Position values, after.</li>
+</ul>
+</ul>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-1817729"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ Alternatively, any of the vendor’s associated <span class="EI-EmphasisItalic">
+developers</span>
+ can rearrange product editions through drag-and-drop operations in the list under the left navigation’s Editions and Pricing subhead. Grab a <span class="EH-EmphasisHeavy">
+|||</span>
+ handle to start dragging the corresponding edition elsewhere in the list.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1809964"></a>edition rank</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1809959"></a>The result per product edition when a product’s vendor ranks the relative commercial value of the corresponding product’s configured editions. This ranking is then the basis for which changes to a customer’s contract — when switching it from one edition to another (supposing that your marketplace even allows this) — constitute an upgrade and which constitute a downgrade.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1815173"></a>The vendor ranks a given edition’s relative value by choosing an option from the Edition Rank list in the Edition Information area at either of two navigation paths: </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1817513"></a>When creating an edition — <span class="EH-EmphasisHeavy">
+Developer &gt; Products &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Add Product</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ Editions &amp; Pricing | [<span class="EH-EmphasisHeavy">
+Add New Edition</span>
+]</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1817542"></a>When editing an edition — <span class="EH-EmphasisHeavy">
+Developer &gt; Products &gt;</span>
+ {product} [<span class="EH-EmphasisHeavy">
+Edit</span>
+]<span class="EH-EmphasisHeavy">
+ &gt;</span>
+ Editions and Pricing |<span class="EH-EmphasisHeavy">
+ Editions &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+edition</span>
+} </li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1817569"></a>A given edition’s Edition Rank value is relative. The Edition Rank list includes exactly the same number of options as the corresponding product has configured editions. For example, with a product that has three configured editions, each edition would show three options in its Edition Rank list: 1, 2, and 3. <span class="EH-EmphasisHeavy">
+The system default value is 1.</span>
+</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1815174"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Before any vendor can use the edition ranking feature, you must enable it on your marketplace. Check the <span class="EH-EmphasisHeavy">
+Use edition rank</span>
+ checkbox on the Subscription Changes field in the Subscriptions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt; </span>
+Billing Settings | <span class="EH-EmphasisHeavy">
+Billing Functionality</span>.</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1818311"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ You can allow or forbid product upgrades and downgrades globally on your marketplace. Check or clear pertinent Subscription Update Options checkboxes in the Contracts area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Billing Settings | <span class="EH-EmphasisHeavy">
+Billing Functionality</span>. The pertinent checkbox labels in the Contracts area are these:<br>
+<br>
+       <span class="EH-EmphasisHeavy">
+•</span>
+    Block edition upgrades for subscriptions with active contracts<br>
+       <span class="EH-EmphasisHeavy">
+•</span>
+    Block edition downgrades for subscriptions with active contracts<br>
+<br>
+When your marketplace forbids product upgrades and downgrades, there is no reason for vendors to set edition rank values. In this case, consistency suggests that you should disable edition ranking.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535345"></a>event token</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535347"></a>A 128-bit hash to identify each event uniquely on your marketplace.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697074"></a><a name="66491"></a>F</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535354"></a>featured product</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535356"></a>Any product that a marketplace provider showcases in the Featured Apps carousel.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697084"></a><a name="68855"></a>I</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535384"></a>integration events</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535386"></a>Developer API events of every kind, which pertain to user/seat provisioning of any integrated product or addon. </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1757715"></a>(<span class="EH-EmphasisHeavy">
+addons v1</span>
+) </li>
+<ul>
+<li class="Bu2-Bullet2">
+<a name="pgfId-2179768"></a><a href="/fm/50413" class="XRef"><code class="S-Sample">
+ADDON_BIND</code>
+ event</a>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1757716"></a><a href="/fm/42382" class="XRef"><code class="S-Sample">
+ADDON_CANCEL</code>
+ event</a>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1757717"></a><a href="/fm/71232" class="XRef"><code class="S-Sample">
+ADDON_CHANGE</code>
+ event</a>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1757718"></a><a href="/fm/75670" class="XRef"><code class="S-Sample">
+ADDON_ORDER</code>
+ event</a>
+</li>
+<li class="Bu2-Bullet2">
+<a name="pgfId-1757719"></a><a href="/fm/13930" class="XRef"><code class="S-Sample">
+ADDON_UNBIND</code>
+ event</a>
+</li>
+</ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1758226"></a><a href="/fm/87065" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_CANCEL</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1758242"></a><a href="/fm/65164" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_CHANGE</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1758215"></a><a href="/fm/74588" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_NOTICE</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1758176"></a><a href="/fm/90048" class="XRef"><code class="S-Sample">
+SUBSCRIPTION_ORDER</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1757742"></a><a href="/fm/28063" class="XRef"><code class="S-Sample">
+USER_ASSIGNMENT</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1757743"></a><a href="/fm/92949" class="XRef"><code class="S-Sample">
+USER_UNASSIGNMENT</code>
+ event</a>
+</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1757745"></a><a href="/fm/62523" class="XRef"><code class="S-Sample">
+USER_UPDATED</code>
+ event</a>
+</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697094"></a><a name="84299"></a>L</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535392"></a>launch approval</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535394"></a>Vendors cannot publish products to your marketplace at their sole discretion. Instead, you decide when and if to approve their request to add a product to your catalog. Without your approval, vendors cannot sell anything through your marketplace.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697104"></a><a name="39547"></a>M</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535406"></a>media sources</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1767551"></a>AppDirect determines — upon request from you, the <span class="EI-EmphasisItalic">
+channel administrator</span>
+ — which media outlets your registered vendors can cite in their product marketing profiles. For example, you might decide that the only permissible sources of product coverage are <span class="EI-EmphasisItalic">
+The New York Times</span>
+ and the <span class="EI-EmphasisItalic">
+South China Morning Post</span>. In this example, no marketing profile citations would be allowed for product coverage by <span class="EI-EmphasisItalic">
+The Washington Post</span>
+ or <span class="EI-EmphasisItalic">
+China Daily</span>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697120"></a><a name="84677"></a>N</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535561"></a><a name="17863"></a>native product</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535563"></a>A product or service whose vendor has a direct contractual relationship with the marketplace that lists it. A native product is always one of these:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1773538"></a>your company (the marketplace provider)’s own proprietary product or service</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1773649"></a>a directly integrated third-party product or service, with whose vendor your company (the provider) has a reseller agreement that predates the signing of your AppDirect contract </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1776319"></a>a referral-only listing, whose billing and provisioning do not depend on AppDirect in any way.</li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1773517"></a>Compare with <a href="/fm/47356" class="XRef">network product</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535582"></a><a name="47356"></a>network product</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535584"></a>A product or service that is not API-integrated directly with the marketplace that lists it, but instead is API-integrated with a different marketplace, which AppDirect also hosts. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1776561"></a>While it is possible for a network product to be a referral-only listing, this would be unusual.</p>
+<p class="Sp-SignpostParagraph
+ tip_banner">
+<a name="pgfId-1774442"></a><span class="SpF-SignpostFlag">
+ TIP: </span>
+ Alternatively, for a marketplace provider whose AppDirect deployment is <span class="EI-EmphasisItalic">
+on premises</span>
+ instead of hosted, a network product is API integrated with either a <a href="/fm/89818" class="XRef">sibling marketplace</a> or a <a href="/fm/37617" class="XRef">parent marketplace</a>. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1774457"></a>A network product is always one of these:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1774277"></a>a third-party product or service that became part of the global AppDirect network catalog without any engagement from your company.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1774228"></a>a third-party product or service that became part of the global AppDirect network upon request by your company after the signing of your AppDirect contract.</li>
+</ul>
+</ul>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1691205"></a>Compare with <a href="/fm/17863" class="XRef">native product</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697130"></a><a name="67260"></a>P</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1769701"></a><a name="37617"></a>parent marketplace</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2195738"></a>A way to characterize a corporate relationship that could connect two marketplaces.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1769703"></a>Relative to the AppDirect platform’s <a href="/fm/90051" class="XRef">network</a> <a href="/fm/92725" class="XRef">plan</a>, a given marketplace can be the ‘parent’ of others that share its same deployment environment, which are also joined together with it as parts of some larger corporate entity or conglomerate. The <span class="EI-EmphasisItalic">
+corporate administrator</span>
+ who operates a parent marketplace can oversee and override what a <span class="EI-EmphasisItalic">
+channel administrator</span>
+ does on any of its <a href="/fm/14018" class="XRef">child marketplace</a>. See <a href="/fm/89818" class="XRef">sibling marketplace</a> </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1791486"></a>popular product</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1791488"></a>Any product that a marketplace showcases automatically in its Popular Apps carousel. </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535461"></a><a name="42897"></a>product catalog</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535463"></a>Consumer-facing product listings — which support searching, filtering, and browsing — where shoppers learn about every no-cost product and every billable product that your marketplace makes available. Your catalog can include any combination of <a href="/fm/17863" class="XRef">native product</a> and <a href="/fm/47356" class="XRef">network product</a> products, including referral-only products. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1767680"></a>Depending on how your marketplace is configured, its catalog might be available for browsing to everyone on the Internet. Or it might be available merely to the subset of Internet users who are registered users of your marketplace.</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1691805"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Some marketplaces “hide” a small number of products, which are not visible to, or purchasable by, consumers but can be purchased on their behalf by the marketplace provider or a linked reseller. </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1536333"></a>product groups</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1536335"></a>The combination of, and combined catalog-filtering effects of, three product metadata types whose varieties you define.</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1726968"></a><span class="EH-EmphasisHeavy">
+categories</span>
+ — Pertain to one job function, specialization, or department, such as marketing, IT, or HR, which might be sufficient unto itself as a filter while browsing your product catalog. Any defined category can have subcategories that pertain to the completion of one kind of task. For example, the “HR” category could have a <span class="EI-EmphasisItalic">
+performance management</span>
+ subcategory, while “IT” could have an <span class="EI-EmphasisItalic">
+orchestration</span>
+ subcategory.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1727018"></a><span class="EH-EmphasisHeavy">
+attributes</span>
+ — Pertain to one of a product’s characteristic properties, which must be further delineated to be of any plain use as a filter while browsing your product catalog. For example, the attribute options for a hypothetical “Deployment Type” attribute could be <span class="EI-EmphasisItalic">
+hosted</span>
+ and <span class="EI-EmphasisItalic">
+on-prem</span>. Or, the attribute options for an hypothetical “Operating System” attribute could be <span class="EI-EmphasisItalic">
+OS X</span>
+, <span class="EI-EmphasisItalic">
+Windows</span>
+, <span class="EI-EmphasisItalic">
+Linux</span>
+, <span class="EI-EmphasisItalic">
+Android</span>
+, and <span class="EI-EmphasisItalic">
+iOS</span>.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1727029"></a><span class="EH-EmphasisHeavy">
+customer groups</span>
+ — Pertain broadly to anything that adds relevance while filtering your product catalog, such as service level agreement tiers or industry verticals.</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1627447"></a><a name="94747"></a>product types</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1727878"></a>The product varieties that your marketplace is configured to list. Each supported type carries its own set of implications for: </p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1808916"></a>marketing profile content</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1808958"></a>pricing models and options</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1808942"></a>service integration</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1727879"></a>support for single- or multi-user implementations</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809041"></a>adding custom fields to the purchase flow</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809111"></a>user authentication</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809137"></a>having no exposed pricing on your marketplace</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809174"></a>merchandising (tagging, featuring, promotions, and sort-weighting)</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809206"></a>having an Under Maintenance mode for any event type</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1809232"></a>having a Coming Soon mode<br>
+</li>
+</ul>
+</ul>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-2178635"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ In addition, your marketplace might support custom product types, developed for your exclusive use. Any such customizations are beyond the scope of this chapter.</p>
+<ul>
+<ul>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1747923"></a><a href="/fm/11724" class="XRef">Domain Provider [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1738621"></a><a href="/fm/26511" class="XRef">Download (Legacy) [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a> </li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1738626"></a><span class="EH-EmphasisHeavy">
+</span>
+<a href="/fm/57409" class="XRef">Stacked Editions Web App [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a> — See also <a href="/fm/59194" class="XRef">stacked edition</a> </li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1738638"></a><span class="EH-EmphasisHeavy">
+<a href="/fm/52886" class="XRef">Web App [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a></span>
+</li>
+<li class="MTBu1-MiniTOCBullet1">
+<a name="pgfId-1736424"></a><a href="/fm/73230" class="XRef"><span class="EH-EmphasisHeavy">
+Web Application</span>
+ (manual setup) [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a><span class="EH-EmphasisHeavy">
+</span>
+</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535644"></a>promotions</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535646"></a>Strategic campaigns and incentives that highlight and drive consumer adoption of certain products. See <a href="/fm/20230" class="XRef">bundles</a> and <a href="/fm/24013" class="XRef">discounts</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697317"></a><a name="60436"></a>Q</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535469"></a><a name="95216"></a>questions</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2193764"></a>A type of user-produced content that solicits information about a product from the product vendor. This content is meant to benefit the product’s current and potential future users.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535471"></a>When your marketplace is configured — in the Reviews &amp; Questions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+ — to show user questions, registered users can submit questions about a product on its product marketing profile page — at <span class="EH-EmphasisHeavy">
+Marketplace &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+product</span>
+}<span class="EH-EmphasisHeavy">
+ &gt; Questions &gt;</span>
+ [<span class="EH-EmphasisHeavy">
+Ask a Question</span>
+] — directed to the product’s vendor and visible on the product’s marketing profile page. Otherwise, when you configure your marketplace to hide questions, the Questions tab is removed from every product’s marketing profile page.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2193307"></a>When your marketplace is configured — in the Reviews &amp; Questions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+ — to hide all user content until you approve it, you can triage submitted questions one-by-one or in bulk at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Home | <span class="EH-EmphasisHeavy">
+Reviews &amp; Questions</span>. Only your approval makes a question visible on your marketplace. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2190332"></a>The developer who integrated the product into your marketplace then receives a notification message in email if the Question Asked template is enabled in the Vendors table at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Custom UI | <span class="EH-EmphasisHeavy">
+Customer Notifications</span>. See <a href="/fm/50314" class="XRef">user content</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697333"></a><a name="74251"></a>R</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1687167"></a><a name="19438"></a>ratings</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2194506"></a>A type of user-produced content that characterizes a product’s relative quality on a fixed, five-point scale. This content is meant to benefit the product’s potential future users.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1687169"></a>Users can submit star ratings for a product on its product marketing profile page — at <span class="EH-EmphasisHeavy">
+Marketplace &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+product</span>
+}<span class="EH-EmphasisHeavy">
+ &gt; Reviews</span>. See <a href="/fm/50314" class="XRef">user content</a>.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2178925"></a>However, you can set a threshold — in the Reviews and Questions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+ — for the minimum number of star ratings that a product’s users must submit collectively before any of the ratings are visible on the product’s marketing profile page. </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1769880"></a>referral-only products</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1769882"></a>Products listed in your catalog, which are sold and managed outside our platform. Such listings can be a source of supplemental income through affiliate programs or outside business agreements.</p>
+<p class="Sp-SignpostParagraph
+ note_banner">
+<a name="pgfId-1807590"></a><span class="SpF-SignpostFlag">
+ NOTE: </span>
+ Your AppDirect environment must run at least the listing <a href="/fm/92725" class="XRef">plan</a> before referral-only integrations are available to you.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535493"></a><a name="47594"></a>reviews</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2194723"></a>A type of user-produced content that summarizes subjective personal experience with, and opinions about, a product’s best and worst traits. This content is meant to benefit the product’s potential future users.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2193682"></a>When your marketplace is configured — in the Reviews &amp; Questions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+ — to limit submission of product reviews to the billable party on a product contract, he or she can review a qualifying product on its marketing profile page at <span class="EH-EmphasisHeavy">
+Marketplace &gt;</span>
+ {<span class="EH-EmphasisHeavy">
+product</span>
+}<span class="EH-EmphasisHeavy">
+ &gt; Reviews</span>. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2192532"></a>When your marketplace is configured — in the Reviews &amp; Questions area at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Settings &gt;</span>
+ Settings | <span class="EH-EmphasisHeavy">
+Marketplace Functionality</span>
+ — to hide all user content until you approve it, you can triage submitted reviews one-by-one or in bulk at <span class="EH-EmphasisHeavy">
+Manage &gt; Channel &gt; Marketplace &gt;</span>
+ Home | <span class="EH-EmphasisHeavy">
+Reviews &amp; Questions</span>. Only your approval makes a review visible on your marketplace. </p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1795332"></a>See <a href="/fm/50314" class="XRef">user content</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697349"></a><a name="26609"></a>S</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-2215499"></a>service type</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2215501"></a>A flag that developers must set when creating a new product on a marketplace where V2 addons are enabled. One service type designates a standalone product, where the other type designates a V2 addon.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1769633"></a><a name="89818"></a>sibling marketplace</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2195549"></a>A way to characterize a corporate relationship that could connect two or more marketplaces.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1769635"></a>A given marketplace can have ‘siblings ‘when all of them share the same <a href="/fm/37617" class="XRef">parent marketplace</a>, relative to the AppDirect platform’s <a href="/fm/90051" class="XRef">network</a> <a href="/fm/92725" class="XRef">plan</a>. </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1744464"></a><a name="57409"></a>Stacked Editions Web App [<a href="/fm/94747" class="XRef">product types</a>]</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2195860"></a>A product type for applications that a user might buy and use in multiple.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1767090"></a>The only difference between a Stacked Editions Web App and a <a href="/fm/52886" class="XRef">Web App [<span class="EH-EmphasisHeavy">
+product type</span>
+]</a> is that registered users can buy a Stacked Editions Web App product multiple times. The intent is that this product type should be reserved for products that can be customized uniquely per instance, such as a Microsoft SharePoint deployment, and that one company might, as a result, buy multiple times. </p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1792206"></a><code class="S-Sample">
+SUBSCRIPTION_CANCEL</code>
+<a name="87065"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1792208"></a>The integration API event type that should fire when a product’s authorized user has requested to cancel an active subscription according to all effective dates, penalties, and grace periods that the product contract stipulates, and relative to its billing cycle interval. Product vendors listen for this event on their <code class="S-Sample">
+Subscription Cancel notification URL</code>
+ endpoints.</p>
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2197042"></a>In the case of addons (<span class="EH-EmphasisHeavy">
+v1</span>
+), a <code class="S-Sample">
+SUBSCRIPTION_CANCEL</code>
+ event fires only when the addon’s contract ends, rather than when its authorized user requests cancellation.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1792216"></a><code class="S-Sample">
+SUBSCRIPTION_CHANGE</code>
+<a name="65164"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1792218"></a>The integration API event type that should fire when a product’s authorized user has updated, upgraded, or downgraded an active subscription. Product vendors listen for this event on their <code class="S-Sample">
+Subscription Change notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535501"></a><code class="S-Sample">
+SUBSCRIPTION_NOTICE</code>
+<a name="74588"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535503"></a>The integration API event type that should fire when a consumer’s rightful access to the described product has changed. Product vendors listen for this event on their <code class="S-Sample">
+Subscription Status notification URL</code>
+ endpoints. The event’s value is always one of these:</p>
+<ul>
+<ul>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1687714"></a><code class="S-Sample">
+CLOSED</code>
+ — The order that underlies this subscription has been in a <code class="S-Sample">
+SUSPENDED</code>
+ or <code class="S-Sample">
+FREE_TRIAL_EXPIRED</code>
+ state for longer than the marketplace-configurable grace period, which is typically 1 or 2 months. The vendor should delete (not suspend) the consumer’s rightful access to the described product.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1687712"></a><code class="S-Sample">
+DEACTIVATED</code>
+ — Due to a late payment or possible contract violation, the consumer’s marketplace account is not currently active. We recommend that the vendor suspend his or her product access but not delete the account or its data. </li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1687713"></a><code class="S-Sample">
+REACTIVATED</code>
+ — The consumer’s account should be considered active, with typical access. This status usually indicates that the consumer paid an overdue invoice or has converted from an expired free trial to a paid seat.</li>
+<li class="Bu1-Bullet1">
+<a name="pgfId-1687715"></a><code class="S-Sample">
+UPCOMING_INVOICE</code>
+ — Invoice calculation for the consumer’s account is set to start in 24 hours. The vendor should call the Billing Usage API endpoint on your marketplace and send any updated usage data for inclusion on the upcoming invoice.</li>
+</ul>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-2385928"></a><code class="S-Sample">
+SUBSCRIPTION_ORDER</code>
+<a name="90048"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-2385930"></a>The integration API event type that should fire when a product seat must be provisioned for a new user. Product vendors listen for this event on their <code class="S-Sample">
+Subscription Order notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1697365"></a><a name="88639"></a>U</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535537"></a><code class="S-Sample">
+USER_ASSIGNMENT</code>
+<a name="28063"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535539"></a>The integration API event type that should fire when registered users are assigned to a product. Product vendors listen for this event on their <code class="S-Sample">
+User Assignment notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535533"></a><code class="S-Sample">
+USER_UNASSIGNMENT</code>
+<a name="92949"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535535"></a>The integration API event type that should fire when registered users, who were once assigned to a given product, are subsequently disconnected from it. Product vendors listen for this event on their <code class="S-Sample">
+User Unassignment notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1536465"></a><a name="50314"></a>user content</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1536467"></a>User-generated content that is specific to a given product. Such content is sometimes visible on product listing pages and sometimes visible on product marketing profile pages. See <a href="/fm/95216" class="XRef">questions</a>, <a href="/fm/19438" class="XRef">ratings</a>, and <a href="/fm/47594" class="XRef">reviews</a>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1535529"></a><code class="S-Sample">
+USER_UPDATED</code>
+<a name="62523"></a> event</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1535531"></a>The integration API event type that should fire when information changes about one of the users who is assigned to a given product. Product vendors listen for this event on their [<code class="S-Sample">
+User Updated notification URL</code>
+ endpoints.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="2">
+<p class="GA-GlossaryAlphabet">
+<a name="pgfId-1732536"></a><a name="78792"></a>W</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1732465"></a><a name="52886"></a>Web App [<a href="/fm/94747" class="XRef">product types</a>]</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1732467"></a>A traditional, fully integrated <a href="/fm/98726" class="XRef">SaaS</a> product. Products of this type support a full marketing profile, all purchasing, pricing, and billing options, management of all assignments, updates, and cancellations, and SSO from each assigned user’s MyApps page. Common examples include Google Apps, New Relic, and Sendgrid. Most products use the web app type.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">
+<p class="GT-GlossaryTerm">
+<a name="pgfId-1732696"></a><span class="EH-EmphasisHeavy">
+Web Application</span>
+<a name="73230"></a> (manual setup) [<a href="/fm/94747" class="XRef">product types</a>]</p>
+</td>
+<td rowspan="1" colspan="1">
+<p class="GD-GlossaryDefinition">
+<a name="pgfId-1732698"></a>Instead of relying upon API automation, this nonstandard <a href="/fm/98726" class="XRef">SaaS</a> product is provisioned manually via email notifications directed to individuals at the vendor-end or the provider-end who must mark each event as resolved or completed. Each product of this type supports a full marketing profile and most purchasing, pricing, and billing options. However, many limitations apply. For example, billing does not begin at purchase, but rather when the purchase event is resolved. Metered usage pricing is not possible. SSO from the assigned user’s MyApps page is not possible. Although this type supports management of all assignments, updates, and cancellations, each event is marked <code class="S-Sample">
+PENDING</code>
+ until it is resolved manually.</p>
+</td>
+</tr>
+</table>
+</div></body></html>

@@ -1,0 +1,9 @@
+/ %header.page_header
+/ 	- book_title = @api.root.title
+/ 	%h1.h2= @root_node.title
+
+/ 	= form_tag search_path, method: :get, class: 'search_form' do
+/ 		= text_field_tag :q, params[:q], :placeholder => "Search #{book_title}", :class => 'icons-magnifying_glass'
+/ 		= hidden_field_tag :index, "Api"
+/ 		= hidden_field_tag :book_title, book_title
+/ 		= submit_tag "GO", name: nil

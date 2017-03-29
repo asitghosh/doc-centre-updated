@@ -1,0 +1,2 @@
+- @pages.each do |page|
+  = render partial: 'pages/single_page', locals: {page: page, channel_specific_content: channel_specific_content(page) }

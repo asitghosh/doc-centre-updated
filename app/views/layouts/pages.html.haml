@@ -1,0 +1,15 @@
+!!! 5
+%html
+  = render "head"
+  %body{:class => "#{controller_name} #{action_name}", :data => { :color => "#{current_user.channel_partner.color.empty? ? '009abf' : current_user.channel_partner.color}" } }
+    .fixed-header
+      = render 'navigation', :fluid => false, :search => true
+      = render 'pages_subnav'
+    
+    #main{:role => "main"}
+      = render 'messages', :fluid => false
+      = yield
+    = render 'footer', :fluid => false
+    / ! end of #container
+    = render 'footer_includes'
+    = render 'usersettings'

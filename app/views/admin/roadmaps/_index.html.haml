@@ -1,0 +1,4 @@
+%ol.pagelist.sortable{ :data => { "sort-url" => "#{sort_roadmaps_path()}" } }
+  - @roadmaps.each do |rm|
+    - if rm.parent_id == 0 || rm.parent_id == nil
+      = render "listitem", :rm => rm

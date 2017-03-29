@@ -1,0 +1,13 @@
+%header
+	%h1.h2= t :headline, :scope => :releases
+
+	= form_tag search_path, method: :get, class: 'search_form' do
+		= text_field_tag :q, params[:q], :placeholder => 'Search Release Notes', :class => 'icons-magnifying_glass'
+		= hidden_field_tag :index, "Release"
+		= submit_tag "GO", name: nil
+	- if action_name == "index"
+		%menu.view_switcher
+			%a{ :href => "#{releases_path :c => 'y', :page => (params[:page]) }", :id => "grid_view", :class => "grid_view iconss-grid ir #{"active" unless list?} "}
+				.grid-icon
+			%a{ :href => "#{releases_path :view => 'list', :c => 'y', :page => (params[:page]) }", :id => "list_view", :class => "list_view ir iconss-list #{"active" if list?} "}
+				.list-icon

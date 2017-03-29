@@ -1,0 +1,13 @@
+%html
+	= stylesheet_link_tag 'email'
+%body
+	%h1 Today's Annotations
+	%ul
+		- @annotations.each do |annotation|
+			%li
+				%p= "Selected Text: #{annotation.quote}"
+				%p= "Comment: #{annotation.text}"
+				%p= "Created By: #{annotation.user} On: #{annotation.created_at}"
+				%p
+					On Page:
+					%a{ href: "https://ad.docs.appdirect.com#{annotation.page_permalink}" }= annotation.page_permalink

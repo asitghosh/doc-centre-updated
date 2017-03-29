@@ -1,0 +1,18 @@
+<li id="list_<%= page.id %>" class="">
+  <div class="for<%= page.id %> itemcontainer <%= 'no_children' if page.children.empty? %>">
+    <span class="title"><%= link_to page.title, edit_admin_manual_path(:id => page.id) %><%= " (draft)" if page.pub_status == 'draft' %></span>
+    <menu>
+      <%= link_to("Create Child", new_admin_manual_path(:parent_id => page.id)) %>
+      <%= link_to("Destroy", admin_manual_path(page), :method => :delete, :confirm => "Are you sure? This cannot be undone!") %>
+    </menu>
+    <%=raw "<span class='redirects'>redirects to first child &#x21b4;</span>" if page.redirect_to_first_child %>
+    <span class="viewpage" id="view_for_<%= page.id %>"><%= link_to "View this page", page.permalink %></span>
+  </div>
+  <% if !page.children.empty? %>
+    <ol>
+      <% page.children.each do |child| %>
+        <%= render "listitem", :page => child %>
+      <% end %>
+    </ol>
+  <% end %>
+</li>

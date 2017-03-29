@@ -1,0 +1,31 @@
+%section.container.three-nine-three
+
+  %header
+
+    %h1.h2= t :headline, :scope => :roadmap
+    = render "search_header"
+  %nav.left-col
+    %ul.roadmap_nav.side{ :class => "depth-0"}
+      = render :partial => "roadmap_navigation", :locals => { :roadmaps => @navigation }
+  %article.middle-col.channel_color_headlines
+    %header.page-head
+      %time.small-gray-caps
+        Last Updated #{datetime_to_date @roadmap.updated_at}
+      = render "read_indicator", :resource => @roadmap
+      %h2.channel_color= @roadmap.title
+      - unless @roadmap.is_a_quarter?
+        %p.roadmap_meta
+          %span= @roadmap.product
+          %span= @roadmap.pub_status.titleize
+
+    = raw @roadmap.content
+
+    - if @children.present?
+      .child_links
+        - @children.each do |child|
+          %h3
+            = link_to child.title, child.permalink
+          %p.roadmap_meta
+            %span= child.product
+            %span= child.pub_status.titleize
+    = render "disclaimer"

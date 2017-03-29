@@ -1,0 +1,13 @@
+.container.releases.footer_padding
+  = render "release_head_w_search"
+  .middle-col.no_pad
+
+    - if @layout == "list"
+      - cache ["releases/index-list", current_user.channel_partner.id, release_unread_digest ] do
+        = render "release_listboxes", :releases => @releases
+    - else
+      - cache ["releases/index-box", current_user.channel_partner.id, release_unread_digest] do
+        - @releases.each do |release|
+          = render_cached "release_flexbox", :release => release, replace: { unread_badge: unread_badge(release) }
+
+  = paginate @releases
